@@ -1,0 +1,23 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(}\PYG{k+kd}{defn }\PYG{n+nv}{geschaeftjahr\PYGZhy{}quartal\PYGZhy{}form}
+  \PYG{l+s}{\PYGZdq{}Die Auswahlboxen für Geschäftsjahr und Quartal und die Planungsschaltfläche.\PYGZdq{}}
+  \PYG{p}{[]}
+  \PYG{p}{(}\PYG{k}{let }\PYG{p}{[}\PYG{n+nv}{jahre} \PYG{o}{@}\PYG{p}{(}\PYG{n+nf}{rf/subscribe} \PYG{p}{[}\PYG{l+s+ss}{:jahre}\PYG{p}{])}
+        \PYG{n+nv}{quartale} \PYG{o}{@}\PYG{p}{(}\PYG{n+nf}{rf/subscribe} \PYG{p}{[}\PYG{l+s+ss}{:quartale}\PYG{p}{])}
+        \PYG{n+nv}{quartal} \PYG{o}{@}\PYG{p}{(}\PYG{n+nf}{rf/subscribe} \PYG{p}{[}\PYG{l+s+ss}{:quartal}\PYG{p}{])}
+        \PYG{n+nv}{geschaeftsjahr} \PYG{o}{@}\PYG{p}{(}\PYG{n+nf}{rf/subscribe} \PYG{p}{[}\PYG{l+s+ss}{:geschaeftsjahr}\PYG{p}{])]}
+    \PYG{p}{[}\PYG{n+nv}{h\PYGZhy{}box} \PYG{l+s+ss}{:class} \PYG{l+s}{\PYGZdq{}bg\PYGZhy{}light border\PYGZhy{}right\PYGZdq{}} \PYG{l+s+ss}{:gap} \PYG{l+s}{\PYGZdq{}10px\PYGZdq{}}
+     \PYG{l+s+ss}{:children}
+     \PYG{p}{[(}\PYG{n+nf}{select\PYGZhy{}box} \PYG{l+s}{\PYGZdq{}Geschäftsjahr:\PYGZdq{}} \PYG{n+nv}{jahre} \PYG{n+nv}{geschaeftsjahr}
+                  \PYG{o}{\PYGZsh{}}\PYG{p}{(}\PYG{n+nf}{rf/dispatch} \PYG{p}{[}\PYG{l+s+ss}{:geschaeftsjahr} \PYG{p}{(}\PYG{l+s+ss}{:key} \PYG{n+nv}{\PYGZpc{}}\PYG{p}{)]))}
+      \PYG{p}{(}\PYG{n+nf}{select\PYGZhy{}box} \PYG{l+s}{\PYGZdq{}Quartal:\PYGZdq{}} \PYG{n+nv}{quartale} \PYG{p}{(}\PYG{n+nf}{quartal\PYGZhy{}\PYGZgt{}string} \PYG{n+nv}{quartal}\PYG{p}{)}
+                  \PYG{o}{\PYGZsh{}}\PYG{p}{(}\PYG{n+nf}{rf/dispatch} \PYG{p}{[}\PYG{l+s+ss}{:quartal} \PYG{p}{(}\PYG{l+s+ss}{:key} \PYG{n+nv}{\PYGZpc{}}\PYG{p}{)]))}
+      \PYG{p}{[}\PYG{n+nv}{button}
+       \PYG{l+s+ss}{:class} \PYG{l+s}{\PYGZdq{}btn\PYGZhy{}primary\PYGZdq{}}
+       \PYG{l+s+ss}{:on\PYGZhy{}click} \PYG{o}{\PYGZsh{}}\PYG{p}{(}\PYG{n+nf}{plane\PYGZhy{}quartal}\PYG{p}{)}
+       \PYG{l+s+ss}{:label} \PYG{l+s}{\PYGZdq{}Plane Quartal\PYGZdq{}}\PYG{p}{]}
+      \PYG{p}{[}\PYG{n+nv}{button}
+       \PYG{l+s+ss}{:class} \PYG{l+s}{\PYGZdq{}btn\PYGZhy{}primary\PYGZdq{}}
+       \PYG{l+s+ss}{:on\PYGZhy{}click} \PYG{o}{\PYGZsh{}}\PYG{p}{(}\PYG{n+nf}{neues\PYGZhy{}geschaeftjahr}\PYG{p}{)}
+       \PYG{l+s+ss}{:label} \PYG{l+s}{\PYGZdq{}neues G\PYGZhy{}Jahr anlegen\PYGZdq{}}\PYG{p}{]} \PYG{p}{]]))}
+\end{Verbatim}

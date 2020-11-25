@@ -1,0 +1,10 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{(}\PYG{n+nf}{big\PYGZhy{}bang} \PYG{n+nv}{state}             \PYG{c+c1}{;; der Weltzustand}
+  \PYG{err}{\PYGZob{}}\PYG{n+nv}{:on\PYGZhy{}tick}  \PYG{n+nv}{tick\PYGZhy{}handler}   \PYG{c+c1}{;; tick\PYGZhy{}handler liefert bei jedem Zeittakt neuen state}
+   \PYG{n+nv}{:on\PYGZhy{}key}   \PYG{n+nv}{key\PYGZhy{}handler}    \PYG{c+c1}{;; key\PYGZhy{}handler berechnet aus state und key neuen state}
+   \PYG{n+nv}{:on\PYGZhy{}mouse} \PYG{n+nv}{mouse\PYGZhy{}handler}  \PYG{c+c1}{;; mouse\PYGZhy{}handler berechnet aus state, den Mauskoordinaten}
+                            \PYG{c+c1}{;; und der Mausaktion neuen stat}
+   \PYG{n+nv}{:to\PYGZhy{}draw}   \PYG{n+nv}{render}        \PYG{c+c1}{;; render verwandelt state in ein Bild (view)}
+   \PYG{n+nv}{:stop\PYGZhy{}when} \PYG{n+nv}{end?}\PYG{err}{\PYGZcb{}}         \PYG{c+c1}{;; end? ermittelt aus state das Ende der Ausführung}
+   \PYG{o}{...}\PYG{p}{)}
+\end{Verbatim}

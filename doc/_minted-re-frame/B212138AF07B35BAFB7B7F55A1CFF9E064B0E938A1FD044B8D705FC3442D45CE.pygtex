@@ -1,0 +1,6 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{[}\PYG{n+nv}{button}
+    \PYG{l+s+ss}{:class} \PYG{l+s}{\PYGZdq{}btn\PYGZhy{}primary\PYGZdq{}}
+    \PYG{l+s+ss}{:on\PYGZhy{}click} \PYG{o}{\PYGZsh{}}\PYG{p}{(}\PYG{n+nf}{plane\PYGZhy{}quartal}\PYG{p}{)}
+    \PYG{l+s+ss}{:label} \PYG{l+s}{\PYGZdq{}Plane Quartal\PYGZdq{}}\PYG{p}{]}
+\end{Verbatim}

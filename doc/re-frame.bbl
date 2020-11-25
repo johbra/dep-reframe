@@ -1,0 +1,16 @@
+\begin{thebibliography}{WH00}
+
+\bibitem[Fer19]{Ferreira19}
+Esdras Portilho~Araujo Ferreira.
+\newblock Unidirectional circular dataflow architecture for real-time updates.
+\newblock Master thesis, School of Computing Dublin City University, November
+  2019.
+
+\bibitem[WH00]{Wan2000Functional}
+Zhanyong Wan and Paul Hudak.
+\newblock {Functional Reactive Programming from First Principles}.
+\newblock In {\em Proceedings of the ACM SIGPLAN 2000 conference on Programming
+  language design and implementation - PLDI '00}, volume~35, pages 242--252,
+  New York, NY, USA, May 2000. ACM Press.
+
+\end{thebibliography}

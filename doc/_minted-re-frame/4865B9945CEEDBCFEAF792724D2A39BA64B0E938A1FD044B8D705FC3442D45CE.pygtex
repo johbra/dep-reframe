@@ -1,0 +1,9 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{p}{[}\PYG{n+nv}{v\PYGZhy{}box}
+  \PYG{l+s+ss}{:children} \PYG{p}{[[}\PYG{n+nv}{box} \PYG{l+s+ss}{:child} \PYG{l+s}{\PYGZdq{}Header\PYGZdq{}}\PYG{p}{]}
+             \PYG{p}{[}\PYG{n+nv}{h\PYGZhy{}box}
+              \PYG{l+s+ss}{:height} \PYG{l+s}{\PYGZdq{}100px\PYGZdq{}}
+              \PYG{l+s+ss}{:children} \PYG{p}{[[}\PYG{n+nv}{box} \PYG{l+s+ss}{:size} \PYG{l+s}{\PYGZdq{}70px\PYGZdq{}} \PYG{l+s+ss}{:child} \PYG{l+s}{\PYGZdq{}Nav\PYGZdq{}}\PYG{p}{]}
+                         \PYG{p}{[}\PYG{n+nv}{box} \PYG{l+s+ss}{:size} \PYG{l+s}{\PYGZdq{}1\PYGZdq{}} \PYG{l+s+ss}{:child} \PYG{l+s}{\PYGZdq{}Content\PYGZdq{}}\PYG{p}{]]]}
+             \PYG{p}{[}\PYG{n+nv}{box} \PYG{l+s+ss}{:child} \PYG{l+s}{\PYGZdq{}Footer\PYGZdq{}}\PYG{p}{]]]}
+\end{Verbatim}

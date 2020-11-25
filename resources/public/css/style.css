@@ -1,0 +1,14 @@
+/* scrollabe tables */
+.tableFixHead    { overflow-y: auto; height: 650px; }
+.tableFixHead th { position: sticky; top: 0; }
+th {background-color: lightgrey}
+
+/*wg. bootstrap.min.css */
+a:not([href]):not([tabindex]) {
+    color: blue;
+    /* text-decoration: underline;  */
+}
+
+/* input {width: 100%} */
+/* .div1 { */
+/*     width: 500px; */

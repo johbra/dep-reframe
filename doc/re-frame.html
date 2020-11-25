@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Nutzung von React-Frameworks</title>
+<meta name="author" content="Johannes Brauer"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="reveal.js-master/dist/reveal.css"/>
+
+<link rel="stylesheet" href="reveal.js-master/dist/theme/simple.css" id="theme"/>
+
+<link rel="stylesheet" href="./mycss/myrevealstyle.css"/>
+<link rel="stylesheet" href="reveal.js-master/plugin/highlight/vs.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Nutzung von React-Frameworks</h1><h3 class="subtitle">Dozenteneinsatzplanung mit re-frame</h3><h2 class="author">Johannes Brauer</h2><h3 class="date">2020-11-19 Thu 12:18</h3>
+</section>
+
+<section>
+<section id="slide-orgbac433e">
+<h2 id="orgbac433e">Einstieg</h2>
+<ul>
+<li>Funktional-reaktive Programmierung keine neue Idee
+<a class="org-ref-reference" href="#/slide-bibliography">[Wan2000Functional]</a>.
+<ul>
+<li>Nutzung einer internen (Haskell) DSL</li>
+
+</ul></li>
+<li>Populär geworden durch das Javascript-Framework <i><a href="https://reactjs.org">React</a></i> von Facebook</li>
+<li>Bevorzugte Verwendung für die Erstellung von Einzelseiten-Webanwendungen (single
+page applications)</li>
+<li>Nutzung durch die Clojurescript-Adaption <i><a href="https://github.com/reagent-project/reagent">Reagent</a></i> für
+<a href="https://johbra.github.io/dep/">Dozenteneinsatzplanung</a> (mit <a href="https://drive.google.com/open?id=1ZR3xy5EXyZfarY7tpM-t8LH1V5gfLO3F">Erfahrungsbericht</a>)</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org8d04f01">
+<h2 id="org8d04f01">Merkmale von FRP</h2>
+<div class="outline-text-2" id="text-org8d04f01">
+</div>
+</section>
+<section id="slide-orgb9f1bbe">
+<h3 id="orgb9f1bbe">Reaktive Systeme</h3>
+<ul>
+<li>ereignis-getriebene Anwendungen</li>
+<li>kontinuierliche Interaktion mit ihrer Umgebung
+um z.&nbsp;B.
+<ul>
+<li>die Aktualisierung des Anwendungszustands,</li>
+<li>die Anzeige von Daten zu erledigen</li>
+<li>interaktivste Komponente einer Anwendung häufig die
+Benutzungsoberfläche: Reaktion auf verschiedene Ereignisse wie
+Mausklicks, Tastatureingaben oder die Betätigung von Schaltflächen</li>
+
+</ul></li>
+<li>Herausforderungen reaktiver Systeme:
+<ul>
+<li>inhärent nebenläufig:
+<ul>
+<li>Reaktion auf asynchron auftretende Ereignisse verschiedener Herkunft</li>
+<li>Darstellung sich verändernder Daten</li>
+
+</ul></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section>
+<ul>
+<li>invertierte Kontrollstruktur:
+<ul>
+<li>Anwendung steuert sich nicht selbst, sondern die Ermittlung der
+nächsten auszuführenden Berechnung wird durch externe Ereignisse
+oder Systeme bestimmt.</li>
+<li>häufig anzutreffende Lösung: Bereitstellung von Routinen, sog.
+Rückruffunktionen  (callback functions), die beim Auftreten
+bestimmter Ereignisse aktiviert werden und in der Regel
+zustandsändernde Operationen ausführen.</li>
+<li>„Callback-Hölle“: viele isolierte Programmfragmente verändern
+dieselben Daten</li>
+
+</ul></li>
+<li>Die geschilderten Probleme legen nahe, funktionale
+Programmiertechniken in Betracht zu ziehen.</li>
+
+</ul>
+</section>
+<section id="slide-org83216f8">
+<h3 id="org83216f8">Manifesto</h3>
+<p>
+<a href="https://www.reactivemanifesto.org">The Reactive Manifesto</a> definiert Eigenschaften reaktiver Systeme.
+</p>
+
+<p>
+Reaktive Systeme sind
+</p>
+<dl>
+<dt>responsive</dt><dd>reagieren „zeitnah”</dd>
+<dt>resilient</dt><dd>bleiben responsive auch im Fehlerfall</dd>
+<dt>elastic</dt><dd>bleiben responsive auch unter Last</dd>
+<dt>message driven</dt><dd>basieren auch asynchronem Nachrichtenaustausch</dd>
+
+</dl>
+</section>
+<section id="slide-orgd61f912">
+<h3 id="orgd61f912">Schematische Darstellung interaktiver Anwendungen</h3>
+<p>
+Formulierung in einer internen DSL
+</p>
+<div class="org-src-container">
+
+<pre><code class="scheme" >(big-bang state             ;; der Weltzustand
+  {:on-tick  tick-handler   ;; tick-handler liefert bei jedem Zeittakt neuen state
+   :on-key   key-handler    ;; key-handler berechnet aus state und key neuen state
+   :on-mouse mouse-handler  ;; mouse-handler berechnet aus state, den Mauskoordinaten
+                            ;; und der Mausaktion neuen stat
+   :to-draw   render        ;; render verwandelt state in ein Bild (view)
+   :stop-when end?}         ;; end? ermittelt aus state das Ende der Ausführung
+   ...)
+</code></pre>
+</div>
+<ul>
+<li>Die Handler, <code>render</code> und <code>end?</code> sind reine Funktionen.</li>
+<li>Die Mutation von <code>state</code> ist in <code>big-bang</code> versteckt.</li>
+<li><a href="file:///Users/jb/Google-Drive/Planung/Clojure-Script/big-bang/src/bb/my_scetch.cljs">Beispiel</a></li>
+
+</ul>
+</section>
+<section id="slide-org20cd4e2">
+<h3 id="org20cd4e2">Bestandteile</h3>
+<ul>
+<li>Events  (<code>:on-tick</code>, <code>:on-mouse</code>, \(\ldots\))</li>
+<li>Handler (<code>tick-handler</code>, <code>mouse-handler</code>,  \(\ldots\))</li>
+<li>Views   (<code>render</code>)</li>
+
+</ul>
+</section>
+<section id="slide-orgc1acc88">
+<h3 id="orgc1acc88">Eigenschaften von re-frame</h3>
+<ul>
+<li>Clojurescript-Framework auf Basis von Reagent/React für die
+Programmierung und Benutzungsoberflächen von Single-Page-Applications</li>
+<li>funktional</li>
+<li><p>
+nutzt die Homoikonizitäts-Eigenschaft von Lisp:
+</p>
+<blockquote>
+<p>
+You are programming in data. The functions which later transform
+data, themselves start as data.
+</p>
+</blockquote></li>
+<li><a href="#/slide-org6b47b15" class="forwardlink">unidirektionaler Datenfluss</a></li>
+
+</ul>
+</section>
+<section id="slide-org2ee1ee1">
+<h4 id="org2ee1ee1">Sechs Dominosteine</h4>
+<dl>
+<dt>Event dispatch</dt><dd>Event = Reaktion auf externe Ereignisse (Mausklick,
+Websocket-Nachricht etc.)</dd>
+<dt>Event handling</dt><dd>Reaktion auf ein Event, notwendige Seiteneffekte werden ermittelt</dd>
+<dt>Effect handling</dt><dd>Seiteneffekte werden ausgeführt</dd>
+
+</dl>
+<p>
+Nach diesen drei Schritten ist der App-Zustand aktualisiert.
+Die drei folgenden Dominosteine berechnen die Funktion \(v = f(z)\). Ein
+View \(v\) ist eine Funktion \(f\) des App-Zustands \(z\).
+</p>
+<dl>
+<dt>Query</dt><dd>Extraktion und Aufbereitung der Daten aus \(z\)</dd>
+<dt>View</dt><dd>Rendern der Daten aus Query; Verwendung des <a href="https://github.com/weavejester/hiccup">hiccup</a>-Formats (HTML-DSL)</dd>
+<dt>DOM</dt><dd>Die DOM-Knoten des Web-Browsers werden durch Reagent/React
+aktualisiert.</dd>
+
+</dl>
+</section>
+<section id="slide-org1d0f973">
+<h5 id="org1d0f973">Zusammenfassung</h5>
+
+<div class="figure">
+<p><img src="./Abbildungen/6dominoes.png" alt="6dominoes.png" width="450px" />
+</p>
+</div>
+</section>
+<section id="slide-orgc62878a">
+<h4 id="orgc62878a">App-Zustand</h4>
+<ul>
+<li>ein globaler Zustand (single source of truth)</li>
+<li>wird von re-frame automatisch angelegt: <br />
+<code class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #0000FF;">def</span> <span style="color: #BA36A5;">app-db</span>  <span style="color: #7388D6;">(</span><span style="color: #6434A3;">reagent</span>/<span style="color: #006FE0;">atom</span> <span style="color: #909183;">{}</span><span style="color: #7388D6;">)</span><span style="color: #707183;">)</span></code></li>
+<li>dient quasi als Hauptspeicherdatenbank</li>
+<li>Alternativen
+<ul>
+<li><a href="https://github.com/tonsky/datascript">datascript</a></li>
+<li><a href="https://github.com/denistakeda/re-posh">re-posh</a></li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org2d67328">
+<h4 id="org2d67328">Code-Beispiele</h4>
+<div class="outline-text-4" id="text-org2d67328">
+</div>
+</section>
+<section id="slide-org7ec9148">
+<h5 id="org7ec9148">Html-DSL</h5>
+<ul>
+<li>In View-Komponenten wird gemäß re-frame-Dokumentation das mit
+Reagent bereitgestellte <a href="https://github.com/weavejester/hiccup">hiccup</a>-Format als HTML-DSL verwendet.</li>
+<li>In der Dozenteneinsatzplanung wird überwiegend eine auf hiccup
+aufbauende DSL benutzt: <a href="https://github.com/day8/re-com">re-com</a>. Re-com stellt
+<ul>
+<li>die üblichen Widgets</li>
+<li>Layout-Komponenten für die Anordnung von Widgets und
+Layout-Komponenten (horizontale und vertikale Boxen) zur
+Verfügung.</li>
+
+</ul></li>
+<li>Beispiel für eine Schaltfläche:<br /></li>
+
+</ul>
+<div class="nebeneinander">
+<div class="small">
+<div class="org-src-container">
+
+<pre><code class="clojure" >  [button
+    :class "btn-primary"
+    :on-click #(plane-quartal)
+    :label "Plane Quartal"]
+</code></pre>
+</div>
+
+</div>
+
+</div>
+<div class="nebeneinander">
+<p>
+
+</p>
+
+
+<div class="figure">
+<p><img src="./Abbildungen/planebutton.png" alt="planebutton.png" width="350px" />
+</p>
+</div>
+
+</div>
+<div class="clear">
+
+</div>
+<div class="org-src-container">
+
+<pre><code class="html" >  &lt;div class="rc-box display-flex rc-button-wrapper display-inline-flex" 
+       style="flex-flow: inherit; flex: 0 0 auto; align-items: flex-start;"&gt;
+    &lt;button class="rc-button btn btn-primary" style="flex: 0 0 auto;"&gt;
+      Plane Quartal&lt;/button&gt;
+  &lt;/div&gt;
+</code></pre>
+</div>
+</section>
+<section>
+<ul>
+<li><p>
+Layout-Beispiel
+</p>
+<div class="small">
+<div class="org-src-container">
+
+<pre><code class="clojure" >[v-box
+  :children [[box :child "Header"]
+             [h-box
+              :height "100px"
+              :children [[box :size "70px" :child "Nav"]
+                         [box :size "1" :child "Content"]]]
+             [box :child "Footer"]]]
+</code></pre>
+</div>
+
+</div>
+<p>
+resultiert in:
+</p>
+
+<div class="figure">
+<p><img src="./Abbildungen/layout.png" alt="layout.png" width="650px" />
+</p>
+</div></li>
+
+</ul>
+
+</section>
+<section id="slide-org6412233">
+<h5 id="org6412233">View-Komponente für <a href="http://localhost:9500/">Auswahl von Geschäftsjahr und Quartal</a></h5>
+
+<div class="figure">
+<p><img src="./Abbildungen/geschaeftsjahrquartal.png" alt="geschaeftsjahrquartal.png" width="450px" />
+</p>
+</div>
+<ul>
+<li>Die View-Funktion <code class="src src-clojure">geschaeftjahr-quartal-form</code> rendert in den Zeilen
+19 und 20 die Auswahlbox für das aktuelle Geschaeftsjahr.</li>
+<li>Wählt der Benutzer ein Geschäftsjahr aus, wird die Handlerfunktion
+<code>dispatch</code> aufgerufen.</li>
+<li>Dadurch wird ein re-frame-Event (<b>Domino 1</b>) ausgelöst.</li>
+<li>Jedes Event wird durch ein Vektor beschrieben:
+<ul>
+<li>Das Keyword <code class="src src-clojure"><span style="color: #D0372D;">:geschaeftsjahr</span></code> benennt das Event.</li>
+<li>Der Ausdruck <code class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #D0372D;">:key</span> <span style="color: #BA36A5;">%</span><span style="color: #707183;">)</span></code> liefert das ausgewählte Geschäftsjahr.</li>
+
+</ul></li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="clojure" data-line-numbers="|1|10-11">(defn geschaeftjahr-quartal-form 
+  "Die Auswahlboxen für Geschäftsjahr und Quartal und die Planungsschaltfläche."
+  []
+  (let [jahre @(rf/subscribe [:jahre])
+        quartale @(rf/subscribe [:quartale])
+        quartal @(rf/subscribe [:quartal])
+        geschaeftsjahr @(rf/subscribe [:geschaeftsjahr])]
+    [h-box :class "bg-light border-right" :gap "10px"     
+     :children
+     [(select-box "Geschäftsjahr:" jahre geschaeftsjahr
+                  #(rf/dispatch [:geschaeftsjahr (:key %)]))
+      (select-box "Quartal:" quartale (quartal-&gt;string quartal)
+                  #(rf/dispatch [:quartal (:key %)]))
+      [button
+       :class "btn-primary"
+       :on-click #(plane-quartal)
+       :label "Plane Quartal"]
+      [button
+       :class "btn-primary"
+       :on-click #(neues-geschaeftjahr)
+       :label "neues G-Jahr anlegen"] ]]))
+</code></pre>
+</div>
+</section>
+<section id="slide-org686a96b">
+<h5 id="org686a96b">Der Handler für das Event <code class="src src-clojure"><span style="color: #D0372D;">:geschaeftsjahr</span></code></h5>
+<ul>
+<li>Event-Bezeichner sind Teil der DSL für das programmierte
+re-frame-System.</li>
+<li>Der folgende Ausdruck registriert den Handler für das Event <code class="src src-clojure"><span style="color: #D0372D;">:geschaeftsjahr</span></code>.</li>
+<li>Das zweite Argument von <code class="src src-clojure"><span style="color: #6434A3;">rf</span>/reg-event-db</code>
+ist der eigentliche Event-Handler (<b>Domino 2</b>), hier eine anonyme Funktion.</li>
+<li>Diese Funktion erwartet zwei Argumente:
+<ul>
+<li>die Datenbank mit dem globalen Zustand der Anwendung</li>
+<li>einen Vektor, dessen erstes Element hier irrelevant ist und dessen
+zweites Element das zweite Element des Dispatch-Vektors enthält
+(hier: das vom Benutzer ausgewählte Geschäftsjahr).</li>
+
+</ul></li>
+<li>Der Rumpf des Handlers beschreibt die Änderung der Datenbank:
+<ul>
+<li>Das Geschäftsjahr wird auf das vom Benutzer selektierte gesetzt.</li>
+<li>Das Quartal wird auf das erste des Geschäftsjahrs gesetzt.</li>
+
+</ul></li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="clojure" data-line-numbers="|2|3-6|3|4-6">(rf/reg-event-db
+ :geschaeftsjahr
+ (fn [db [_ item]] 
+   (assoc db 
+          :geschaeftsjahr (js/parseInt item)
+          :quartal (first (quartale-fuer-jahr item)))))
+</code></pre>
+</div>
+</section>
+<section id="slide-org101b76b">
+<h5 id="org101b76b">Das Effect-Handling für das Event <code class="src src-clojure"><span style="color: #D0372D;">:geschaeftsjahr</span></code></h5>
+<ul>
+<li>Im Allgemeinen verarbeiten Effect-Handler-Funktionen das Resultat
+der Event-Handler-Funktion (Domino 2).</li>
+<li>Dieses sieht meistens so aus: 
+<code class="src src-clojure"><span style="color: #707183;">{</span><span style="color: #D0372D;">:db</span> new-db<span style="color: #707183;">}</span></code>, wobei <code>new-db</code> die vom
+Event-Handler berechnete neue Datenbank ist.</li>
+<li>Der Effect-Handler für den Effect <code class="src src-clojure"><span style="color: #D0372D;">:db</span></code>
+ist in re-frame vordefiniert und setzt die Datenbank auf den neuen
+Wert (Mutation!). In dem Fall muss der Programmierer für <b>Domino 3</b>
+nichts tun.</li>
+<li>Für andere Effekte können eigene Effect-Handler registriert werden.</li>
+
+</ul>
+</section>
+<section id="slide-org4547e95">
+<h5 id="org4547e95">Query &#x2013; View &#x2013; DOM</h5>
+<ul>
+<li>Nachdem der Zustand der Applikation neu berechnet ist, wird ein
+neues View ermittelt: \(v = f(s)\).</li>
+<li>Eine Anwendung enthält in der Regel mehrere View-Funktionen,
+<code class="src src-clojure">geschaeftjahr-quartal-form</code> ist eine der
+View-Funktionen der Dozenteneinsatzplanung.</li>
+<li>Jede View-Funktion definiert Queries für die Teile der Datenbank,
+deren Änderung eine Neuberechnung des Views erfordert.</li>
+<li>Durch den Ausdruck <code class="src src-clojure"><span style="color: #707183;">(</span><span style="color: #6434A3;">rf</span>/subscribe <span style="color: #7388D6;">[</span><span style="color: #D0372D;">:geschaeftsjahr</span><span style="color: #7388D6;">]</span><span style="color: #707183;">)</span></code> wird eine Query-Funktion mit der Kennung
+<code class="src src-clojure"><span style="color: #D0372D;">:geschaeftsjahr</span></code> registriert.</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="clojure" data-line-numbers="|4-7|7">(defn geschaeftjahr-quartal-form 
+  "Die Auswahlboxen für Geschäftsjahr und Quartal und die Planungsschaltfläche."
+  []
+  (let [jahre @(rf/subscribe [:jahre])
+        quartale @(rf/subscribe [:quartale])
+        quartal @(rf/subscribe [:quartal])
+        geschaeftsjahr @(rf/subscribe [:geschaeftsjahr])]
+    [h-box :class "bg-light border-right" :gap "10px"     
+     :children
+     [(select-box "Geschäftsjahr:" jahre geschaeftsjahr
+                  #(rf/dispatch [:geschaeftsjahr (:key %)]))
+      (select-box "Quartal:" quartale (quartal-&gt;string quartal)
+                  #(rf/dispatch [:quartal (:key %)]))
+      [button
+       :class "btn-primary"
+       :on-click #(plane-quartal)
+       :label "Plane Quartal"]
+      [button
+       :class "btn-primary"
+       :on-click #(neues-geschaeftjahr)
+       :label "neues G-Jahr anlegen"] ]]))
+</code></pre>
+</div>
+</section>
+<section>
+<ul>
+<li>Die anonyme Query-Funktion wird mithilfe von <code>reg-sub</code> registriert.</li>
+<li>Sie liefert das in der Datenbank gespeicherte aktuelle Geschäftsjahr
+als Resultat.</li>
+
+</ul>
+<div class="small">
+<div class="org-src-container">
+
+<pre><code class="clojure" data-line-numbers="|3,4">(rf/reg-sub
+ :geschaeftsjahr
+ (fn [db _]
+   (:geschaeftsjahr db)))
+</code></pre>
+</div>
+
+</div>
+<ul>
+<li>Jede Änderung des Geschäftsjahrs führt zur Ausführung der
+View-Funktion <code class="src src-clojure">geschaeftjahr-quartal-form</code> sowie</li>
+<li>aller für <code class="src src-clojure"><span style="color: #D0372D;">:geschaeftsjahr</span></code> registrierten
+View-Funktionen.</li>
+<li>Die View-Funktionen berechnen das DOM neu, alles Weitere erledigt
+React.</li>
+
+</ul>
+</section>
+<section id="slide-orgc089f72">
+<h5 id="orgc089f72">View-Komponente für die <a href="http://localhost:9500">Anzeige der Dozentenauslastung</a></h5>
+<ul>
+<li>Eine weitere für die Kennung <code class="src src-clojure"><span style="color: #D0372D;">:geschaeftsjahr</span></code> 
+registrierte View-Funktion ist <code class="src src-clojure">dozentenauslastung</code>.</li>
+<li>Neben dem <code class="src src-clojure"><span style="color: #D0372D;">:geschaeftsjahr</span></code> ist die
+Funktion für die Query-Funktionen
+<code class="src src-clojure"><span style="color: #D0372D;">:dozenten</span></code> und
+<code class="src src-clojure"><span style="color: #D0372D;">:lven</span></code> (Lehrveranstaltungen) registriert.</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre><code class="clojure" data-line-numbers="|5|4,6|8-14|">(defn dozentenauslastung
+  "Komponente für die Anzeige der Dozentenauslastung."
+  [] 
+  (let [dozenten       @(rf/subscribe [:dozenten])
+        geschaeftsjahr @(rf/subscribe [:geschaeftsjahr])
+        lven           @(rf/subscribe [:lven])
+        _              (aktualisiere-dozentenauslastung lven dozenten geschaeftsjahr)] 
+    [table-ui
+     (doz-auslstngn-&gt;table dozenten)
+     "Dozentenauslastung"
+     [:Dozent :Q4 :Q1 :Q2 :Q3 :Summe]
+     [:Dozent :Q4 :Q1 :Q2 :Q3 :Summe]
+     [[:Dozent false]]
+     td-render-fn ]))
+</code></pre>
+</div>
+<ul>
+<li>Im Rumpf der Funktion werden mithilfe einer weiteren internen DSL
+die Auslastungsdaten der Dozenten in eine HTML-Tabelle verwandelt.</li>
+
+</ul>
+</section>
+<section id="slide-orgfd77ad7">
+<h4 id="orgfd77ad7">Infos aus der re-frame-Dokumentation</h4>
+<ul>
+<li><a href="http://day8.github.io/re-frame/event-handling-infographic/">Infographics</a></li>
+<li><a href="http://day8.github.io/re-frame/subscriptions/#as-infographic">The Signal Graph</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org83820e0">
+<h2 id="org83820e0">FRP vs. MVC</h2>
+<p>
+<a class="org-ref-reference" href="#/slide-bibliography">[Ferreira19]</a>
+</p>
+</section>
+<section id="slide-org68e4bd5">
+<h3 id="org68e4bd5">Model-View-Controller</h3>
+<ul>
+<li><p>
+Datenfluss
+</p>
+
+<div class="figure">
+<p><img src="./Abbildungen/mvc.png" alt="mvc.png" width="450px" />
+</p>
+</div></li>
+<li>repräsentiert das Single Responsibility Principle</li>
+<li>komplexere Anwendungen (mit intensiver Benutzerinterkation)
+überfordern den Controller:
+<ul>
+<li>Verwaltung des Anwendungszustands</li>
+<li>Mittler zwischen View und Model</li>
+
+</ul></li>
+
+</ul>
+</section>
+<section id="slide-org24dbab5">
+<h3 id="org24dbab5">Model-Binding</h3>
+<ul>
+<li><p>
+Datenfluss
+</p>
+
+<div class="figure">
+<p><img src="./Abbildungen/model-binding.png" alt="model-binding.png" width="450px" />
+</p>
+</div></li>
+<li>Anwendungszustand und -daten werden von zwei Quellen manipuliert &#x2013;
+unter Umgehung des Controllers</li>
+<li>Vorteil: Controller wird entlastet</li>
+<li>Nachteil: Der aktuelle Zustand ist schwer vorhersagbar</li>
+
+</ul>
+</section>
+<section id="slide-org6b47b15">
+<h3 id="org6b47b15">Unidirektionaler Datenfluss</h3>
+
+<div class="figure">
+<p><img src="./Abbildungen/unidirectional.png" alt="unidirectional.png" width="450px" />
+</p>
+</div>
+<ul>
+<li>Änderungen im View löst Aktionen in der Datenkomponente (Application-Store) aus.</li>
+<li>Diese Änderungen haben Rückwirkungen auf die View-Komponente</li>
+<li>Kein direkter Zugriff von View auf die Application-Store</li>
+<li>In React ist der View eine (pure) Funktion der Anwendungsdaten.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-bibliography">
+<h2 id="bibliography">Literaturverzeichnis</h2>
+<ul class='org-ref-bib'><li><a id="Wan2000Functional">[Wan2000Functional] Wan & Hudak, Functional Reactive Programming from First Principles, 242-252, in in: Proceedings of the ACM SIGPLAN 2000 conference on Programming language design and implementation  - PLDI '00, edited by ACM Press (2000)</a></li>
+<li><a id="Ferreira19">[Ferreira19] Esdras Portilho Araujo Ferreira, Unidirectional circular dataflow architecture for real-time updates, School of Computing Dublin City University, (2019).</a></li>
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="reveal.js-master/dist/reveal.js"></script>
+<script src="reveal.js-master/plugin/highlight/highlight.js"></script>
+<script src="reveal.js-master/plugin/zoom/zoom.js"></script>
+<script src="reveal.js-master/plugin/search/search.js"></script>
+<script src="reveal.js-master/plugin/menu/menu.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: true,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: true,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+
+overview: true,
+width: 1400,
+height: 1000,
+margin: 0.05,
+
+transition: 'slide',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealHighlight, RevealZoom, RevealSearch, RevealMenu ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+,menu: {hideMissingTitles: true, markers: false, themes: true }});
+</script>
+</body>
+</html>

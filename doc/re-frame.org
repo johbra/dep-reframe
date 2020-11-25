@@ -1,0 +1,385 @@
+# +SETUPFILE: ./theme-bigblow-local.setup
+#+TITLE: Nutzung von React-Frameworks
+#+SUBTITLE: Dozenteneinsatzplanung mit re-frame
+#+AUTHOR: Johannes Brauer
+#+DATE: {{{time(%Y-%m-%d %a %H:%M)}}}
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="mycss/mystyle.css" />
+
+#+OPTIONS: reveal_width:1400 reveal_height:1000
+#+OPTIONS: reveal_center:t reveal_progress:t reveal_control:t reveal_history:t
+#+OPTIONS: reveal_fragmentinurl:t
+# +OPTIONS: reveal_klipsify_src:t gelegentlich ausprobieren
+#+OPTIONS: reveal_single_file:nil
+#+OPTIONS: reveal_inter_presentation_links:t
+#+REVEAL_ROOT: reveal.js-master/
+#+REVEAL_THEME: simple
+#+REVEAL_TRANS: slide
+#+REVEAL_HLEVEL: 1
+#+REVEAL_PLUGINS: (highlight zoom search)
+#+REVEAL_HIGHLIGHT_CSS: reveal.js-master/plugin/highlight/vs.css
+#+REVEAL_ADD_PLUGIN: menu RevealMenu plugin/menu/menu.js
+#+REVEAL_INIT_SCRIPT:  menu: {hideMissingTitles: true, markers: false, themes: true }
+#+REVEAL_TITLE_SLIDE: <h1 class="title">%t</h1><h3 class="subtitle">%s</h3><h2 class="author">%a</h2><h3 class="date">%d</h3>
+#+REVEAL_MARGIN: 0.05
+
+#+OPTIONS: num:nil d:true
+#+OPTIONS:   H:4
+#+OPTIONS: toc:nil
+
+#+Language:  de
+# +STARTUP: latexpreview
+# +STARTUP: inlineimages
+#+REVEAL_EXTRA_CSS: ./mycss/myrevealstyle.css
+
+#+LATEX_HEADER: \renewcommand\refname{Quellen}
+#+LATEX_HEADER: \usepackage{textgreek}
+#+LATEX_HEADER: \usemintedstyle{emacs}
+#+LATEX_CLASS_OPTIONS: [a4paper]
+#+LATEX_HEADER: \newcommand{\printbibliography}[1][h]{\bibliographystyle{alpha}\bibliography{referenzen}}
+#+LATEX_HEADER: \usepackage[left=2.5cm,right=2cm,top=1.5cm,bottom=1cm,includeheadfoot]{geometry}
+
+* Einstieg
++ Funktional-reaktive Programmierung keine neue Idee
+  cite:Wan2000Functional.
+  + Nutzung einer internen (Haskell) DSL
++ Populär geworden durch das Javascript-Framework /[[https://reactjs.org][React]]/ von Facebook
++ Bevorzugte Verwendung für die Erstellung von Einzelseiten-Webanwendungen (single
+  page applications)
++ Nutzung durch die Clojurescript-Adaption /[[https://github.com/reagent-project/reagent][Reagent]]/ für
+  [[https://johbra.github.io/dep/][Dozenteneinsatzplanung]] (mit [[https://drive.google.com/open?id=1ZR3xy5EXyZfarY7tpM-t8LH1V5gfLO3F][Erfahrungsbericht]])
+* Merkmale von FRP
+** Reaktive Systeme
++ ereignis-getriebene Anwendungen
++ kontinuierliche Interaktion mit ihrer Umgebung
+  um z.\nbsp{}B.
+  + die Aktualisierung des Anwendungszustands,
+  + die Anzeige von Daten zu erledigen
+  + interaktivste Komponente einer Anwendung häufig die
+    Benutzungsoberfläche: Reaktion auf verschiedene Ereignisse wie
+    Mausklicks, Tastatureingaben oder die Betätigung von Schaltflächen
++ Herausforderungen reaktiver Systeme:
+  + inhärent nebenläufig:
+    + Reaktion auf asynchron auftretende Ereignisse verschiedener Herkunft
+    + Darstellung sich verändernder Daten
+#+Reveal: split
++ invertierte Kontrollstruktur:
+  + Anwendung steuert sich nicht selbst, sondern die Ermittlung der
+    nächsten auszuführenden Berechnung wird durch externe Ereignisse
+    oder Systeme bestimmt.
+  + häufig anzutreffende Lösung: Bereitstellung von Routinen, sog.
+    Rückruffunktionen  (callback functions), die beim Auftreten
+    bestimmter Ereignisse aktiviert werden und in der Regel
+    zustandsändernde Operationen ausführen.
+  + „Callback-Hölle“: viele isolierte Programmfragmente verändern
+    dieselben Daten
++ Die geschilderten Probleme legen nahe, funktionale
+  Programmiertechniken in Betracht zu ziehen.
+** Manifesto
+[[https://www.reactivemanifesto.org][The Reactive Manifesto]] definiert Eigenschaften reaktiver Systeme.
+
+Reaktive Systeme sind
++ responsive :: reagieren „zeitnah”
++ resilient :: bleiben responsive auch im Fehlerfall
++ elastic :: bleiben responsive auch unter Last
++ message driven :: basieren auch asynchronem Nachrichtenaustausch
+** Schematische Darstellung interaktiver Anwendungen
+Formulierung in einer internen DSL
+#+begin_src scheme
+(big-bang state             ;; der Weltzustand
+  {:on-tick  tick-handler   ;; tick-handler liefert bei jedem Zeittakt neuen state
+   :on-key   key-handler    ;; key-handler berechnet aus state und key neuen state
+   :on-mouse mouse-handler  ;; mouse-handler berechnet aus state, den Mauskoordinaten
+                            ;; und der Mausaktion neuen stat
+   :to-draw   render        ;; render verwandelt state in ein Bild (view)
+   :stop-when end?}         ;; end? ermittelt aus state das Ende der Ausführung
+   ...)
+#+end_src
++ Die Handler, =render= und =end?= sind reine Funktionen.
++ Die Mutation von =state= ist in =big-bang= versteckt.
++ [[file:~/Google-Drive/Planung/Clojure-Script/big-bang/src/bb/my_scetch.cljs][Beispiel]]
+** Bestandteile
++ Events  (=:on-tick=, =:on-mouse=, $\ldots$)
++ Handler (=tick-handler=, =mouse-handler=,  $\ldots$)
++ Views   (=render=)
+** Eigenschaften von re-frame
++ Clojurescript-Framework auf Basis von Reagent/React für die
+  Programmierung und Benutzungsoberflächen von Single-Page-Applications
++ funktional
++ nutzt die Homoikonizitäts-Eigenschaft von Lisp:
+  #+begin_quote 
+ You are programming in data. The functions which later transform
+ data, themselves start as data.
+  #+end_quote
++ [[*Unidirektionaler Datenfluss][unidirektionaler Datenfluss]]
+*** Sechs Dominosteine
++ Event dispatch :: 
+   Event = Reaktion auf externe Ereignisse (Mausklick,
+   Websocket-Nachricht etc.)
++ Event handling ::
+   Reaktion auf ein Event, notwendige Seiteneffekte werden ermittelt
++ Effect handling ::
+   Seiteneffekte werden ausgeführt
+Nach diesen drei Schritten ist der App-Zustand aktualisiert.
+Die drei folgenden Dominosteine berechnen die Funktion $v = f(z)$. Ein
+View $v$ ist eine Funktion $f$ des App-Zustands $z$.
++ Query :: Extraktion und Aufbereitung der Daten aus $z$
++ View :: Rendern der Daten aus Query; Verwendung des [[https://github.com/weavejester/hiccup][hiccup]]-Formats (HTML-DSL)
++ DOM :: Die DOM-Knoten des Web-Browsers werden durch Reagent/React
+  aktualisiert.
+**** Zusammenfassung 
+  #+attr_html: :width 450px
+  [[./Abbildungen/6dominoes.png]]
+*** App-Zustand
++ ein globaler Zustand (single source of truth)
++ wird von re-frame automatisch angelegt: \\
+  src_clojure[:exports code]{(def app-db  (reagent/atom {}))}
++ dient quasi als Hauptspeicherdatenbank
++ Alternativen
+  + [[https://github.com/tonsky/datascript][datascript]]
+  + [[https://github.com/denistakeda/re-posh][re-posh]]
+*** Code-Beispiele
+**** Html-DSL
++ In View-Komponenten wird gemäß re-frame-Dokumentation das mit
+  Reagent bereitgestellte [[https://github.com/weavejester/hiccup][hiccup]]-Format als HTML-DSL verwendet.
++ In der Dozenteneinsatzplanung wird überwiegend eine auf hiccup
+  aufbauende DSL benutzt: [[https://github.com/day8/re-com][re-com]]. Re-com stellt
+  + die üblichen Widgets
+  + Layout-Komponenten für die Anordnung von Widgets und
+    Layout-Komponenten (horizontale und vertikale Boxen) zur
+    Verfügung.
++ Beispiel für eine Schaltfläche:\\
+#+begin_nebeneinander
+#+begin_small
+  #+begin_src clojure
+  [button
+    :class "btn-primary"
+    :on-click #(plane-quartal)
+    :label "Plane Quartal"]
+  #+end_src
+  #+end_small
+#+end_nebeneinander
+#+begin_nebeneinander
+
+  #+attr_html: :width 350px
+  [[./Abbildungen/planebutton.png]]
+#+end_nebeneinander
+  #+begin_clear
+  #+end_clear
+  #+begin_src html
+  <div class="rc-box display-flex rc-button-wrapper display-inline-flex" 
+       style="flex-flow: inherit; flex: 0 0 auto; align-items: flex-start;">
+    <button class="rc-button btn btn-primary" style="flex: 0 0 auto;">
+      Plane Quartal</button>
+  </div>
+  #+end_src
+#+Reveal: split
++ Layout-Beispiel
+  #+begin_small
+  #+begin_src clojure 
+[v-box
+  :children [[box :child "Header"]
+             [h-box
+              :height "100px"
+              :children [[box :size "70px" :child "Nav"]
+                         [box :size "1" :child "Content"]]]
+             [box :child "Footer"]]]
+  #+end_src
+  #+end_small
+  resultiert in:
+  #+attr_html: :width 650px
+  [[./Abbildungen/layout.png]]
+
+**** View-Komponente für [[http://localhost:9500/][Auswahl von Geschäftsjahr und Quartal]]
+  #+attr_html: :width 450px
+  [[./Abbildungen/geschaeftsjahrquartal.png]]
++ Die View-Funktion src_clojure[:exports code]{geschaeftjahr-quartal-form} rendert in den Zeilen
+  19 und 20 die Auswahlbox für das aktuelle Geschaeftsjahr.
++ Wählt der Benutzer ein Geschäftsjahr aus, wird die Handlerfunktion
+  =dispatch= aufgerufen.
++ Dadurch wird ein re-frame-Event (*Domino 1*) ausgelöst.
++ Jedes Event wird durch ein Vektor beschrieben:
+  + Das Keyword src_clojure[:exports code]{:geschaeftsjahr} benennt das Event.
+  + Der Ausdruck src_clojure[:exports code]{(:key %)} liefert das ausgewählte Geschäftsjahr.
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|1|10-11"
+#+begin_src clojure
+(defn geschaeftjahr-quartal-form 
+  "Die Auswahlboxen für Geschäftsjahr und Quartal und die Planungsschaltfläche."
+  []
+  (let [jahre @(rf/subscribe [:jahre])
+        quartale @(rf/subscribe [:quartale])
+        quartal @(rf/subscribe [:quartal])
+        geschaeftsjahr @(rf/subscribe [:geschaeftsjahr])]
+    [h-box :class "bg-light border-right" :gap "10px"     
+     :children
+     [(select-box "Geschäftsjahr:" jahre geschaeftsjahr
+                  #(rf/dispatch [:geschaeftsjahr (:key %)]))
+      (select-box "Quartal:" quartale (quartal->string quartal)
+                  #(rf/dispatch [:quartal (:key %)]))
+      [button
+       :class "btn-primary"
+       :on-click #(plane-quartal)
+       :label "Plane Quartal"]
+      [button
+       :class "btn-primary"
+       :on-click #(neues-geschaeftjahr)
+       :label "neues G-Jahr anlegen"] ]]))
+#+end_src
+**** Der Handler für das Event src_clojure[:exports code]{:geschaeftsjahr}
++ Event-Bezeichner sind Teil der DSL für das programmierte
+  re-frame-System.
++ Der folgende Ausdruck registriert den Handler für das Event src_clojure[:exports code]{:geschaeftsjahr}.
++ Das zweite Argument von src_clojure[:exports code]{rf/reg-event-db}
+  ist der eigentliche Event-Handler (*Domino 2*), hier eine anonyme Funktion.
++ Diese Funktion erwartet zwei Argumente:
+  + die Datenbank mit dem globalen Zustand der Anwendung
+  + einen Vektor, dessen erstes Element hier irrelevant ist und dessen
+    zweites Element das zweite Element des Dispatch-Vektors enthält
+    (hier: das vom Benutzer ausgewählte Geschäftsjahr).
++ Der Rumpf des Handlers beschreibt die Änderung der Datenbank:
+  + Das Geschäftsjahr wird auf das vom Benutzer selektierte gesetzt.
+  + Das Quartal wird auf das erste des Geschäftsjahrs gesetzt.
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|2|3-6|3|4-6"
+#+begin_src clojure
+(rf/reg-event-db
+ :geschaeftsjahr
+ (fn [db [_ item]] 
+   (assoc db 
+          :geschaeftsjahr (js/parseInt item)
+          :quartal (first (quartale-fuer-jahr item)))))
+#+end_src
+**** Das Effect-Handling für das Event src_clojure[:exports code]{:geschaeftsjahr}
++ Im Allgemeinen verarbeiten Effect-Handler-Funktionen das Resultat
+  der Event-Handler-Funktion (Domino 2).
++ Dieses sieht meistens so aus: 
+  src_clojure[:exports code]{{:db new-db}}, wobei =new-db= die vom
+  Event-Handler berechnete neue Datenbank ist.
++ Der Effect-Handler für den Effect src_clojure[:exports code]{:db}
+  ist in re-frame vordefiniert und setzt die Datenbank auf den neuen
+  Wert (Mutation!). In dem Fall muss der Programmierer für *Domino 3*
+  nichts tun.
++ Für andere Effekte können eigene Effect-Handler registriert werden.
+**** Query -- View -- DOM
++ Nachdem der Zustand der Applikation neu berechnet ist, wird ein
+  neues View ermittelt: $v = f(s)$.
++ Eine Anwendung enthält in der Regel mehrere View-Funktionen,
+  src_clojure[:exports code]{geschaeftjahr-quartal-form} ist eine der
+  View-Funktionen der Dozenteneinsatzplanung.
++ Jede View-Funktion definiert Queries für die Teile der Datenbank,
+  deren Änderung eine Neuberechnung des Views erfordert.
++ Durch den Ausdruck src_clojure[:exports code]{(rf/subscribe
+  [:geschaeftsjahr])} wird eine Query-Funktion mit der Kennung
+  src_clojure[:exports code]{:geschaeftsjahr} registriert.
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|4-7|7"
+  #+begin_src clojure
+(defn geschaeftjahr-quartal-form 
+  "Die Auswahlboxen für Geschäftsjahr und Quartal und die Planungsschaltfläche."
+  []
+  (let [jahre @(rf/subscribe [:jahre])
+        quartale @(rf/subscribe [:quartale])
+        quartal @(rf/subscribe [:quartal])
+        geschaeftsjahr @(rf/subscribe [:geschaeftsjahr])]
+    [h-box :class "bg-light border-right" :gap "10px"     
+     :children
+     [(select-box "Geschäftsjahr:" jahre geschaeftsjahr
+                  #(rf/dispatch [:geschaeftsjahr (:key %)]))
+      (select-box "Quartal:" quartale (quartal->string quartal)
+                  #(rf/dispatch [:quartal (:key %)]))
+      [button
+       :class "btn-primary"
+       :on-click #(plane-quartal)
+       :label "Plane Quartal"]
+      [button
+       :class "btn-primary"
+       :on-click #(neues-geschaeftjahr)
+       :label "neues G-Jahr anlegen"] ]]))
+  #+end_src
+#+Reveal: split
++ Die anonyme Query-Funktion wird mithilfe von =reg-sub= registriert.
++ Sie liefert das in der Datenbank gespeicherte aktuelle Geschäftsjahr
+  als Resultat.
+#+begin_small
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|3,4"
+  #+begin_src clojure
+(rf/reg-sub
+ :geschaeftsjahr
+ (fn [db _]
+   (:geschaeftsjahr db)))
+  #+end_src
+#+end_small
++ Jede Änderung des Geschäftsjahrs führt zur Ausführung der
+  View-Funktion src_clojure[:exports code]{geschaeftjahr-quartal-form} sowie
++ aller für src_clojure[:exports code]{:geschaeftsjahr} registrierten
+  View-Funktionen.
++ Die View-Funktionen berechnen das DOM neu, alles Weitere erledigt
+  React.
+**** View-Komponente für die [[http://localhost:9500][Anzeige der Dozentenauslastung]]
++ Eine weitere für die Kennung src_clojure[:exports code]{:geschaeftsjahr} 
+  registrierte View-Funktion ist src_clojure[:exports code]{dozentenauslastung}.
++ Neben dem src_clojure[:exports code]{:geschaeftsjahr} ist die
+  Funktion für die Query-Funktionen
+  src_clojure[:exports code]{:dozenten} und
+  src_clojure[:exports code]{:lven} (Lehrveranstaltungen) registriert.
+#+ATTR_REVEAL: :code_attribs data-line-numbers="|5|4,6|8-14|"
+#+begin_src clojure
+(defn dozentenauslastung
+  "Komponente für die Anzeige der Dozentenauslastung."
+  [] 
+  (let [dozenten       @(rf/subscribe [:dozenten])
+        geschaeftsjahr @(rf/subscribe [:geschaeftsjahr])
+        lven           @(rf/subscribe [:lven])
+        _              (aktualisiere-dozentenauslastung lven dozenten geschaeftsjahr)] 
+    [table-ui
+     (doz-auslstngn->table dozenten)
+     "Dozentenauslastung"
+     [:Dozent :Q4 :Q1 :Q2 :Q3 :Summe]
+     [:Dozent :Q4 :Q1 :Q2 :Q3 :Summe]
+     [[:Dozent false]]
+     td-render-fn ]))
+#+end_src
++ Im Rumpf der Funktion werden mithilfe einer weiteren internen DSL
+  die Auslastungsdaten der Dozenten in eine HTML-Tabelle verwandelt.
+*** Infos aus der re-frame-Dokumentation
++ [[http://day8.github.io/re-frame/event-handling-infographic/][Infographics]]
++ [[http://day8.github.io/re-frame/subscriptions/#as-infographic][The Signal Graph]]
+* FRP vs. MVC
+cite:Ferreira19
+** Model-View-Controller 
++ Datenfluss
+  #+attr_html: :width 450px
+  [[./Abbildungen/mvc.png]]
++ repräsentiert das Single Responsibility Principle
++ komplexere Anwendungen (mit intensiver Benutzerinterkation)
+  überfordern den Controller:
+  + Verwaltung des Anwendungszustands
+  + Mittler zwischen View und Model
+** Model-Binding
++ Datenfluss
+  #+attr_html: :width 450px
+  [[./Abbildungen/model-binding.png]]
++ Anwendungszustand und -daten werden von zwei Quellen manipuliert --
+  unter Umgehung des Controllers
++ Vorteil: Controller wird entlastet
++ Nachteil: Der aktuelle Zustand ist schwer vorhersagbar
+** Unidirektionaler Datenfluss
+  #+attr_html: :width 450px
+  [[./Abbildungen/unidirectional.png]]
++ Änderungen im View löst Aktionen in der Datenkomponente (Application-Store) aus.
++ Diese Änderungen haben Rückwirkungen auf die View-Komponente
++ Kein direkter Zugriff von View auf die Application-Store
++ In React ist der View eine (pure) Funktion der Anwendungsdaten.
+
+# ** Quellen
+# + https://www.freecodecamp.org/news/is-mvc-dead-for-the-frontend-35b4d1fe39ec/
+# + https://staltz.com/unidirectional-user-interface-architectures.html
+
+* Literaturverzeichnis
+   :PROPERTIES:
+   :CUSTOM_ID: bibliography
+   :END:
+
+#+latex: \begingroup
+#+latex: \renewcommand{\section}[2]{}%
+printbibliography:referenzen.bib
+#+latex: \endgroup
+
+# * bibliography:referenzen.bib
