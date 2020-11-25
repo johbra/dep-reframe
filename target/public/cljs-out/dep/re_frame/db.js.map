@@ -1,0 +1,1 @@
+{"version":3,"file":"\/Users\/jb\/Google-Drive\/Planung\/Clojure-Script\/dep-reframe\/target\/public\/cljs-out\/dep\/re_frame\/db.js","sources":["db.cljc"],"lineCount":7,"mappings":";AAAA;;;AASA,AAAKA,qBAAO,iCAAA,jCAACC","names":["re-frame.db\/app-db","re-frame.interop\/ratom"]}
