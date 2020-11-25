@@ -1,8 +1,8 @@
-window.CLOSURE_UNCOMPILED_DEFINES = {"figwheel.repl.connect_url":"ws:\/\/localhost:9500\/figwheel-connect?fwprocess=778b34&fwbuild=dep"};
+window.CLOSURE_UNCOMPILED_DEFINES = {"figwheel.repl.connect_url":"ws:\/\/localhost:9500\/figwheel-connect?fwprocess=e63d91&fwbuild=dep"};
 window.CLOSURE_NO_DEPS = true;
-if(typeof goog == "undefined") document.write('<script src="/cljs-out/dep/goog/base.js"></script>');
-document.write('<script src="/cljs-out/dep/goog/deps.js"></script>');
-document.write('<script src="/cljs-out/dep/cljs_deps.js"></script>');
+if(typeof goog == "undefined") document.write('<script src="cljs-out/dep/goog/base.js"></script>');
+document.write('<script src="cljs-out/dep/goog/deps.js"></script>');
+document.write('<script src="cljs-out/dep/cljs_deps.js"></script>');
 document.write('<script>if (typeof goog == "undefined") console.warn("ClojureScript could not load :main, did you forget to specify :asset-path?");</script>');
 document.write('<script>goog.require("figwheel.core");</script>');
 document.write('<script>goog.require("figwheel.main");</script>');

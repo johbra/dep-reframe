@@ -19,8 +19,8 @@ return dep.helpers.data_modifiers.replace_dataset.call(null,new cljs.core.Keywor
  * Wandelt die studienrichtungen für die Darstellung als Tabelle um. 
  */
 dep.views.studienrichtungen.studienrichtungen__GT_table = (function dep$views$studienrichtungen$studienrichtungen__GT_table(studienrichtungen){
-return cljs.core.mapv.call(null,(function (p1__27340_SHARP_){
-return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Bezeichnung","Bezeichnung",1945244820)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__27340_SHARP_)]);
+return cljs.core.mapv.call(null,(function (p1__27363_SHARP_){
+return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Bezeichnung","Bezeichnung",1945244820)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__27363_SHARP_)]);
 }),studienrichtungen);
 });
 dep.views.studienrichtungen.studienrichtung_form_felder = (function dep$views$studienrichtungen$studienrichtung_form_felder(form_state){

@@ -19,8 +19,8 @@ return (((dep.model.lehrveranstaltung.semesterWochenstunden.call(null,lv) * (10)
 dep.views.dozentenauslastung.lvstunden_dozent = (function dep$views$dozentenauslastung$lvstunden_dozent(lven,doz_nam){
 return cljs.core.reduce.call(null,cljs.core._PLUS_,(0),cljs.core.map.call(null,(function (lv){
 return dep.views.dozentenauslastung.lvStunden.call(null,lv);
-}),cljs.core.filter.call(null,(function (p1__26117_SHARP_){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"dozent","dozent",1571095254).cljs$core$IFn$_invoke$arity$1(p1__26117_SHARP_),doz_nam);
+}),cljs.core.filter.call(null,(function (p1__26140_SHARP_){
+return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"dozent","dozent",1571095254).cljs$core$IFn$_invoke$arity$1(p1__26140_SHARP_),doz_nam);
 }),lven)));
 });
 /**
@@ -28,10 +28,10 @@ return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"dozent","dozent",157
  *   Lehrveranstaltungen in lvn für das quartal
  */
 dep.views.dozentenauslastung.dozentenstunden_quartal = (function dep$views$dozentenauslastung$dozentenstunden_quartal(lvn,dozenten,quartal){
-return cljs.core.mapv.call(null,(function (p1__26118_SHARP_){
-return dep.model.dozent.schreiben_stunden_auf_quartal.call(null,p1__26118_SHARP_,dep.views.dozentenauslastung.lvstunden_dozent.call(null,cljs.core.filter.call(null,(function (lv){
+return cljs.core.mapv.call(null,(function (p1__26141_SHARP_){
+return dep.model.dozent.schreiben_stunden_auf_quartal.call(null,p1__26141_SHARP_,dep.views.dozentenauslastung.lvstunden_dozent.call(null,cljs.core.filter.call(null,(function (lv){
 return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(lv),quartal);
-}),lvn),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__26118_SHARP_)),quartal);
+}),lvn),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__26141_SHARP_)),quartal);
 }),dozenten);
 });
 /**
@@ -39,33 +39,33 @@ return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-
  *   Lehrveranstaltungen in lvn für ein Geschäftsjahr
  */
 dep.views.dozentenauslastung.dozentenstunden_jahr = (function dep$views$dozentenauslastung$dozentenstunden_jahr(lvn,dozenten,jahr){
-return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,(function (){var iter__4529__auto__ = (function dep$views$dozentenauslastung$dozentenstunden_jahr_$_iter__26120(s__26121){
+return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,(function (){var iter__4529__auto__ = (function dep$views$dozentenauslastung$dozentenstunden_jahr_$_iter__26143(s__26144){
 return (new cljs.core.LazySeq(null,(function (){
-var s__26121__$1 = s__26121;
+var s__26144__$1 = s__26144;
 while(true){
-var temp__5735__auto__ = cljs.core.seq.call(null,s__26121__$1);
+var temp__5735__auto__ = cljs.core.seq.call(null,s__26144__$1);
 if(temp__5735__auto__){
-var s__26121__$2 = temp__5735__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__26121__$2)){
-var c__4527__auto__ = cljs.core.chunk_first.call(null,s__26121__$2);
+var s__26144__$2 = temp__5735__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__26144__$2)){
+var c__4527__auto__ = cljs.core.chunk_first.call(null,s__26144__$2);
 var size__4528__auto__ = cljs.core.count.call(null,c__4527__auto__);
-var b__26123 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
-if((function (){var i__26122 = (0);
+var b__26146 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
+if((function (){var i__26145 = (0);
 while(true){
-if((i__26122 < size__4528__auto__)){
-var d = cljs.core._nth.call(null,c__4527__auto__,i__26122);
-cljs.core.chunk_append.call(null,b__26123,cljs.core.assoc_in.call(null,d,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"auslastungen","auslastungen",-1035018324),jahr], null),cljs.core.mapv.call(null,((function (i__26122,d,c__4527__auto__,size__4528__auto__,b__26123,s__26121__$2,temp__5735__auto__){
-return (function (p1__26119_SHARP_){
-return dep.views.dozentenauslastung.lvstunden_dozent.call(null,cljs.core.filter.call(null,((function (i__26122,d,c__4527__auto__,size__4528__auto__,b__26123,s__26121__$2,temp__5735__auto__){
+if((i__26145 < size__4528__auto__)){
+var d = cljs.core._nth.call(null,c__4527__auto__,i__26145);
+cljs.core.chunk_append.call(null,b__26146,cljs.core.assoc_in.call(null,d,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"auslastungen","auslastungen",-1035018324),jahr], null),cljs.core.mapv.call(null,((function (i__26145,d,c__4527__auto__,size__4528__auto__,b__26146,s__26144__$2,temp__5735__auto__){
+return (function (p1__26142_SHARP_){
+return dep.views.dozentenauslastung.lvstunden_dozent.call(null,cljs.core.filter.call(null,((function (i__26145,d,c__4527__auto__,size__4528__auto__,b__26146,s__26144__$2,temp__5735__auto__){
 return (function (lv){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(lv),p1__26119_SHARP_);
-});})(i__26122,d,c__4527__auto__,size__4528__auto__,b__26123,s__26121__$2,temp__5735__auto__))
+return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(lv),p1__26142_SHARP_);
+});})(i__26145,d,c__4527__auto__,size__4528__auto__,b__26146,s__26144__$2,temp__5735__auto__))
 ,lvn),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(d));
-});})(i__26122,d,c__4527__auto__,size__4528__auto__,b__26123,s__26121__$2,temp__5735__auto__))
+});})(i__26145,d,c__4527__auto__,size__4528__auto__,b__26146,s__26144__$2,temp__5735__auto__))
 ,dep.model.quartal.quartale_fuer_jahr.call(null,jahr))));
 
-var G__26124 = (i__26122 + (1));
-i__26122 = G__26124;
+var G__26147 = (i__26145 + (1));
+i__26145 = G__26147;
 continue;
 } else {
 return true;
@@ -73,19 +73,19 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26123),dep$views$dozentenauslastung$dozentenstunden_jahr_$_iter__26120.call(null,cljs.core.chunk_rest.call(null,s__26121__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26146),dep$views$dozentenauslastung$dozentenstunden_jahr_$_iter__26143.call(null,cljs.core.chunk_rest.call(null,s__26144__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26123),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26146),null);
 }
 } else {
-var d = cljs.core.first.call(null,s__26121__$2);
-return cljs.core.cons.call(null,cljs.core.assoc_in.call(null,d,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"auslastungen","auslastungen",-1035018324),jahr], null),cljs.core.mapv.call(null,((function (d,s__26121__$2,temp__5735__auto__){
-return (function (p1__26119_SHARP_){
+var d = cljs.core.first.call(null,s__26144__$2);
+return cljs.core.cons.call(null,cljs.core.assoc_in.call(null,d,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"auslastungen","auslastungen",-1035018324),jahr], null),cljs.core.mapv.call(null,((function (d,s__26144__$2,temp__5735__auto__){
+return (function (p1__26142_SHARP_){
 return dep.views.dozentenauslastung.lvstunden_dozent.call(null,cljs.core.filter.call(null,(function (lv){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(lv),p1__26119_SHARP_);
+return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(lv),p1__26142_SHARP_);
 }),lvn),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(d));
-});})(d,s__26121__$2,temp__5735__auto__))
-,dep.model.quartal.quartale_fuer_jahr.call(null,jahr))),dep$views$dozentenauslastung$dozentenstunden_jahr_$_iter__26120.call(null,cljs.core.rest.call(null,s__26121__$2)));
+});})(d,s__26144__$2,temp__5735__auto__))
+,dep.model.quartal.quartale_fuer_jahr.call(null,jahr))),dep$views$dozentenauslastung$dozentenstunden_jahr_$_iter__26143.call(null,cljs.core.rest.call(null,s__26144__$2)));
 }
 } else {
 return null;
@@ -103,8 +103,8 @@ return iter__4529__auto__.call(null,dozenten);
 dep.views.dozentenauslastung.lven_fuer_aktuelles_geschaeftsjahr = (function dep$views$dozentenauslastung$lven_fuer_aktuelles_geschaeftsjahr(lvn,jahr){
 var quartale = dep.model.quartal.quartale_fuer_jahr.call(null,jahr);
 return cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.mapcat.call(null,(function (q){
-return cljs.core.filter.call(null,(function (p1__26125_SHARP_){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(p1__26125_SHARP_),q);
+return cljs.core.filter.call(null,(function (p1__26148_SHARP_){
+return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(p1__26148_SHARP_),q);
 }),lvn);
 }),quartale));
 });
@@ -120,8 +120,8 @@ return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 
  */
 dep.views.dozentenauslastung.doz_auslstngn__GT_table = (function dep$views$dozentenauslastung$doz_auslstngn__GT_table(dozenten){
 var geschaeftsjahr = cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"geschaeftsjahr","geschaeftsjahr",1407893286)], null)));
-return cljs.core.mapv.call(null,(function (p1__26126_SHARP_){
-return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Dozent","Dozent",-1144807975),new cljs.core.Keyword(null,"Q4","Q4",77117001),new cljs.core.Keyword(null,"Q1","Q1",1497900173),new cljs.core.Keyword(null,"Q2","Q2",997554436),new cljs.core.Keyword(null,"Q3","Q3",-2046925906),new cljs.core.Keyword(null,"Summe","Summe",1283013789)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__26126_SHARP_),dep.model.dozent.stundenInQ4.call(null,p1__26126_SHARP_,geschaeftsjahr),dep.model.dozent.stundenInQ1.call(null,p1__26126_SHARP_,geschaeftsjahr),dep.model.dozent.stundenInQ2.call(null,p1__26126_SHARP_,geschaeftsjahr),dep.model.dozent.stundenInQ3.call(null,p1__26126_SHARP_,geschaeftsjahr),dep.model.dozent.stunden_in_geschaeftsjahr.call(null,p1__26126_SHARP_,geschaeftsjahr)]);
+return cljs.core.mapv.call(null,(function (p1__26149_SHARP_){
+return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Dozent","Dozent",-1144807975),new cljs.core.Keyword(null,"Q4","Q4",77117001),new cljs.core.Keyword(null,"Q1","Q1",1497900173),new cljs.core.Keyword(null,"Q2","Q2",997554436),new cljs.core.Keyword(null,"Q3","Q3",-2046925906),new cljs.core.Keyword(null,"Summe","Summe",1283013789)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__26149_SHARP_),dep.model.dozent.stundenInQ4.call(null,p1__26149_SHARP_,geschaeftsjahr),dep.model.dozent.stundenInQ1.call(null,p1__26149_SHARP_,geschaeftsjahr),dep.model.dozent.stundenInQ2.call(null,p1__26149_SHARP_,geschaeftsjahr),dep.model.dozent.stundenInQ3.call(null,p1__26149_SHARP_,geschaeftsjahr),dep.model.dozent.stunden_in_geschaeftsjahr.call(null,p1__26149_SHARP_,geschaeftsjahr)]);
 }),dozenten);
 });
 dep.views.dozentenauslastung.td_render_fn = (function dep$views$dozentenauslastung$td_render_fn(row,col_id){
