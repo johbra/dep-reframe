@@ -1,7 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{p}{\PYGZlt{}}\PYG{n+nt}{div} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}rc\PYGZhy{}box display\PYGZhy{}flex rc\PYGZhy{}button\PYGZhy{}wrapper display\PYGZhy{}inline\PYGZhy{}flex\PYGZdq{}}
-     \PYG{n+na}{style}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}flex\PYGZhy{}flow: inherit; flex: 0 0 auto; align\PYGZhy{}items: flex\PYGZhy{}start;\PYGZdq{}}\PYG{p}{\PYGZgt{}}
-  \PYG{p}{\PYGZlt{}}\PYG{n+nt}{button} \PYG{n+na}{class}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}rc\PYGZhy{}button btn btn\PYGZhy{}primary\PYGZdq{}} \PYG{n+na}{style}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}flex: 0 0 auto;\PYGZdq{}}\PYG{p}{\PYGZgt{}}
-    Plane Quartal\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{button}\PYG{p}{\PYGZgt{}}
-\PYG{p}{\PYGZlt{}/}\PYG{n+nt}{div}\PYG{p}{\PYGZgt{}}
-\end{Verbatim}
