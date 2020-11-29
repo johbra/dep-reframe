@@ -12,14 +12,14 @@ re_com.misc.throbber_args_desc = new cljs.core.PersistentVector(null, 5, 5, cljs
  */
 re_com.misc.throbber = (function re_com$misc$throbber(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15090 = arguments.length;
-var i__4737__auto___15091 = (0);
+var len__4736__auto___20863 = arguments.length;
+var i__4737__auto___20864 = (0);
 while(true){
-if((i__4737__auto___15091 < len__4736__auto___15090)){
-args__4742__auto__.push((arguments[i__4737__auto___15091]));
+if((i__4737__auto___20864 < len__4736__auto___20863)){
+args__4742__auto__.push((arguments[i__4737__auto___20864]));
 
-var G__15092 = (i__4737__auto___15091 + (1));
-i__4737__auto___15091 = G__15092;
+var G__20865 = (i__4737__auto___20864 + (1));
+i__4737__auto___20864 = G__20865;
 continue;
 } else {
 }
@@ -30,15 +30,15 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return re_com.misc.throbber.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(re_com.misc.throbber.cljs$core$IFn$_invoke$arity$variadic = (function (p__15085){
-var map__15086 = p__15085;
-var map__15086__$1 = (((((!((map__15086 == null))))?(((((map__15086.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15086.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15086):map__15086);
-var args = map__15086__$1;
-var size = cljs.core.get.call(null,map__15086__$1,new cljs.core.Keyword(null,"size","size",1098693007));
-var color = cljs.core.get.call(null,map__15086__$1,new cljs.core.Keyword(null,"color","color",1011675173));
-var class$ = cljs.core.get.call(null,map__15086__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var style = cljs.core.get.call(null,map__15086__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var attr = cljs.core.get.call(null,map__15086__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+(re_com.misc.throbber.cljs$core$IFn$_invoke$arity$variadic = (function (p__20858){
+var map__20859 = p__20858;
+var map__20859__$1 = (((((!((map__20859 == null))))?(((((map__20859.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__20859.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__20859):map__20859);
+var args = map__20859__$1;
+var size = cljs.core.get.call(null,map__20859__$1,new cljs.core.Keyword(null,"size","size",1098693007));
+var color = cljs.core.get.call(null,map__20859__$1,new cljs.core.Keyword(null,"color","color",1011675173));
+var class$ = cljs.core.get.call(null,map__20859__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var style = cljs.core.get.call(null,map__20859__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var attr = cljs.core.get.call(null,map__20859__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.misc.throbber_args_desc),args,"throbber"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro throbber-args-desc args \"throbber\")"));
@@ -47,9 +47,9 @@ throw (new Error("Assert failed: (validate-args-macro throbber-args-desc args \"
 var seg = (function (){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"li","li",723558921),(cljs.core.truth_(color)?new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"background-color","background-color",570434026),color], null)], null):null)], null);
 });
-return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.box.box,new cljs.core.Keyword(null,"class","class",-2030961996),"rc-throbber-wrapper",new cljs.core.Keyword(null,"align","align",1964212802),new cljs.core.Keyword(null,"start","start",-355208981),new cljs.core.Keyword(null,"child","child",623967545),new cljs.core.PersistentVector(null, 10, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"ul","ul",-1349521403),cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"class","class",-2030961996),["rc-throbber loader ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var G__15089 = size;
-var G__15089__$1 = (((G__15089 instanceof cljs.core.Keyword))?G__15089.fqn:null);
-switch (G__15089__$1) {
+return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.box.box,new cljs.core.Keyword(null,"class","class",-2030961996),"rc-throbber-wrapper",new cljs.core.Keyword(null,"align","align",1964212802),new cljs.core.Keyword(null,"start","start",-355208981),new cljs.core.Keyword(null,"child","child",623967545),new cljs.core.PersistentVector(null, 10, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"ul","ul",-1349521403),cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"class","class",-2030961996),["rc-throbber loader ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var G__20862 = size;
+var G__20862__$1 = (((G__20862 instanceof cljs.core.Keyword))?G__20862.fqn:null);
+switch (G__20862__$1) {
 case "regular":
 return "";
 
@@ -76,9 +76,9 @@ return "";
 (re_com.misc.throbber.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.throbber.cljs$lang$applyTo = (function (seq15084){
+(re_com.misc.throbber.cljs$lang$applyTo = (function (seq20857){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15084));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20857));
 }));
 
 re_com.misc.input_text_args_desc = new cljs.core.PersistentVector(null, 16, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"model","model",331153215),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"string/nil | atom",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.nillable_string_or_atom_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"text of the input (can be atom or value/nil)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"on-change","on-change",-732046149),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"string -> nil",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.fn_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":change-on-blur?"], null)," controls when it is called. Passed the current input string"], null)], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"keyword",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.input_status_type_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"validation status. ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),"nil/omitted"], null)," for normal status or one of: ",re_com.validate.input_status_types_list], null)], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"status-icon?","status-icon?",1328423612),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),false,new cljs.core.Keyword(null,"type","type",1174270348),"boolean",new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"when true, display an icon to match ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":status"], null)," (no icon for nil)"], null)], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"status-tooltip","status-tooltip",1912159007),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"displayed in status icon's tooltip"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"placeholder","placeholder",-104873083),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"background text shown when empty"], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"width","width",-384071477),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),"250px",new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"standard CSS width setting for this input"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"height","height",1025178622),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"standard CSS height setting for this input"], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"rows","rows",850049680),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),(3),new cljs.core.Keyword(null,"type","type",1174270348),"integer | string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.number_or_string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"ONLY applies to 'input-textarea': the number of rows of text to show"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"change-on-blur?","change-on-blur?",854283925),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),true,new cljs.core.Keyword(null,"type","type",1174270348),"boolean | atom",new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"when true, invoke ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":on-change"], null)," function on blur, otherwise on every change (character by character)"], null)], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"validation-regex","validation-regex",-197064361),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"regex",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.regex_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"user input is only accepted if it would result in a string that matches this regular expression"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),false,new cljs.core.Keyword(null,"type","type",1174270348),"boolean | atom",new cljs.core.Keyword(null,"description","description",-1428560544),"if true, the user can't interact (input anything)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS class names, space separated (applies to the textbox, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"CSS style map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.css_style_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS styles to add or override (applies to the textbox, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"attr","attr",-604132353),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"HTML attr map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.html_attr_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"HTML attributes, like ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":on-mouse-move"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"br","br",934104792)], null),"No ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":class"], null)," or ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":style"], null),"allowed (applies to the textbox, not the wrapping div)"], null)], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"input-type","input-type",856973840),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"keyword",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.keyword_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"ONLY applies to super function 'base-input-text': either ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":input"], null),", ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":password"], null)," or ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":textarea"], null)], null)], null)], null);
@@ -87,14 +87,14 @@ re_com.misc.input_text_args_desc = new cljs.core.PersistentVector(null, 16, 5, c
  */
 re_com.misc.input_text_base = (function re_com$misc$input_text_base(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15106 = arguments.length;
-var i__4737__auto___15107 = (0);
+var len__4736__auto___20879 = arguments.length;
+var i__4737__auto___20880 = (0);
 while(true){
-if((i__4737__auto___15107 < len__4736__auto___15106)){
-args__4742__auto__.push((arguments[i__4737__auto___15107]));
+if((i__4737__auto___20880 < len__4736__auto___20879)){
+args__4742__auto__.push((arguments[i__4737__auto___20880]));
 
-var G__15108 = (i__4737__auto___15107 + (1));
-i__4737__auto___15107 = G__15108;
+var G__20881 = (i__4737__auto___20880 + (1));
+i__4737__auto___20880 = G__20881;
 continue;
 } else {
 }
@@ -105,12 +105,12 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return re_com.misc.input_text_base.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(re_com.misc.input_text_base.cljs$core$IFn$_invoke$arity$variadic = (function (p__15095){
-var map__15096 = p__15095;
-var map__15096__$1 = (((((!((map__15096 == null))))?(((((map__15096.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15096.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15096):map__15096);
-var args = map__15096__$1;
-var model = cljs.core.get.call(null,map__15096__$1,new cljs.core.Keyword(null,"model","model",331153215));
-var input_type = cljs.core.get.call(null,map__15096__$1,new cljs.core.Keyword(null,"input-type","input-type",856973840));
+(re_com.misc.input_text_base.cljs$core$IFn$_invoke$arity$variadic = (function (p__20868){
+var map__20869 = p__20868;
+var map__20869__$1 = (((((!((map__20869 == null))))?(((((map__20869.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__20869.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__20869):map__20869);
+var args = map__20869__$1;
+var model = cljs.core.get.call(null,map__20869__$1,new cljs.core.Keyword(null,"model","model",331153215));
+var input_type = cljs.core.get.call(null,map__20869__$1,new cljs.core.Keyword(null,"input-type","input-type",856973840));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.misc.input_text_args_desc),args,"input-text"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro input-text-args-desc args \"input-text\")"));
@@ -119,25 +119,25 @@ throw (new Error("Assert failed: (validate-args-macro input-text-args-desc args 
 var external_model = reagent.core.atom.call(null,re_com.util.deref_or_value.call(null,model));
 var internal_model = reagent.core.atom.call(null,(((cljs.core.deref.call(null,external_model) == null))?"":cljs.core.deref.call(null,external_model)));
 return (function() { 
-var G__15109__delegate = function (p__15098){
-var map__15099 = p__15098;
-var map__15099__$1 = (((((!((map__15099 == null))))?(((((map__15099.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15099.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15099):map__15099);
-var args__$1 = map__15099__$1;
-var disabled_QMARK_ = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var on_change = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
-var status_icon_QMARK_ = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"status-icon?","status-icon?",1328423612));
-var height = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"height","height",1025178622));
-var status_tooltip = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"status-tooltip","status-tooltip",1912159007));
-var model__$1 = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"model","model",331153215));
-var attr = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
-var placeholder = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083));
-var width = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"width","width",-384071477));
-var rows = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"rows","rows",850049680));
-var style = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var status = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"status","status",-1997798413));
-var class$ = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var change_on_blur_QMARK_ = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"change-on-blur?","change-on-blur?",854283925),true);
-var validation_regex = cljs.core.get.call(null,map__15099__$1,new cljs.core.Keyword(null,"validation-regex","validation-regex",-197064361));
+var G__20882__delegate = function (p__20871){
+var map__20872 = p__20871;
+var map__20872__$1 = (((((!((map__20872 == null))))?(((((map__20872.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__20872.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__20872):map__20872);
+var args__$1 = map__20872__$1;
+var disabled_QMARK_ = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var on_change = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
+var status_icon_QMARK_ = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"status-icon?","status-icon?",1328423612));
+var height = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"height","height",1025178622));
+var status_tooltip = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"status-tooltip","status-tooltip",1912159007));
+var model__$1 = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"model","model",331153215));
+var attr = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var placeholder = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"placeholder","placeholder",-104873083));
+var width = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"width","width",-384071477));
+var rows = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"rows","rows",850049680));
+var style = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var status = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"status","status",-1997798413));
+var class$ = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var change_on_blur_QMARK_ = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"change-on-blur?","change-on-blur?",854283925),true);
+var validation_regex = cljs.core.get.call(null,map__20872__$1,new cljs.core.Keyword(null,"validation-regex","validation-regex",-197064361));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.misc.input_text_args_desc),args__$1,"input-text"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro input-text-args-desc args \"input-text\")"));
@@ -154,9 +154,9 @@ cljs.core.reset_BANG_.call(null,internal_model,latest_ext_model);
 } else {
 }
 
-return new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.box.h_box,new cljs.core.Keyword(null,"class","class",-2030961996),"rc-input-text ",new cljs.core.Keyword(null,"align","align",1964212802),new cljs.core.Keyword(null,"start","start",-355208981),new cljs.core.Keyword(null,"width","width",-384071477),(cljs.core.truth_(width)?width:"250px"),new cljs.core.Keyword(null,"children","children",-940561982),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"class","class",-2030961996),["rc-input-text-inner ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var G__15102 = status;
-var G__15102__$1 = (((G__15102 instanceof cljs.core.Keyword))?G__15102.fqn:null);
-switch (G__15102__$1) {
+return new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.box.h_box,new cljs.core.Keyword(null,"class","class",-2030961996),"rc-input-text ",new cljs.core.Keyword(null,"align","align",1964212802),new cljs.core.Keyword(null,"start","start",-355208981),new cljs.core.Keyword(null,"width","width",-384071477),(cljs.core.truth_(width)?width:"250px"),new cljs.core.Keyword(null,"children","children",-940561982),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"class","class",-2030961996),["rc-input-text-inner ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var G__20875 = status;
+var G__20875__$1 = (((G__20875 instanceof cljs.core.Keyword))?G__20875.fqn:null);
+switch (G__20875__$1) {
 case "success":
 return "has-success ";
 
@@ -199,9 +199,9 @@ on_change.call(null,cljs.core.deref.call(null,internal_model));
 }
 
 return null;
-}),(function (){var G__15103 = input_type;
-var G__15103__$1 = (((G__15103 instanceof cljs.core.Keyword))?G__15103.fqn:null);
-switch (G__15103__$1) {
+}),(function (){var G__20876 = input_type;
+var G__20876__$1 = (((G__20876 instanceof cljs.core.Keyword))?G__20876.fqn:null);
+switch (G__20876__$1) {
 case "input":
 return "text";
 
@@ -224,8 +224,8 @@ return (3);
 if(cljs.core.truth_(disabled_QMARK___$1)){
 event.preventDefault();
 } else {
-var G__15104_15112 = event.which;
-switch (G__15104_15112) {
+var G__20877_20885 = event.which;
+switch (G__20877_20885) {
 case (13):
 if(cljs.core.truth_(on_change)){
 cljs.core.reset_BANG_.call(null,external_model,cljs.core.deref.call(null,internal_model));
@@ -246,12 +246,12 @@ default:
 
 return null;
 }),["form-control ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(class$)].join(''),(function (event){
-var new_val_15114 = event.target.value;
+var new_val_20887 = event.target.value;
 if(cljs.core.truth_((function (){var and__4115__auto__ = on_change;
 if(cljs.core.truth_(and__4115__auto__)){
 if(cljs.core.not.call(null,disabled_QMARK___$1)){
 if(cljs.core.truth_(validation_regex)){
-return cljs.core.re_find.call(null,validation_regex,new_val_15114);
+return cljs.core.re_find.call(null,validation_regex,new_val_20887);
 } else {
 return true;
 }
@@ -262,7 +262,7 @@ return false;
 return and__4115__auto__;
 }
 })())){
-cljs.core.reset_BANG_.call(null,internal_model,new_val_15114);
+cljs.core.reset_BANG_.call(null,internal_model,new_val_20887);
 
 if(cljs.core.truth_(change_on_blur_QMARK___$1)){
 } else {
@@ -280,9 +280,9 @@ return status;
 } else {
 return and__4115__auto__;
 }
-})())?(function (){var icon_class = (function (){var G__15105 = status;
-var G__15105__$1 = (((G__15105 instanceof cljs.core.Keyword))?G__15105.fqn:null);
-switch (G__15105__$1) {
+})())?(function (){var icon_class = (function (){var G__20878 = status;
+var G__20878__$1 = (((G__20878 instanceof cljs.core.Keyword))?G__20878.fqn:null);
+switch (G__20878__$1) {
 case "success":
 return "zmdi-check-circle";
 
@@ -300,7 +300,7 @@ return "zmdi-hc-spin zmdi-rotate-right zmdi-spinner";
 
 break;
 default:
-throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__15105__$1)].join('')));
+throw (new Error(["No matching clause: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__20878__$1)].join('')));
 
 }
 })();
@@ -361,21 +361,21 @@ return and__4115__auto__;
 }
 })():null)], null)], null);
 };
-var G__15109 = function (var_args){
-var p__15098 = null;
+var G__20882 = function (var_args){
+var p__20871 = null;
 if (arguments.length > 0) {
-var G__15116__i = 0, G__15116__a = new Array(arguments.length -  0);
-while (G__15116__i < G__15116__a.length) {G__15116__a[G__15116__i] = arguments[G__15116__i + 0]; ++G__15116__i;}
-  p__15098 = new cljs.core.IndexedSeq(G__15116__a,0,null);
+var G__20889__i = 0, G__20889__a = new Array(arguments.length -  0);
+while (G__20889__i < G__20889__a.length) {G__20889__a[G__20889__i] = arguments[G__20889__i + 0]; ++G__20889__i;}
+  p__20871 = new cljs.core.IndexedSeq(G__20889__a,0,null);
 } 
-return G__15109__delegate.call(this,p__15098);};
-G__15109.cljs$lang$maxFixedArity = 0;
-G__15109.cljs$lang$applyTo = (function (arglist__15117){
-var p__15098 = cljs.core.seq(arglist__15117);
-return G__15109__delegate(p__15098);
+return G__20882__delegate.call(this,p__20871);};
+G__20882.cljs$lang$maxFixedArity = 0;
+G__20882.cljs$lang$applyTo = (function (arglist__20890){
+var p__20871 = cljs.core.seq(arglist__20890);
+return G__20882__delegate(p__20871);
 });
-G__15109.cljs$core$IFn$_invoke$arity$variadic = G__15109__delegate;
-return G__15109;
+G__20882.cljs$core$IFn$_invoke$arity$variadic = G__20882__delegate;
+return G__20882;
 })()
 ;
 }));
@@ -383,21 +383,21 @@ return G__15109;
 (re_com.misc.input_text_base.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.input_text_base.cljs$lang$applyTo = (function (seq15094){
+(re_com.misc.input_text_base.cljs$lang$applyTo = (function (seq20867){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15094));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20867));
 }));
 
 re_com.misc.input_text = (function re_com$misc$input_text(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15119 = arguments.length;
-var i__4737__auto___15120 = (0);
+var len__4736__auto___20892 = arguments.length;
+var i__4737__auto___20893 = (0);
 while(true){
-if((i__4737__auto___15120 < len__4736__auto___15119)){
-args__4742__auto__.push((arguments[i__4737__auto___15120]));
+if((i__4737__auto___20893 < len__4736__auto___20892)){
+args__4742__auto__.push((arguments[i__4737__auto___20893]));
 
-var G__15121 = (i__4737__auto___15120 + (1));
-i__4737__auto___15120 = G__15121;
+var G__20894 = (i__4737__auto___20893 + (1));
+i__4737__auto___20893 = G__20894;
 continue;
 } else {
 }
@@ -415,21 +415,21 @@ return cljs.core.apply.call(null,re_com.misc.input_text_base,new cljs.core.Keywo
 (re_com.misc.input_text.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.input_text.cljs$lang$applyTo = (function (seq15118){
+(re_com.misc.input_text.cljs$lang$applyTo = (function (seq20891){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15118));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20891));
 }));
 
 re_com.misc.input_password = (function re_com$misc$input_password(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15123 = arguments.length;
-var i__4737__auto___15124 = (0);
+var len__4736__auto___20896 = arguments.length;
+var i__4737__auto___20897 = (0);
 while(true){
-if((i__4737__auto___15124 < len__4736__auto___15123)){
-args__4742__auto__.push((arguments[i__4737__auto___15124]));
+if((i__4737__auto___20897 < len__4736__auto___20896)){
+args__4742__auto__.push((arguments[i__4737__auto___20897]));
 
-var G__15125 = (i__4737__auto___15124 + (1));
-i__4737__auto___15124 = G__15125;
+var G__20898 = (i__4737__auto___20897 + (1));
+i__4737__auto___20897 = G__20898;
 continue;
 } else {
 }
@@ -447,21 +447,21 @@ return cljs.core.apply.call(null,re_com.misc.input_text_base,new cljs.core.Keywo
 (re_com.misc.input_password.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.input_password.cljs$lang$applyTo = (function (seq15122){
+(re_com.misc.input_password.cljs$lang$applyTo = (function (seq20895){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15122));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20895));
 }));
 
 re_com.misc.input_textarea = (function re_com$misc$input_textarea(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15127 = arguments.length;
-var i__4737__auto___15128 = (0);
+var len__4736__auto___20900 = arguments.length;
+var i__4737__auto___20901 = (0);
 while(true){
-if((i__4737__auto___15128 < len__4736__auto___15127)){
-args__4742__auto__.push((arguments[i__4737__auto___15128]));
+if((i__4737__auto___20901 < len__4736__auto___20900)){
+args__4742__auto__.push((arguments[i__4737__auto___20901]));
 
-var G__15129 = (i__4737__auto___15128 + (1));
-i__4737__auto___15128 = G__15129;
+var G__20902 = (i__4737__auto___20901 + (1));
+i__4737__auto___20901 = G__20902;
 continue;
 } else {
 }
@@ -479,9 +479,9 @@ return cljs.core.apply.call(null,re_com.misc.input_text_base,new cljs.core.Keywo
 (re_com.misc.input_textarea.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.input_textarea.cljs$lang$applyTo = (function (seq15126){
+(re_com.misc.input_textarea.cljs$lang$applyTo = (function (seq20899){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15126));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20899));
 }));
 
 re_com.misc.checkbox_args_desc = new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"model","model",331153215),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"boolean | atom",new cljs.core.Keyword(null,"description","description",-1428560544),"holds state of the checkbox when it is called"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"on-change","on-change",-732046149),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"boolean -> nil",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.fn_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"called when the checkbox is clicked. Passed the new value of the checkbox"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"label","label",1718410804),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string | hiccup",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.string_or_hiccup_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"the label shown to the right"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),false,new cljs.core.Keyword(null,"type","type",1174270348),"boolean | atom",new cljs.core.Keyword(null,"description","description",-1428560544),"if true, user interaction is disabled"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"label-class","label-class",-2068991202),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS class names (applies to the label)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"label-style","label-style",-1703650121),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"CSS style map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.css_style_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS style map (applies to the label)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS class names, space separated (applies to the checkbox, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"CSS style map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.css_style_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS style map (applies to the checkbox, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"attr","attr",-604132353),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"HTML attr map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.html_attr_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"HTML attributes, like ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":on-mouse-move"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"br","br",934104792)], null),"No ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":class"], null)," or ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":style"], null),"allowed (applies to the checkbox, not the wrapping div)"], null)], null)], null);
@@ -490,14 +490,14 @@ re_com.misc.checkbox_args_desc = new cljs.core.PersistentVector(null, 9, 5, cljs
  */
 re_com.misc.checkbox = (function re_com$misc$checkbox(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15134 = arguments.length;
-var i__4737__auto___15135 = (0);
+var len__4736__auto___20907 = arguments.length;
+var i__4737__auto___20908 = (0);
 while(true){
-if((i__4737__auto___15135 < len__4736__auto___15134)){
-args__4742__auto__.push((arguments[i__4737__auto___15135]));
+if((i__4737__auto___20908 < len__4736__auto___20907)){
+args__4742__auto__.push((arguments[i__4737__auto___20908]));
 
-var G__15136 = (i__4737__auto___15135 + (1));
-i__4737__auto___15135 = G__15136;
+var G__20909 = (i__4737__auto___20908 + (1));
+i__4737__auto___20908 = G__20909;
 continue;
 } else {
 }
@@ -508,19 +508,19 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return re_com.misc.checkbox.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(re_com.misc.checkbox.cljs$core$IFn$_invoke$arity$variadic = (function (p__15131){
-var map__15132 = p__15131;
-var map__15132__$1 = (((((!((map__15132 == null))))?(((((map__15132.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15132.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15132):map__15132);
-var args = map__15132__$1;
-var disabled_QMARK_ = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var on_change = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
-var label_class = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"label-class","label-class",-2068991202));
-var model = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"model","model",331153215));
-var attr = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
-var style = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var label = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"label","label",1718410804));
-var class$ = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var label_style = cljs.core.get.call(null,map__15132__$1,new cljs.core.Keyword(null,"label-style","label-style",-1703650121));
+(re_com.misc.checkbox.cljs$core$IFn$_invoke$arity$variadic = (function (p__20904){
+var map__20905 = p__20904;
+var map__20905__$1 = (((((!((map__20905 == null))))?(((((map__20905.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__20905.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__20905):map__20905);
+var args = map__20905__$1;
+var disabled_QMARK_ = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var on_change = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
+var label_class = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"label-class","label-class",-2068991202));
+var model = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"model","model",331153215));
+var attr = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var style = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var label = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"label","label",1718410804));
+var class$ = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var label_style = cljs.core.get.call(null,map__20905__$1,new cljs.core.Keyword(null,"label-style","label-style",-1703650121));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.misc.checkbox_args_desc),args,"checkbox"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro checkbox-args-desc args \"checkbox\")"));
@@ -556,9 +556,9 @@ return null;
 (re_com.misc.checkbox.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.checkbox.cljs$lang$applyTo = (function (seq15130){
+(re_com.misc.checkbox.cljs$lang$applyTo = (function (seq20903){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15130));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20903));
 }));
 
 re_com.misc.radio_button_args_desc = new cljs.core.PersistentVector(null, 10, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"model","model",331153215),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"anything | atom",new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"selected value of the radio button group. See also ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":value"], null)], null)], null),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"value","value",305978217),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"anything",new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"if ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":model"], null)," equals ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":value"], null)," then this radio button is selected"], null)], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"on-change","on-change",-732046149),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"anything -> nil",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.fn_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"called when the radio button is clicked. Passed ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":value"], null)], null)], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"label","label",1718410804),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string | hiccup",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.string_or_hiccup_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"the label shown to the right"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),false,new cljs.core.Keyword(null,"type","type",1174270348),"boolean | atom",new cljs.core.Keyword(null,"description","description",-1428560544),"if true, the user can't click the radio button"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"label-class","label-class",-2068991202),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS class names (applies to the label)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"label-style","label-style",-1703650121),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"CSS style map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.css_style_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS style map (applies to the label)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS class names, space separated (applies to the radio-button, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"CSS style map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.css_style_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS style map (applies to the radio-button, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"attr","attr",-604132353),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"HTML attr map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.html_attr_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"HTML attributes, like ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":on-mouse-move"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"br","br",934104792)], null),"No ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":class"], null)," or ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":style"], null),"allowed (applies to the radio-button, not the wrapping div)"], null)], null)], null);
@@ -567,14 +567,14 @@ re_com.misc.radio_button_args_desc = new cljs.core.PersistentVector(null, 10, 5,
  */
 re_com.misc.radio_button = (function re_com$misc$radio_button(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15141 = arguments.length;
-var i__4737__auto___15142 = (0);
+var len__4736__auto___20914 = arguments.length;
+var i__4737__auto___20915 = (0);
 while(true){
-if((i__4737__auto___15142 < len__4736__auto___15141)){
-args__4742__auto__.push((arguments[i__4737__auto___15142]));
+if((i__4737__auto___20915 < len__4736__auto___20914)){
+args__4742__auto__.push((arguments[i__4737__auto___20915]));
 
-var G__15143 = (i__4737__auto___15142 + (1));
-i__4737__auto___15142 = G__15143;
+var G__20916 = (i__4737__auto___20915 + (1));
+i__4737__auto___20915 = G__20916;
 continue;
 } else {
 }
@@ -585,20 +585,20 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return re_com.misc.radio_button.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(re_com.misc.radio_button.cljs$core$IFn$_invoke$arity$variadic = (function (p__15138){
-var map__15139 = p__15138;
-var map__15139__$1 = (((((!((map__15139 == null))))?(((((map__15139.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15139.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15139):map__15139);
-var args = map__15139__$1;
-var disabled_QMARK_ = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var on_change = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
-var label_class = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"label-class","label-class",-2068991202));
-var model = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"model","model",331153215));
-var attr = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
-var value = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"value","value",305978217));
-var style = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var label = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"label","label",1718410804));
-var class$ = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var label_style = cljs.core.get.call(null,map__15139__$1,new cljs.core.Keyword(null,"label-style","label-style",-1703650121));
+(re_com.misc.radio_button.cljs$core$IFn$_invoke$arity$variadic = (function (p__20911){
+var map__20912 = p__20911;
+var map__20912__$1 = (((((!((map__20912 == null))))?(((((map__20912.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__20912.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__20912):map__20912);
+var args = map__20912__$1;
+var disabled_QMARK_ = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var on_change = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
+var label_class = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"label-class","label-class",-2068991202));
+var model = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"model","model",331153215));
+var attr = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var value = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"value","value",305978217));
+var style = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var label = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"label","label",1718410804));
+var class$ = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var label_style = cljs.core.get.call(null,map__20912__$1,new cljs.core.Keyword(null,"label-style","label-style",-1703650121));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.misc.radio_button_args_desc),args,"radio-button"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro radio-button-args-desc args \"radio-button\")"));
@@ -634,9 +634,9 @@ return null;
 (re_com.misc.radio_button.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.radio_button.cljs$lang$applyTo = (function (seq15137){
+(re_com.misc.radio_button.cljs$lang$applyTo = (function (seq20910){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15137));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20910));
 }));
 
 re_com.misc.slider_args_desc = new cljs.core.PersistentVector(null, 10, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"model","model",331153215),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"double | string | atom",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.number_or_string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"current value of the slider"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"on-change","on-change",-732046149),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"double -> nil",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.fn_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"called when the slider is moved. Passed the new value of the slider"], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"min","min",444991522),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),(0),new cljs.core.Keyword(null,"type","type",1174270348),"double | string | atom",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.number_or_string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"the minimum value of the slider"], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"max","max",61366548),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),(100),new cljs.core.Keyword(null,"type","type",1174270348),"double | string | atom",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.number_or_string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"the maximum value of the slider"], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"step","step",1288888124),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),(1),new cljs.core.Keyword(null,"type","type",1174270348),"double | string | atom",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.number_or_string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"step value between min and max"], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"width","width",-384071477),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),"400px",new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"standard CSS width setting for the slider"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),false,new cljs.core.Keyword(null,"type","type",1174270348),"boolean | atom",new cljs.core.Keyword(null,"description","description",-1428560544),"if true, the user can't change the slider"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS class names, space separated (applies to the slider, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"CSS style map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.css_style_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS styles to add or override (applies to the slider, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"attr","attr",-604132353),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"HTML attr map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.html_attr_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"HTML attributes, like ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":on-mouse-move"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"br","br",934104792)], null),"No ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":class"], null)," or ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":style"], null),"allowed (applies to the slider, not the wrapping div)"], null)], null)], null);
@@ -645,14 +645,14 @@ re_com.misc.slider_args_desc = new cljs.core.PersistentVector(null, 10, 5, cljs.
  */
 re_com.misc.slider = (function re_com$misc$slider(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15148 = arguments.length;
-var i__4737__auto___15149 = (0);
+var len__4736__auto___20921 = arguments.length;
+var i__4737__auto___20922 = (0);
 while(true){
-if((i__4737__auto___15149 < len__4736__auto___15148)){
-args__4742__auto__.push((arguments[i__4737__auto___15149]));
+if((i__4737__auto___20922 < len__4736__auto___20921)){
+args__4742__auto__.push((arguments[i__4737__auto___20922]));
 
-var G__15150 = (i__4737__auto___15149 + (1));
-i__4737__auto___15149 = G__15150;
+var G__20923 = (i__4737__auto___20922 + (1));
+i__4737__auto___20922 = G__20923;
 continue;
 } else {
 }
@@ -663,20 +663,20 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return re_com.misc.slider.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(re_com.misc.slider.cljs$core$IFn$_invoke$arity$variadic = (function (p__15145){
-var map__15146 = p__15145;
-var map__15146__$1 = (((((!((map__15146 == null))))?(((((map__15146.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15146.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15146):map__15146);
-var args = map__15146__$1;
-var disabled_QMARK_ = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var on_change = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
-var step = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"step","step",1288888124));
-var model = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"model","model",331153215));
-var attr = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
-var min = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"min","min",444991522),(0));
-var width = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"width","width",-384071477));
-var style = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var class$ = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var max = cljs.core.get.call(null,map__15146__$1,new cljs.core.Keyword(null,"max","max",61366548),(100));
+(re_com.misc.slider.cljs$core$IFn$_invoke$arity$variadic = (function (p__20918){
+var map__20919 = p__20918;
+var map__20919__$1 = (((((!((map__20919 == null))))?(((((map__20919.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__20919.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__20919):map__20919);
+var args = map__20919__$1;
+var disabled_QMARK_ = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var on_change = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"on-change","on-change",-732046149));
+var step = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"step","step",1288888124));
+var model = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"model","model",331153215));
+var attr = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var min = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"min","min",444991522),(0));
+var width = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"width","width",-384071477));
+var style = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var class$ = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var max = cljs.core.get.call(null,map__20919__$1,new cljs.core.Keyword(null,"max","max",61366548),(100));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.misc.slider_args_desc),args,"slider"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro slider-args-desc args \"slider\")"));
@@ -703,9 +703,9 @@ return null;
 (re_com.misc.slider.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.slider.cljs$lang$applyTo = (function (seq15144){
+(re_com.misc.slider.cljs$lang$applyTo = (function (seq20917){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15144));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20917));
 }));
 
 re_com.misc.progress_bar_args_desc = new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"model","model",331153215),new cljs.core.Keyword(null,"required","required",1807647006),true,new cljs.core.Keyword(null,"type","type",1174270348),"double | string | atom",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.number_or_string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"current value of the slider. A number between 0 and 100"], null),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"width","width",-384071477),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),"100%",new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"a CSS width"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"striped?","striped?",-797214979),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"default","default",-1987822328),false,new cljs.core.Keyword(null,"type","type",1174270348),"boolean",new cljs.core.Keyword(null,"description","description",-1428560544),"when true, the progress section is a set of animated stripes"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"bar-class","bar-class",1668073058),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS class name(s) for the actual progress bar itself, space separated"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"class","class",-2030961996),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"string",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),cljs.core.string_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS class names, space separated (applies to the progress-bar, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"CSS style map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.css_style_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),"CSS styles to add or override (applies to the progress-bar, not the wrapping div)"], null),new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"name","name",1843675177),new cljs.core.Keyword(null,"attr","attr",-604132353),new cljs.core.Keyword(null,"required","required",1807647006),false,new cljs.core.Keyword(null,"type","type",1174270348),"HTML attr map",new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),re_com.validate.html_attr_QMARK_,new cljs.core.Keyword(null,"description","description",-1428560544),new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991),"HTML attributes, like ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":on-mouse-move"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"br","br",934104792)], null),"No ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":class"], null)," or ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"code","code",1586293142),":style"], null),"allowed (applies to the progress-bar, not the wrapping div)"], null)], null)], null);
@@ -714,14 +714,14 @@ re_com.misc.progress_bar_args_desc = new cljs.core.PersistentVector(null, 7, 5, 
  */
 re_com.misc.progress_bar = (function re_com$misc$progress_bar(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___15155 = arguments.length;
-var i__4737__auto___15156 = (0);
+var len__4736__auto___20928 = arguments.length;
+var i__4737__auto___20929 = (0);
 while(true){
-if((i__4737__auto___15156 < len__4736__auto___15155)){
-args__4742__auto__.push((arguments[i__4737__auto___15156]));
+if((i__4737__auto___20929 < len__4736__auto___20928)){
+args__4742__auto__.push((arguments[i__4737__auto___20929]));
 
-var G__15157 = (i__4737__auto___15156 + (1));
-i__4737__auto___15156 = G__15157;
+var G__20930 = (i__4737__auto___20929 + (1));
+i__4737__auto___20929 = G__20930;
 continue;
 } else {
 }
@@ -732,17 +732,17 @@ var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.I
 return re_com.misc.progress_bar.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
 });
 
-(re_com.misc.progress_bar.cljs$core$IFn$_invoke$arity$variadic = (function (p__15152){
-var map__15153 = p__15152;
-var map__15153__$1 = (((((!((map__15153 == null))))?(((((map__15153.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15153.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15153):map__15153);
-var args = map__15153__$1;
-var model = cljs.core.get.call(null,map__15153__$1,new cljs.core.Keyword(null,"model","model",331153215));
-var width = cljs.core.get.call(null,map__15153__$1,new cljs.core.Keyword(null,"width","width",-384071477),"100%");
-var striped_QMARK_ = cljs.core.get.call(null,map__15153__$1,new cljs.core.Keyword(null,"striped?","striped?",-797214979));
-var class$ = cljs.core.get.call(null,map__15153__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var bar_class = cljs.core.get.call(null,map__15153__$1,new cljs.core.Keyword(null,"bar-class","bar-class",1668073058));
-var style = cljs.core.get.call(null,map__15153__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var attr = cljs.core.get.call(null,map__15153__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+(re_com.misc.progress_bar.cljs$core$IFn$_invoke$arity$variadic = (function (p__20925){
+var map__20926 = p__20925;
+var map__20926__$1 = (((((!((map__20926 == null))))?(((((map__20926.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__20926.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__20926):map__20926);
+var args = map__20926__$1;
+var model = cljs.core.get.call(null,map__20926__$1,new cljs.core.Keyword(null,"model","model",331153215));
+var width = cljs.core.get.call(null,map__20926__$1,new cljs.core.Keyword(null,"width","width",-384071477),"100%");
+var striped_QMARK_ = cljs.core.get.call(null,map__20926__$1,new cljs.core.Keyword(null,"striped?","striped?",-797214979));
+var class$ = cljs.core.get.call(null,map__20926__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var bar_class = cljs.core.get.call(null,map__20926__$1,new cljs.core.Keyword(null,"bar-class","bar-class",1668073058));
+var style = cljs.core.get.call(null,map__20926__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var attr = cljs.core.get.call(null,map__20926__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.misc.progress_bar_args_desc),args,"progress-bar"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro progress-bar-args-desc args \"progress-bar\")"));
@@ -755,9 +755,9 @@ return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMP
 (re_com.misc.progress_bar.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.misc.progress_bar.cljs$lang$applyTo = (function (seq15151){
+(re_com.misc.progress_bar.cljs$lang$applyTo = (function (seq20924){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq15151));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq20924));
 }));
 
 

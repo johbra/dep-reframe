@@ -22,12 +22,12 @@ throw e;
 }),(0));
 });
 devtools.async.promise_based_set_immediate = (function devtools$async$promise_based_set_immediate(callback){
-var o__21716__auto___23511 = (function (){var o__21716__auto___23511 = (function (){var o__21716__auto___23511 = Promise;
-return (o__21716__auto___23511["resolve"]).call(o__21716__auto___23511);
+var o__27489__auto___29284 = (function (){var o__27489__auto___29284 = (function (){var o__27489__auto___29284 = Promise;
+return (o__27489__auto___29284["resolve"]).call(o__27489__auto___29284);
 })();
-return (o__21716__auto___23511["then"]).call(o__21716__auto___23511,callback);
+return (o__27489__auto___29284["then"]).call(o__27489__auto___29284,callback);
 })();
-(o__21716__auto___23511["catch"]).call(o__21716__auto___23511,devtools.async.rethrow_outside_promise);
+(o__27489__auto___29284["catch"]).call(o__27489__auto___29284,devtools.async.rethrow_outside_promise);
 
 return null;
 });
@@ -48,14 +48,14 @@ return null;
 } else {
 (devtools.async._STAR_installed_STAR_ = true);
 
-var G__23512_23513 = Error;
-var target__21721__auto___23514 = G__23512_23513;
-if(cljs.core.truth_(target__21721__auto___23514)){
+var G__29285_29286 = Error;
+var target__27494__auto___29287 = G__29285_29286;
+if(cljs.core.truth_(target__27494__auto___29287)){
 } else {
-throw (new Error(["Assert failed: ",["unable to locate object path ",null," in ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__23512_23513)].join(''),"\n","target__21721__auto__"].join('')));
+throw (new Error(["Assert failed: ",["unable to locate object path ",null," in ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(G__29285_29286)].join(''),"\n","target__27494__auto__"].join('')));
 }
 
-(target__21721__auto___23514["stackTraceLimit"] = Infinity);
+(target__27494__auto___29287["stackTraceLimit"] = Infinity);
 
 
 devtools.async.install_async_set_immediate_BANG_.call(null);
