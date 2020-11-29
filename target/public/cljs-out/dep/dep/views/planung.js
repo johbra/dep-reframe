@@ -12,8 +12,8 @@ goog.require('dep.views.lehrveranstaltungen');
  * fuegt allen dozenten die Initialauslastung für ein Geschäftsjahr jahr hinzu.
  */
 dep.views.planung.fuege_geschaeftsjahr_hinzu = (function dep$views$planung$fuege_geschaeftsjahr_hinzu(dozenten,jahr){
-return cljs.core.mapv.call(null,(function (p1__18657_SHARP_){
-return cljs.core.assoc_in.call(null,p1__18657_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"auslastungen","auslastungen",-1035018324),jahr], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0),(0),(0)], null));
+return cljs.core.mapv.call(null,(function (p1__18406_SHARP_){
+return cljs.core.assoc_in.call(null,p1__18406_SHARP_,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"auslastungen","auslastungen",-1035018324),jahr], null),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0),(0),(0)], null));
 }),dozenten);
 });
 /**
@@ -41,32 +41,32 @@ return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"manipel","manipel",1
  *   Semesterquartale.
  */
 dep.views.planung.geaenderte_semester_quartale = (function dep$views$planung$geaenderte_semester_quartale(alt_manipel,neu_manipel){
-return cljs.core.apply.call(null,cljs.core.merge,(function (){var iter__4529__auto__ = (function dep$views$planung$geaenderte_semester_quartale_$_iter__18658(s__18659){
+return cljs.core.apply.call(null,cljs.core.merge,(function (){var iter__4529__auto__ = (function dep$views$planung$geaenderte_semester_quartale_$_iter__18407(s__18408){
 return (new cljs.core.LazySeq(null,(function (){
-var s__18659__$1 = s__18659;
+var s__18408__$1 = s__18408;
 while(true){
-var temp__5735__auto__ = cljs.core.seq.call(null,s__18659__$1);
+var temp__5735__auto__ = cljs.core.seq.call(null,s__18408__$1);
 if(temp__5735__auto__){
-var s__18659__$2 = temp__5735__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__18659__$2)){
-var c__4527__auto__ = cljs.core.chunk_first.call(null,s__18659__$2);
+var s__18408__$2 = temp__5735__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__18408__$2)){
+var c__4527__auto__ = cljs.core.chunk_first.call(null,s__18408__$2);
 var size__4528__auto__ = cljs.core.count.call(null,c__4527__auto__);
-var b__18661 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
-if((function (){var i__18660 = (0);
+var b__18410 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
+if((function (){var i__18409 = (0);
 while(true){
-if((i__18660 < size__4528__auto__)){
-var vec__18662 = cljs.core._nth.call(null,c__4527__auto__,i__18660);
-var q = cljs.core.nth.call(null,vec__18662,(0),null);
-var s = cljs.core.nth.call(null,vec__18662,(1),null);
+if((i__18409 < size__4528__auto__)){
+var vec__18411 = cljs.core._nth.call(null,c__4527__auto__,i__18409);
+var q = cljs.core.nth.call(null,vec__18411,(0),null);
+var s = cljs.core.nth.call(null,vec__18411,(1),null);
 if(cljs.core.not_EQ_.call(null,q,dep.model.manipel.quartal_aus_jsz_fuer_semester.call(null,new cljs.core.Keyword(null,"jahrSemesterZuordnung","jahrSemesterZuordnung",332963010).cljs$core$IFn$_invoke$arity$1(neu_manipel),s))){
-cljs.core.chunk_append.call(null,b__18661,cljs.core.PersistentArrayMap.createAsIfByAssoc([q,s]));
+cljs.core.chunk_append.call(null,b__18410,cljs.core.PersistentArrayMap.createAsIfByAssoc([q,s]));
 
-var G__18668 = (i__18660 + (1));
-i__18660 = G__18668;
+var G__18417 = (i__18409 + (1));
+i__18409 = G__18417;
 continue;
 } else {
-var G__18669 = (i__18660 + (1));
-i__18660 = G__18669;
+var G__18418 = (i__18409 + (1));
+i__18409 = G__18418;
 continue;
 }
 } else {
@@ -75,19 +75,19 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18661),dep$views$planung$geaenderte_semester_quartale_$_iter__18658.call(null,cljs.core.chunk_rest.call(null,s__18659__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18410),dep$views$planung$geaenderte_semester_quartale_$_iter__18407.call(null,cljs.core.chunk_rest.call(null,s__18408__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18661),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18410),null);
 }
 } else {
-var vec__18665 = cljs.core.first.call(null,s__18659__$2);
-var q = cljs.core.nth.call(null,vec__18665,(0),null);
-var s = cljs.core.nth.call(null,vec__18665,(1),null);
+var vec__18414 = cljs.core.first.call(null,s__18408__$2);
+var q = cljs.core.nth.call(null,vec__18414,(0),null);
+var s = cljs.core.nth.call(null,vec__18414,(1),null);
 if(cljs.core.not_EQ_.call(null,q,dep.model.manipel.quartal_aus_jsz_fuer_semester.call(null,new cljs.core.Keyword(null,"jahrSemesterZuordnung","jahrSemesterZuordnung",332963010).cljs$core$IFn$_invoke$arity$1(neu_manipel),s))){
-return cljs.core.cons.call(null,cljs.core.PersistentArrayMap.createAsIfByAssoc([q,s]),dep$views$planung$geaenderte_semester_quartale_$_iter__18658.call(null,cljs.core.rest.call(null,s__18659__$2)));
+return cljs.core.cons.call(null,cljs.core.PersistentArrayMap.createAsIfByAssoc([q,s]),dep$views$planung$geaenderte_semester_quartale_$_iter__18407.call(null,cljs.core.rest.call(null,s__18408__$2)));
 } else {
-var G__18670 = cljs.core.rest.call(null,s__18659__$2);
-s__18659__$1 = G__18670;
+var G__18419 = cljs.core.rest.call(null,s__18408__$2);
+s__18408__$1 = G__18419;
 continue;
 }
 }
@@ -143,8 +143,8 @@ dep.views.planung.plane_quartal = (function dep$views$planung$plane_quartal(){
 var quartal = cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"quartal","quartal",-467113586)], null)));
 var lvn = dep.model.lehrveranstaltung.lehrveranstaltungen_fuer_quartal.call(null,quartal,cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"manipels","manipels",626202456)], null))),cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"module","module",1424618191)], null))));
 var dzntn = dep.views.dozentenauslastung.dozentenstunden_quartal.call(null,lvn,cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"dozenten","dozenten",688305194)], null))),quartal);
-var alle_lvn = cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.concat.call(null,cljs.core.remove.call(null,(function (p1__18671_SHARP_){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(p1__18671_SHARP_),quartal);
+var alle_lvn = cljs.core.into.call(null,cljs.core.PersistentVector.EMPTY,cljs.core.concat.call(null,cljs.core.remove.call(null,(function (p1__18420_SHARP_){
+return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"quartal","quartal",-467113586).cljs$core$IFn$_invoke$arity$1(p1__18420_SHARP_),quartal);
 }),cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"lven","lven",294854909)], null)))),lvn));
 re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"lven","lven",294854909),alle_lvn], null));
 

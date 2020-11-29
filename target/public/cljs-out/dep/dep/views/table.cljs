@@ -32,4 +32,4 @@
                          :sortable-columns sortable-columns
                          :sort-columns     sort-columns
                          :td-render-fn     td-render
-                         :sort-image-base  "img/"}]]]]]))
+                         :sort-image-base  "resources/public/img/"}]]]]]))
