@@ -15,8 +15,8 @@ return new cljs.core.PersistentArrayMap(null, 5, [new cljs.core.Keyword(null,"na
  * Initialisiert die Auslastungen für dozent in den geschaeftsjahren.
  */
 dep.model.dozent.initialisiereAuslastungenIn = (function dep$model$dozent$initialisiereAuslastungenIn(dozent,geschaeftsjahre){
-return cljs.core.assoc.call(null,dozent,new cljs.core.Keyword(null,"auslastungen","auslastungen",-1035018324),cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p1__26136_SHARP_){
-return cljs.core.PersistentHashMap.fromArrays([p1__26136_SHARP_],[new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0),(0),(0)], null)]);
+return cljs.core.assoc.call(null,dozent,new cljs.core.Keyword(null,"auslastungen","auslastungen",-1035018324),cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.map.call(null,(function (p1__20340_SHARP_){
+return cljs.core.PersistentHashMap.fromArrays([p1__20340_SHARP_],[new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [(0),(0),(0),(0)], null)]);
 }),geschaeftsjahre)));
 });
 /**
@@ -64,8 +64,8 @@ throw (new Error(["Gesch\u00E4ftsjahr existiert nicht: ",cljs.core.str.cljs$core
  * Liefert den Dozenten mit dem Namen string aus der Liste dozenten.
  */
 dep.model.dozent.dozent_mit_namen = (function dep$model$dozent$dozent_mit_namen(dozenten,string){
-return cljs.core.first.call(null,cljs.core.filter.call(null,(function (p1__26137_SHARP_){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__26137_SHARP_),string);
+return cljs.core.first.call(null,cljs.core.filter.call(null,(function (p1__20341_SHARP_){
+return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__20341_SHARP_),string);
 }),dozenten));
 });
 

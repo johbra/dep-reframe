@@ -16,8 +16,8 @@ return dep.helpers.data_modifiers.replace_dataset.call(null,new cljs.core.Keywor
  * Wandelt die dozenten für die Darstellung als Tabelle um.
  */
 dep.views.dozenten.dozenten__GT_table = (function dep$views$dozenten$dozenten__GT_table(dozenten){
-return cljs.core.mapv.call(null,(function (p1__27366_SHARP_){
-return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Name","Name",-131211369),new cljs.core.Keyword(null,"Vorname","Vorname",327484912),new cljs.core.Keyword(null,"insMenue","insMenue",723765954),new cljs.core.Keyword(null,"Stundensoll","Stundensoll",2136971867),new cljs.core.Keyword(null,"Dozent","Dozent",-1144807975)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__27366_SHARP_),new cljs.core.Keyword(null,"vorname","vorname",-451998086).cljs$core$IFn$_invoke$arity$1(p1__27366_SHARP_),new cljs.core.Keyword(null,"insMenue","insMenue",723765954).cljs$core$IFn$_invoke$arity$1(p1__27366_SHARP_),new cljs.core.Keyword(null,"sollStunden","sollStunden",-1175543891).cljs$core$IFn$_invoke$arity$1(p1__27366_SHARP_),p1__27366_SHARP_]);
+return cljs.core.mapv.call(null,(function (p1__21570_SHARP_){
+return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Name","Name",-131211369),new cljs.core.Keyword(null,"Vorname","Vorname",327484912),new cljs.core.Keyword(null,"insMenue","insMenue",723765954),new cljs.core.Keyword(null,"Stundensoll","Stundensoll",2136971867),new cljs.core.Keyword(null,"Dozent","Dozent",-1144807975)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__21570_SHARP_),new cljs.core.Keyword(null,"vorname","vorname",-451998086).cljs$core$IFn$_invoke$arity$1(p1__21570_SHARP_),new cljs.core.Keyword(null,"insMenue","insMenue",723765954).cljs$core$IFn$_invoke$arity$1(p1__21570_SHARP_),new cljs.core.Keyword(null,"sollStunden","sollStunden",-1175543891).cljs$core$IFn$_invoke$arity$1(p1__21570_SHARP_),p1__21570_SHARP_]);
 }),dozenten);
 });
 dep.views.dozenten.dozent_form_felder = (function dep$views$dozenten$dozent_form_felder(form_state){

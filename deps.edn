@@ -17,4 +17,5 @@
  :aliases
  {:clj-kondo
   {:extra-deps {clj-kondo {:mvn/version "RELEASE"}}
-   :main-opts ["-m" "clj-kondo.main"]}}}
+   :main-opts ["-m" "clj-kondo.main"]}
+  :fig {:main-opts ["-m" "figwheel.main"]}}}

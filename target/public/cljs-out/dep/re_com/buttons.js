@@ -13,18 +13,18 @@ re_com.buttons.button_args_desc = new cljs.core.PersistentVector(null, 8, 5, clj
 re_com.buttons.button = (function re_com$buttons$button(){
 var showing_QMARK_ = reagent.core.atom.call(null,false);
 return (function() { 
-var G__21276__delegate = function (p__21273){
-var map__21274 = p__21273;
-var map__21274__$1 = (((((!((map__21274 == null))))?(((((map__21274.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__21274.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21274):map__21274);
-var args = map__21274__$1;
-var label = cljs.core.get.call(null,map__21274__$1,new cljs.core.Keyword(null,"label","label",1718410804));
-var on_click = cljs.core.get.call(null,map__21274__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
-var tooltip = cljs.core.get.call(null,map__21274__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
-var tooltip_position = cljs.core.get.call(null,map__21274__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
-var disabled_QMARK_ = cljs.core.get.call(null,map__21274__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var class$ = cljs.core.get.call(null,map__21274__$1,new cljs.core.Keyword(null,"class","class",-2030961996),"btn-default");
-var style = cljs.core.get.call(null,map__21274__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var attr = cljs.core.get.call(null,map__21274__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var G__15480__delegate = function (p__15477){
+var map__15478 = p__15477;
+var map__15478__$1 = (((((!((map__15478 == null))))?(((((map__15478.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15478.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15478):map__15478);
+var args = map__15478__$1;
+var label = cljs.core.get.call(null,map__15478__$1,new cljs.core.Keyword(null,"label","label",1718410804));
+var on_click = cljs.core.get.call(null,map__15478__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
+var tooltip = cljs.core.get.call(null,map__15478__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
+var tooltip_position = cljs.core.get.call(null,map__15478__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
+var disabled_QMARK_ = cljs.core.get.call(null,map__15478__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var class$ = cljs.core.get.call(null,map__15478__$1,new cljs.core.Keyword(null,"class","class",-2030961996),"btn-default");
+var style = cljs.core.get.call(null,map__15478__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var attr = cljs.core.get.call(null,map__15478__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.buttons.button_args_desc),args,"button"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro button-args-desc args \"button\")"));
@@ -71,21 +71,21 @@ return new cljs.core.Keyword(null,"below-center","below-center",-2126885397);
 }
 })(),new cljs.core.Keyword(null,"showing?","showing?",2094921488),showing_QMARK_,new cljs.core.Keyword(null,"anchor","anchor",1549638489),the_button], null):the_button)], null);
 };
-var G__21276 = function (var_args){
-var p__21273 = null;
+var G__15480 = function (var_args){
+var p__15477 = null;
 if (arguments.length > 0) {
-var G__21277__i = 0, G__21277__a = new Array(arguments.length -  0);
-while (G__21277__i < G__21277__a.length) {G__21277__a[G__21277__i] = arguments[G__21277__i + 0]; ++G__21277__i;}
-  p__21273 = new cljs.core.IndexedSeq(G__21277__a,0,null);
+var G__15481__i = 0, G__15481__a = new Array(arguments.length -  0);
+while (G__15481__i < G__15481__a.length) {G__15481__a[G__15481__i] = arguments[G__15481__i + 0]; ++G__15481__i;}
+  p__15477 = new cljs.core.IndexedSeq(G__15481__a,0,null);
 } 
-return G__21276__delegate.call(this,p__21273);};
-G__21276.cljs$lang$maxFixedArity = 0;
-G__21276.cljs$lang$applyTo = (function (arglist__21278){
-var p__21273 = cljs.core.seq(arglist__21278);
-return G__21276__delegate(p__21273);
+return G__15480__delegate.call(this,p__15477);};
+G__15480.cljs$lang$maxFixedArity = 0;
+G__15480.cljs$lang$applyTo = (function (arglist__15482){
+var p__15477 = cljs.core.seq(arglist__15482);
+return G__15480__delegate(p__15477);
 });
-G__21276.cljs$core$IFn$_invoke$arity$variadic = G__21276__delegate;
-return G__21276;
+G__15480.cljs$core$IFn$_invoke$arity$variadic = G__15480__delegate;
+return G__15480;
 })()
 ;
 });
@@ -96,20 +96,20 @@ re_com.buttons.md_circle_icon_button_args_desc = new cljs.core.PersistentVector(
 re_com.buttons.md_circle_icon_button = (function re_com$buttons$md_circle_icon_button(){
 var showing_QMARK_ = reagent.core.atom.call(null,false);
 return (function() { 
-var G__21284__delegate = function (p__21279){
-var map__21280 = p__21279;
-var map__21280__$1 = (((((!((map__21280 == null))))?(((((map__21280.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__21280.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21280):map__21280);
-var args = map__21280__$1;
-var disabled_QMARK_ = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var tooltip = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
-var attr = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
-var emphasise_QMARK_ = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"emphasise?","emphasise?",1618294247));
-var md_icon_name = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"md-icon-name","md-icon-name",681785863),"zmdi-plus");
-var on_click = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
-var size = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"size","size",1098693007));
-var style = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var class$ = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var tooltip_position = cljs.core.get.call(null,map__21280__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
+var G__15488__delegate = function (p__15483){
+var map__15484 = p__15483;
+var map__15484__$1 = (((((!((map__15484 == null))))?(((((map__15484.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15484.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15484):map__15484);
+var args = map__15484__$1;
+var disabled_QMARK_ = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var tooltip = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
+var attr = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var emphasise_QMARK_ = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"emphasise?","emphasise?",1618294247));
+var md_icon_name = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"md-icon-name","md-icon-name",681785863),"zmdi-plus");
+var on_click = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
+var size = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"size","size",1098693007));
+var style = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var class$ = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var tooltip_position = cljs.core.get.call(null,map__15484__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.buttons.md_circle_icon_button_args_desc),args,"md-circle-icon-button"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro md-circle-icon-button-args-desc args \"md-circle-icon-button\")"));
@@ -120,9 +120,9 @@ if(cljs.core.truth_(tooltip)){
 cljs.core.reset_BANG_.call(null,showing_QMARK_,false);
 }
 
-var the_button = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"class","class",-2030961996),["rc-md-circle-icon-button noselect ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var G__21283 = size;
-var G__21283__$1 = (((G__21283 instanceof cljs.core.Keyword))?G__21283.fqn:null);
-switch (G__21283__$1) {
+var the_button = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"class","class",-2030961996),["rc-md-circle-icon-button noselect ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var G__15487 = size;
+var G__15487__$1 = (((G__15487 instanceof cljs.core.Keyword))?G__15487.fqn:null);
+switch (G__15487__$1) {
 case "smaller":
 return "rc-circle-smaller ";
 
@@ -165,21 +165,21 @@ return new cljs.core.Keyword(null,"below-center","below-center",-2126885397);
 }
 })(),new cljs.core.Keyword(null,"showing?","showing?",2094921488),showing_QMARK_,new cljs.core.Keyword(null,"anchor","anchor",1549638489),the_button], null):the_button)], null);
 };
-var G__21284 = function (var_args){
-var p__21279 = null;
+var G__15488 = function (var_args){
+var p__15483 = null;
 if (arguments.length > 0) {
-var G__21286__i = 0, G__21286__a = new Array(arguments.length -  0);
-while (G__21286__i < G__21286__a.length) {G__21286__a[G__21286__i] = arguments[G__21286__i + 0]; ++G__21286__i;}
-  p__21279 = new cljs.core.IndexedSeq(G__21286__a,0,null);
+var G__15490__i = 0, G__15490__a = new Array(arguments.length -  0);
+while (G__15490__i < G__15490__a.length) {G__15490__a[G__15490__i] = arguments[G__15490__i + 0]; ++G__15490__i;}
+  p__15483 = new cljs.core.IndexedSeq(G__15490__a,0,null);
 } 
-return G__21284__delegate.call(this,p__21279);};
-G__21284.cljs$lang$maxFixedArity = 0;
-G__21284.cljs$lang$applyTo = (function (arglist__21287){
-var p__21279 = cljs.core.seq(arglist__21287);
-return G__21284__delegate(p__21279);
+return G__15488__delegate.call(this,p__15483);};
+G__15488.cljs$lang$maxFixedArity = 0;
+G__15488.cljs$lang$applyTo = (function (arglist__15491){
+var p__15483 = cljs.core.seq(arglist__15491);
+return G__15488__delegate(p__15483);
 });
-G__21284.cljs$core$IFn$_invoke$arity$variadic = G__21284__delegate;
-return G__21284;
+G__15488.cljs$core$IFn$_invoke$arity$variadic = G__15488__delegate;
+return G__15488;
 })()
 ;
 });
@@ -190,20 +190,20 @@ re_com.buttons.md_icon_button_args_desc = new cljs.core.PersistentVector(null, 1
 re_com.buttons.md_icon_button = (function re_com$buttons$md_icon_button(){
 var showing_QMARK_ = reagent.core.atom.call(null,false);
 return (function() { 
-var G__21293__delegate = function (p__21288){
-var map__21289 = p__21288;
-var map__21289__$1 = (((((!((map__21289 == null))))?(((((map__21289.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__21289.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21289):map__21289);
-var args = map__21289__$1;
-var disabled_QMARK_ = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var tooltip = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
-var attr = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
-var emphasise_QMARK_ = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"emphasise?","emphasise?",1618294247));
-var md_icon_name = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"md-icon-name","md-icon-name",681785863),"zmdi-plus");
-var on_click = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
-var size = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"size","size",1098693007));
-var style = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var class$ = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var tooltip_position = cljs.core.get.call(null,map__21289__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
+var G__15497__delegate = function (p__15492){
+var map__15493 = p__15492;
+var map__15493__$1 = (((((!((map__15493 == null))))?(((((map__15493.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15493.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15493):map__15493);
+var args = map__15493__$1;
+var disabled_QMARK_ = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var tooltip = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
+var attr = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var emphasise_QMARK_ = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"emphasise?","emphasise?",1618294247));
+var md_icon_name = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"md-icon-name","md-icon-name",681785863),"zmdi-plus");
+var on_click = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
+var size = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"size","size",1098693007));
+var style = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var class$ = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var tooltip_position = cljs.core.get.call(null,map__15493__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.buttons.md_icon_button_args_desc),args,"md-icon-button"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro md-icon-button-args-desc args \"md-icon-button\")"));
@@ -214,9 +214,9 @@ if(cljs.core.truth_(tooltip)){
 cljs.core.reset_BANG_.call(null,showing_QMARK_,false);
 }
 
-var the_button = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"class","class",-2030961996),["rc-md-icon-button noselect ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var G__21292 = size;
-var G__21292__$1 = (((G__21292 instanceof cljs.core.Keyword))?G__21292.fqn:null);
-switch (G__21292__$1) {
+var the_button = new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),cljs.core.merge.call(null,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"class","class",-2030961996),["rc-md-icon-button noselect ",cljs.core.str.cljs$core$IFn$_invoke$arity$1((function (){var G__15496 = size;
+var G__15496__$1 = (((G__15496 instanceof cljs.core.Keyword))?G__15496.fqn:null);
+switch (G__15496__$1) {
 case "smaller":
 return "rc-icon-smaller ";
 
@@ -259,21 +259,21 @@ return new cljs.core.Keyword(null,"below-center","below-center",-2126885397);
 }
 })(),new cljs.core.Keyword(null,"showing?","showing?",2094921488),showing_QMARK_,new cljs.core.Keyword(null,"anchor","anchor",1549638489),the_button], null):the_button)], null);
 };
-var G__21293 = function (var_args){
-var p__21288 = null;
+var G__15497 = function (var_args){
+var p__15492 = null;
 if (arguments.length > 0) {
-var G__21295__i = 0, G__21295__a = new Array(arguments.length -  0);
-while (G__21295__i < G__21295__a.length) {G__21295__a[G__21295__i] = arguments[G__21295__i + 0]; ++G__21295__i;}
-  p__21288 = new cljs.core.IndexedSeq(G__21295__a,0,null);
+var G__15499__i = 0, G__15499__a = new Array(arguments.length -  0);
+while (G__15499__i < G__15499__a.length) {G__15499__a[G__15499__i] = arguments[G__15499__i + 0]; ++G__15499__i;}
+  p__15492 = new cljs.core.IndexedSeq(G__15499__a,0,null);
 } 
-return G__21293__delegate.call(this,p__21288);};
-G__21293.cljs$lang$maxFixedArity = 0;
-G__21293.cljs$lang$applyTo = (function (arglist__21296){
-var p__21288 = cljs.core.seq(arglist__21296);
-return G__21293__delegate(p__21288);
+return G__15497__delegate.call(this,p__15492);};
+G__15497.cljs$lang$maxFixedArity = 0;
+G__15497.cljs$lang$applyTo = (function (arglist__15500){
+var p__15492 = cljs.core.seq(arglist__15500);
+return G__15497__delegate(p__15492);
 });
-G__21293.cljs$core$IFn$_invoke$arity$variadic = G__21293__delegate;
-return G__21293;
+G__15497.cljs$core$IFn$_invoke$arity$variadic = G__15497__delegate;
+return G__15497;
 })()
 ;
 });
@@ -287,16 +287,16 @@ re_com.buttons.info_button_args_desc = new cljs.core.PersistentVector(null, 6, 5
 re_com.buttons.info_button = (function re_com$buttons$info_button(){
 var showing_QMARK_ = reagent.core.atom.call(null,false);
 return (function() { 
-var G__21300__delegate = function (p__21297){
-var map__21298 = p__21297;
-var map__21298__$1 = (((((!((map__21298 == null))))?(((((map__21298.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__21298.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21298):map__21298);
-var args = map__21298__$1;
-var info = cljs.core.get.call(null,map__21298__$1,new cljs.core.Keyword(null,"info","info",-317069002));
-var position = cljs.core.get.call(null,map__21298__$1,new cljs.core.Keyword(null,"position","position",-2011731912));
-var width = cljs.core.get.call(null,map__21298__$1,new cljs.core.Keyword(null,"width","width",-384071477));
-var class$ = cljs.core.get.call(null,map__21298__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var style = cljs.core.get.call(null,map__21298__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var attr = cljs.core.get.call(null,map__21298__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var G__15504__delegate = function (p__15501){
+var map__15502 = p__15501;
+var map__15502__$1 = (((((!((map__15502 == null))))?(((((map__15502.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15502.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15502):map__15502);
+var args = map__15502__$1;
+var info = cljs.core.get.call(null,map__15502__$1,new cljs.core.Keyword(null,"info","info",-317069002));
+var position = cljs.core.get.call(null,map__15502__$1,new cljs.core.Keyword(null,"position","position",-2011731912));
+var width = cljs.core.get.call(null,map__15502__$1,new cljs.core.Keyword(null,"width","width",-384071477));
+var class$ = cljs.core.get.call(null,map__15502__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var style = cljs.core.get.call(null,map__15502__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var attr = cljs.core.get.call(null,map__15502__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.buttons.info_button_args_desc),args,"info-button"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro info-button-args-desc args \"info-button\")"));
@@ -322,21 +322,21 @@ cljs.core.swap_BANG_.call(null,showing_QMARK_,cljs.core.not);
 return null;
 })], null),attr),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"svg","svg",856789142),new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"width","width",-384071477),"11",new cljs.core.Keyword(null,"height","height",1025178622),"11"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"circle","circle",1903212362),new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"cx","cx",1272694324),"5.5",new cljs.core.Keyword(null,"cy","cy",755331060),"5.5",new cljs.core.Keyword(null,"r","r",-471384190),"5.5"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"circle","circle",1903212362),new cljs.core.PersistentArrayMap(null, 4, [new cljs.core.Keyword(null,"cx","cx",1272694324),"5.5",new cljs.core.Keyword(null,"cy","cy",755331060),"2.5",new cljs.core.Keyword(null,"r","r",-471384190),"1.4",new cljs.core.Keyword(null,"fill","fill",883462889),"white"], null)], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"line","line",212345235),new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"x1","x1",-1863922247),"5.5",new cljs.core.Keyword(null,"y1","y1",589123466),"5.2",new cljs.core.Keyword(null,"x2","x2",-1362513475),"5.5",new cljs.core.Keyword(null,"y2","y2",-718691301),"9.7",new cljs.core.Keyword(null,"stroke","stroke",1741823555),"white",new cljs.core.Keyword(null,"stroke-width","stroke-width",716836435),"2.5"], null)], null)], null)], null)], null);
 };
-var G__21300 = function (var_args){
-var p__21297 = null;
+var G__15504 = function (var_args){
+var p__15501 = null;
 if (arguments.length > 0) {
-var G__21301__i = 0, G__21301__a = new Array(arguments.length -  0);
-while (G__21301__i < G__21301__a.length) {G__21301__a[G__21301__i] = arguments[G__21301__i + 0]; ++G__21301__i;}
-  p__21297 = new cljs.core.IndexedSeq(G__21301__a,0,null);
+var G__15505__i = 0, G__15505__a = new Array(arguments.length -  0);
+while (G__15505__i < G__15505__a.length) {G__15505__a[G__15505__i] = arguments[G__15505__i + 0]; ++G__15505__i;}
+  p__15501 = new cljs.core.IndexedSeq(G__15505__a,0,null);
 } 
-return G__21300__delegate.call(this,p__21297);};
-G__21300.cljs$lang$maxFixedArity = 0;
-G__21300.cljs$lang$applyTo = (function (arglist__21302){
-var p__21297 = cljs.core.seq(arglist__21302);
-return G__21300__delegate(p__21297);
+return G__15504__delegate.call(this,p__15501);};
+G__15504.cljs$lang$maxFixedArity = 0;
+G__15504.cljs$lang$applyTo = (function (arglist__15506){
+var p__15501 = cljs.core.seq(arglist__15506);
+return G__15504__delegate(p__15501);
 });
-G__21300.cljs$core$IFn$_invoke$arity$variadic = G__21300__delegate;
-return G__21300;
+G__15504.cljs$core$IFn$_invoke$arity$variadic = G__15504__delegate;
+return G__15504;
 })()
 ;
 });
@@ -347,19 +347,19 @@ re_com.buttons.row_button_args_desc = new cljs.core.PersistentVector(null, 9, 5,
 re_com.buttons.row_button = (function re_com$buttons$row_button(){
 var showing_QMARK_ = reagent.core.atom.call(null,false);
 return (function() { 
-var G__21306__delegate = function (p__21303){
-var map__21304 = p__21303;
-var map__21304__$1 = (((((!((map__21304 == null))))?(((((map__21304.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__21304.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21304):map__21304);
-var args = map__21304__$1;
-var disabled_QMARK_ = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var tooltip = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
-var attr = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
-var md_icon_name = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"md-icon-name","md-icon-name",681785863),"zmdi-plus");
-var on_click = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
-var style = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var class$ = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var tooltip_position = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
-var mouse_over_row_QMARK_ = cljs.core.get.call(null,map__21304__$1,new cljs.core.Keyword(null,"mouse-over-row?","mouse-over-row?",-446703882));
+var G__15510__delegate = function (p__15507){
+var map__15508 = p__15507;
+var map__15508__$1 = (((((!((map__15508 == null))))?(((((map__15508.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15508.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15508):map__15508);
+var args = map__15508__$1;
+var disabled_QMARK_ = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var tooltip = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
+var attr = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var md_icon_name = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"md-icon-name","md-icon-name",681785863),"zmdi-plus");
+var on_click = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
+var style = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var class$ = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var tooltip_position = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
+var mouse_over_row_QMARK_ = cljs.core.get.call(null,map__15508__$1,new cljs.core.Keyword(null,"mouse-over-row?","mouse-over-row?",-446703882));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.buttons.row_button_args_desc),args,"row-button"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro row-button-args-desc args \"row-button\")"));
@@ -400,21 +400,21 @@ return new cljs.core.Keyword(null,"below-center","below-center",-2126885397);
 }
 })(),new cljs.core.Keyword(null,"showing?","showing?",2094921488),showing_QMARK_,new cljs.core.Keyword(null,"anchor","anchor",1549638489),the_button], null):the_button)], null);
 };
-var G__21306 = function (var_args){
-var p__21303 = null;
+var G__15510 = function (var_args){
+var p__15507 = null;
 if (arguments.length > 0) {
-var G__21307__i = 0, G__21307__a = new Array(arguments.length -  0);
-while (G__21307__i < G__21307__a.length) {G__21307__a[G__21307__i] = arguments[G__21307__i + 0]; ++G__21307__i;}
-  p__21303 = new cljs.core.IndexedSeq(G__21307__a,0,null);
+var G__15511__i = 0, G__15511__a = new Array(arguments.length -  0);
+while (G__15511__i < G__15511__a.length) {G__15511__a[G__15511__i] = arguments[G__15511__i + 0]; ++G__15511__i;}
+  p__15507 = new cljs.core.IndexedSeq(G__15511__a,0,null);
 } 
-return G__21306__delegate.call(this,p__21303);};
-G__21306.cljs$lang$maxFixedArity = 0;
-G__21306.cljs$lang$applyTo = (function (arglist__21308){
-var p__21303 = cljs.core.seq(arglist__21308);
-return G__21306__delegate(p__21303);
+return G__15510__delegate.call(this,p__15507);};
+G__15510.cljs$lang$maxFixedArity = 0;
+G__15510.cljs$lang$applyTo = (function (arglist__15512){
+var p__15507 = cljs.core.seq(arglist__15512);
+return G__15510__delegate(p__15507);
 });
-G__21306.cljs$core$IFn$_invoke$arity$variadic = G__21306__delegate;
-return G__21306;
+G__15510.cljs$core$IFn$_invoke$arity$variadic = G__15510__delegate;
+return G__15510;
 })()
 ;
 });
@@ -427,18 +427,18 @@ re_com.buttons.hyperlink_args_desc = new cljs.core.PersistentVector(null, 8, 5, 
 re_com.buttons.hyperlink = (function re_com$buttons$hyperlink(){
 var showing_QMARK_ = reagent.core.atom.call(null,false);
 return (function() { 
-var G__21312__delegate = function (p__21309){
-var map__21310 = p__21309;
-var map__21310__$1 = (((((!((map__21310 == null))))?(((((map__21310.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__21310.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21310):map__21310);
-var args = map__21310__$1;
-var label = cljs.core.get.call(null,map__21310__$1,new cljs.core.Keyword(null,"label","label",1718410804));
-var on_click = cljs.core.get.call(null,map__21310__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
-var tooltip = cljs.core.get.call(null,map__21310__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
-var tooltip_position = cljs.core.get.call(null,map__21310__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
-var disabled_QMARK_ = cljs.core.get.call(null,map__21310__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
-var class$ = cljs.core.get.call(null,map__21310__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var style = cljs.core.get.call(null,map__21310__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var attr = cljs.core.get.call(null,map__21310__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var G__15516__delegate = function (p__15513){
+var map__15514 = p__15513;
+var map__15514__$1 = (((((!((map__15514 == null))))?(((((map__15514.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15514.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15514):map__15514);
+var args = map__15514__$1;
+var label = cljs.core.get.call(null,map__15514__$1,new cljs.core.Keyword(null,"label","label",1718410804));
+var on_click = cljs.core.get.call(null,map__15514__$1,new cljs.core.Keyword(null,"on-click","on-click",1632826543));
+var tooltip = cljs.core.get.call(null,map__15514__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
+var tooltip_position = cljs.core.get.call(null,map__15514__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
+var disabled_QMARK_ = cljs.core.get.call(null,map__15514__$1,new cljs.core.Keyword(null,"disabled?","disabled?",-1523234181));
+var class$ = cljs.core.get.call(null,map__15514__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var style = cljs.core.get.call(null,map__15514__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var attr = cljs.core.get.call(null,map__15514__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.buttons.hyperlink_args_desc),args,"hyperlink"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro hyperlink-args-desc args \"hyperlink\")"));
@@ -481,21 +481,21 @@ return new cljs.core.Keyword(null,"below-center","below-center",-2126885397);
 }
 })(),new cljs.core.Keyword(null,"showing?","showing?",2094921488),showing_QMARK_,new cljs.core.Keyword(null,"anchor","anchor",1549638489),the_button], null):the_button)], null);
 };
-var G__21312 = function (var_args){
-var p__21309 = null;
+var G__15516 = function (var_args){
+var p__15513 = null;
 if (arguments.length > 0) {
-var G__21313__i = 0, G__21313__a = new Array(arguments.length -  0);
-while (G__21313__i < G__21313__a.length) {G__21313__a[G__21313__i] = arguments[G__21313__i + 0]; ++G__21313__i;}
-  p__21309 = new cljs.core.IndexedSeq(G__21313__a,0,null);
+var G__15517__i = 0, G__15517__a = new Array(arguments.length -  0);
+while (G__15517__i < G__15517__a.length) {G__15517__a[G__15517__i] = arguments[G__15517__i + 0]; ++G__15517__i;}
+  p__15513 = new cljs.core.IndexedSeq(G__15517__a,0,null);
 } 
-return G__21312__delegate.call(this,p__21309);};
-G__21312.cljs$lang$maxFixedArity = 0;
-G__21312.cljs$lang$applyTo = (function (arglist__21314){
-var p__21309 = cljs.core.seq(arglist__21314);
-return G__21312__delegate(p__21309);
+return G__15516__delegate.call(this,p__15513);};
+G__15516.cljs$lang$maxFixedArity = 0;
+G__15516.cljs$lang$applyTo = (function (arglist__15518){
+var p__15513 = cljs.core.seq(arglist__15518);
+return G__15516__delegate(p__15513);
 });
-G__21312.cljs$core$IFn$_invoke$arity$variadic = G__21312__delegate;
-return G__21312;
+G__15516.cljs$core$IFn$_invoke$arity$variadic = G__15516__delegate;
+return G__15516;
 })()
 ;
 });
@@ -508,18 +508,18 @@ re_com.buttons.hyperlink_href_args_desc = new cljs.core.PersistentVector(null, 8
 re_com.buttons.hyperlink_href = (function re_com$buttons$hyperlink_href(){
 var showing_QMARK_ = reagent.core.atom.call(null,false);
 return (function() { 
-var G__21318__delegate = function (p__21315){
-var map__21316 = p__21315;
-var map__21316__$1 = (((((!((map__21316 == null))))?(((((map__21316.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__21316.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__21316):map__21316);
-var args = map__21316__$1;
-var label = cljs.core.get.call(null,map__21316__$1,new cljs.core.Keyword(null,"label","label",1718410804));
-var href = cljs.core.get.call(null,map__21316__$1,new cljs.core.Keyword(null,"href","href",-793805698));
-var target = cljs.core.get.call(null,map__21316__$1,new cljs.core.Keyword(null,"target","target",253001721));
-var tooltip = cljs.core.get.call(null,map__21316__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
-var tooltip_position = cljs.core.get.call(null,map__21316__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
-var class$ = cljs.core.get.call(null,map__21316__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
-var style = cljs.core.get.call(null,map__21316__$1,new cljs.core.Keyword(null,"style","style",-496642736));
-var attr = cljs.core.get.call(null,map__21316__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
+var G__15522__delegate = function (p__15519){
+var map__15520 = p__15519;
+var map__15520__$1 = (((((!((map__15520 == null))))?(((((map__15520.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__15520.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__15520):map__15520);
+var args = map__15520__$1;
+var label = cljs.core.get.call(null,map__15520__$1,new cljs.core.Keyword(null,"label","label",1718410804));
+var href = cljs.core.get.call(null,map__15520__$1,new cljs.core.Keyword(null,"href","href",-793805698));
+var target = cljs.core.get.call(null,map__15520__$1,new cljs.core.Keyword(null,"target","target",253001721));
+var tooltip = cljs.core.get.call(null,map__15520__$1,new cljs.core.Keyword(null,"tooltip","tooltip",-1809677058));
+var tooltip_position = cljs.core.get.call(null,map__15520__$1,new cljs.core.Keyword(null,"tooltip-position","tooltip-position",936197013));
+var class$ = cljs.core.get.call(null,map__15520__$1,new cljs.core.Keyword(null,"class","class",-2030961996));
+var style = cljs.core.get.call(null,map__15520__$1,new cljs.core.Keyword(null,"style","style",-496642736));
+var attr = cljs.core.get.call(null,map__15520__$1,new cljs.core.Keyword(null,"attr","attr",-604132353));
 if((((!(goog.DEBUG)))?true:re_com.validate.validate_args.call(null,re_com.validate.extract_arg_data.call(null,re_com.buttons.hyperlink_href_args_desc),args,"hyperlink-href"))){
 } else {
 throw (new Error("Assert failed: (validate-args-macro hyperlink-href-args-desc args \"hyperlink-href\")"));
@@ -550,21 +550,21 @@ return new cljs.core.Keyword(null,"below-center","below-center",-2126885397);
 }
 })(),new cljs.core.Keyword(null,"showing?","showing?",2094921488),showing_QMARK_,new cljs.core.Keyword(null,"anchor","anchor",1549638489),the_button], null):the_button)], null);
 };
-var G__21318 = function (var_args){
-var p__21315 = null;
+var G__15522 = function (var_args){
+var p__15519 = null;
 if (arguments.length > 0) {
-var G__21319__i = 0, G__21319__a = new Array(arguments.length -  0);
-while (G__21319__i < G__21319__a.length) {G__21319__a[G__21319__i] = arguments[G__21319__i + 0]; ++G__21319__i;}
-  p__21315 = new cljs.core.IndexedSeq(G__21319__a,0,null);
+var G__15523__i = 0, G__15523__a = new Array(arguments.length -  0);
+while (G__15523__i < G__15523__a.length) {G__15523__a[G__15523__i] = arguments[G__15523__i + 0]; ++G__15523__i;}
+  p__15519 = new cljs.core.IndexedSeq(G__15523__a,0,null);
 } 
-return G__21318__delegate.call(this,p__21315);};
-G__21318.cljs$lang$maxFixedArity = 0;
-G__21318.cljs$lang$applyTo = (function (arglist__21320){
-var p__21315 = cljs.core.seq(arglist__21320);
-return G__21318__delegate(p__21315);
+return G__15522__delegate.call(this,p__15519);};
+G__15522.cljs$lang$maxFixedArity = 0;
+G__15522.cljs$lang$applyTo = (function (arglist__15524){
+var p__15519 = cljs.core.seq(arglist__15524);
+return G__15522__delegate(p__15519);
 });
-G__21318.cljs$core$IFn$_invoke$arity$variadic = G__21318__delegate;
-return G__21318;
+G__15522.cljs$core$IFn$_invoke$arity$variadic = G__15522__delegate;
+return G__15522;
 })()
 ;
 });
