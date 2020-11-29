@@ -11,8 +11,8 @@ goog.require('dep.helpers.data_modifiers');
 /**
  * Die Spaltenüberschriften für die 7 Semester
  */
-dep.views.module.sem_tabellen_koepfe = cljs.core.map.call(null,(function (p1__18440_SHARP_){
-return cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__18440_SHARP_)].join(''));
+dep.views.module.sem_tabellen_koepfe = cljs.core.map.call(null,(function (p1__18606_SHARP_){
+return cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__18606_SHARP_)].join(''));
 }),cljs.core.range.call(null,(1),(8)));
 /**
  * liefert {:S1 1, :S2 2, :S3 3, :S4 4, :S5 5, :S6 6, :S7 7}
@@ -23,8 +23,8 @@ dep.views.module.semester = cljs.core.zipmap.call(null,dep.views.module.sem_tabe
  *   Semesterwochenstunden.
  */
 dep.views.module.aender_sws = (function dep$views$module$aender_sws(aenderungen){
-return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.filter.call(null,(function (p1__18441_SHARP_){
-return cljs.core.not_EQ_.call(null,cljs.core.val.call(null,p1__18441_SHARP_),(0));
+return cljs.core.into.call(null,cljs.core.PersistentArrayMap.EMPTY,cljs.core.filter.call(null,(function (p1__18607_SHARP_){
+return cljs.core.not_EQ_.call(null,cljs.core.val.call(null,p1__18607_SHARP_),(0));
 }),clojure.set.rename_keys.call(null,cljs.core.select_keys.call(null,aenderungen,dep.views.module.sem_tabellen_koepfe),dep.views.module.semester)));
 });
 /**
@@ -47,33 +47,33 @@ return dep.helpers.data_modifiers.duplicate_dataset.call(null,new cljs.core.Keyw
  * Wandelt die module für die Darstellung als Tabelle um.
  */
 dep.views.module.module__GT_table = (function dep$views$module$module__GT_table(module){
-return cljs.core.mapv.call(null,(function (p1__18442_SHARP_){
-return cljs.core.merge.call(null,cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Nr","Nr",-700839286),new cljs.core.Keyword(null,"Name","Name",-131211369),new cljs.core.Keyword(null,"Studienrichtung","Studienrichtung",2009895848)],[new cljs.core.Keyword(null,"nummer","nummer",1652450962).cljs$core$IFn$_invoke$arity$1(p1__18442_SHARP_),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__18442_SHARP_),new cljs.core.Keyword(null,"studienrichtung","studienrichtung",-290576756).cljs$core$IFn$_invoke$arity$1(p1__18442_SHARP_)]),dep.model.modul.sws__GT_alle_semester.call(null,new cljs.core.Keyword(null,"semesterWochenstunden","semesterWochenstunden",1725648707).cljs$core$IFn$_invoke$arity$1(p1__18442_SHARP_)),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ab-Stbgnn","ab-Stbgnn",604950411),new cljs.core.Keyword(null,"bis-Stbgnn","bis-Stbgnn",275678925),new cljs.core.Keyword(null,"Id","Id",-2148601)],[dep.model.quartal.quartal__GT_string.call(null,new cljs.core.Keyword(null,"gueltigAb","gueltigAb",-1592672781).cljs$core$IFn$_invoke$arity$1(p1__18442_SHARP_)),dep.model.quartal.quartal__GT_string.call(null,new cljs.core.Keyword(null,"gueltigBis","gueltigBis",-999485251).cljs$core$IFn$_invoke$arity$1(p1__18442_SHARP_)),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__18442_SHARP_)]));
+return cljs.core.mapv.call(null,(function (p1__18608_SHARP_){
+return cljs.core.merge.call(null,cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Nr","Nr",-700839286),new cljs.core.Keyword(null,"Name","Name",-131211369),new cljs.core.Keyword(null,"Studienrichtung","Studienrichtung",2009895848)],[new cljs.core.Keyword(null,"nummer","nummer",1652450962).cljs$core$IFn$_invoke$arity$1(p1__18608_SHARP_),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__18608_SHARP_),new cljs.core.Keyword(null,"studienrichtung","studienrichtung",-290576756).cljs$core$IFn$_invoke$arity$1(p1__18608_SHARP_)]),dep.model.modul.sws__GT_alle_semester.call(null,new cljs.core.Keyword(null,"semesterWochenstunden","semesterWochenstunden",1725648707).cljs$core$IFn$_invoke$arity$1(p1__18608_SHARP_)),cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"ab-Stbgnn","ab-Stbgnn",604950411),new cljs.core.Keyword(null,"bis-Stbgnn","bis-Stbgnn",275678925),new cljs.core.Keyword(null,"Id","Id",-2148601)],[dep.model.quartal.quartal__GT_string.call(null,new cljs.core.Keyword(null,"gueltigAb","gueltigAb",-1592672781).cljs$core$IFn$_invoke$arity$1(p1__18608_SHARP_)),dep.model.quartal.quartal__GT_string.call(null,new cljs.core.Keyword(null,"gueltigBis","gueltigBis",-999485251).cljs$core$IFn$_invoke$arity$1(p1__18608_SHARP_)),new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__18608_SHARP_)]));
 }),module);
 });
 dep.views.module.modul_form_felder = (function dep$views$module$modul_form_felder(form_state){
-var studienrichtungen = cljs.core.mapv.call(null,(function (p1__18443_SHARP_){
-return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"label","label",1718410804)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__18443_SHARP_),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__18443_SHARP_)]);
+var studienrichtungen = cljs.core.mapv.call(null,(function (p1__18609_SHARP_){
+return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"label","label",1718410804)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__18609_SHARP_),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__18609_SHARP_)]);
 }),cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"studienrichtungen","studienrichtungen",805439886)], null))));
-return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.title,new cljs.core.Keyword(null,"label","label",1718410804),"Modul",new cljs.core.Keyword(null,"level","level",1290497552),new cljs.core.Keyword(null,"level2","level2",-2044031830)], null),dep.helpers.form_helpers.rc_input_box.call(null,"Nr.",cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"Nr","Nr",-700839286).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state))),new cljs.core.Keyword(null,"Nr","Nr",-700839286),null,cljs.core.symbol,false,form_state),dep.helpers.form_helpers.rc_input_box.call(null,"Name",new cljs.core.Keyword(null,"Name","Name",-131211369).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state)),new cljs.core.Keyword(null,"Name","Name",-131211369),null,cljs.core.identity,false,form_state),dep.helpers.form_helpers.rc_dropdown.call(null,"Studienrichtung",new cljs.core.Keyword(null,"Studienrichtung","Studienrichtung",2009895848),studienrichtungen,false,form_state),(function (){var iter__4529__auto__ = (function dep$views$module$modul_form_felder_$_iter__18444(s__18445){
+return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.title,new cljs.core.Keyword(null,"label","label",1718410804),"Modul",new cljs.core.Keyword(null,"level","level",1290497552),new cljs.core.Keyword(null,"level2","level2",-2044031830)], null),dep.helpers.form_helpers.rc_input_box.call(null,"Nr.",cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"Nr","Nr",-700839286).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state))),new cljs.core.Keyword(null,"Nr","Nr",-700839286),null,cljs.core.symbol,false,form_state),dep.helpers.form_helpers.rc_input_box.call(null,"Name",new cljs.core.Keyword(null,"Name","Name",-131211369).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state)),new cljs.core.Keyword(null,"Name","Name",-131211369),null,cljs.core.identity,false,form_state),dep.helpers.form_helpers.rc_dropdown.call(null,"Studienrichtung",new cljs.core.Keyword(null,"Studienrichtung","Studienrichtung",2009895848),studienrichtungen,false,form_state),(function (){var iter__4529__auto__ = (function dep$views$module$modul_form_felder_$_iter__18610(s__18611){
 return (new cljs.core.LazySeq(null,(function (){
-var s__18445__$1 = s__18445;
+var s__18611__$1 = s__18611;
 while(true){
-var temp__5735__auto__ = cljs.core.seq.call(null,s__18445__$1);
+var temp__5735__auto__ = cljs.core.seq.call(null,s__18611__$1);
 if(temp__5735__auto__){
-var s__18445__$2 = temp__5735__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__18445__$2)){
-var c__4527__auto__ = cljs.core.chunk_first.call(null,s__18445__$2);
+var s__18611__$2 = temp__5735__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__18611__$2)){
+var c__4527__auto__ = cljs.core.chunk_first.call(null,s__18611__$2);
 var size__4528__auto__ = cljs.core.count.call(null,c__4527__auto__);
-var b__18447 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
-if((function (){var i__18446 = (0);
+var b__18613 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
+if((function (){var i__18612 = (0);
 while(true){
-if((i__18446 < size__4528__auto__)){
-var i = cljs.core._nth.call(null,c__4527__auto__,i__18446);
-cljs.core.chunk_append.call(null,b__18447,dep.helpers.form_helpers.rc_input_box.call(null,["Semester ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join(''),cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')).call(null,cljs.core.deref.call(null,form_state))),cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),/^(\d+)$/,parseInt,false,form_state));
+if((i__18612 < size__4528__auto__)){
+var i = cljs.core._nth.call(null,c__4527__auto__,i__18612);
+cljs.core.chunk_append.call(null,b__18613,dep.helpers.form_helpers.rc_input_box.call(null,["Semester ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join(''),cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')).call(null,cljs.core.deref.call(null,form_state))),cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),/^(\d+)$/,parseInt,false,form_state));
 
-var G__18448 = (i__18446 + (1));
-i__18446 = G__18448;
+var G__18614 = (i__18612 + (1));
+i__18612 = G__18614;
 continue;
 } else {
 return true;
@@ -81,13 +81,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18447),dep$views$module$modul_form_felder_$_iter__18444.call(null,cljs.core.chunk_rest.call(null,s__18445__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18613),dep$views$module$modul_form_felder_$_iter__18610.call(null,cljs.core.chunk_rest.call(null,s__18611__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18447),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__18613),null);
 }
 } else {
-var i = cljs.core.first.call(null,s__18445__$2);
-return cljs.core.cons.call(null,dep.helpers.form_helpers.rc_input_box.call(null,["Semester ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join(''),cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')).call(null,cljs.core.deref.call(null,form_state))),cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),/^(\d+)$/,parseInt,false,form_state),dep$views$module$modul_form_felder_$_iter__18444.call(null,cljs.core.rest.call(null,s__18445__$2)));
+var i = cljs.core.first.call(null,s__18611__$2);
+return cljs.core.cons.call(null,dep.helpers.form_helpers.rc_input_box.call(null,["Semester ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join(''),cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')).call(null,cljs.core.deref.call(null,form_state))),cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),/^(\d+)$/,parseInt,false,form_state),dep$views$module$modul_form_felder_$_iter__18610.call(null,cljs.core.rest.call(null,s__18611__$2)));
 }
 } else {
 return null;
