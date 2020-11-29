@@ -31,4 +31,5 @@
                          :rows             (:data (:table-data @table-state))
                          :sortable-columns sortable-columns
                          :sort-columns     sort-columns
-                         :td-render-fn     td-render}]]]]]))
+                         :td-render-fn     td-render
+                         :sort-image-base  "img/"}]]]]]))

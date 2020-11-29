@@ -13,8 +13,8 @@ goog.require('dep.helpers.data_modifiers');
 /**
  * Die Spaltenüberschriften für die 7 Semester
  */
-dep.views.manipels.sem_tabellen_koepfe = cljs.core.map.call(null,(function (p1__26146_SHARP_){
-return cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__26146_SHARP_)].join(''));
+dep.views.manipels.sem_tabellen_koepfe = cljs.core.map.call(null,(function (p1__29722_SHARP_){
+return cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__29722_SHARP_)].join(''));
 }),cljs.core.range.call(null,(1),(8)));
 /**
  * liefert {:S1 1, :S2 2, :S3 3, :S4 4, :S5 5, :S6 6, :S7 7}
@@ -24,25 +24,25 @@ dep.views.manipels.semestermanipel_mit_namen = cljs.core.zipmap.call(null,dep.vi
  * erzeugt aus den Strings des Formulars eine jahrsemesterzuordnung
  */
 dep.views.manipels.formular_daten__GT_jahr_semester_zuordung = (function dep$views$manipels$formular_daten__GT_jahr_semester_zuordung(formulardaten){
-var jsz = cljs.core.select_keys.call(null,formulardaten,(function (){var iter__4529__auto__ = (function dep$views$manipels$formular_daten__GT_jahr_semester_zuordung_$_iter__26149(s__26150){
+var jsz = cljs.core.select_keys.call(null,formulardaten,(function (){var iter__4529__auto__ = (function dep$views$manipels$formular_daten__GT_jahr_semester_zuordung_$_iter__29725(s__29726){
 return (new cljs.core.LazySeq(null,(function (){
-var s__26150__$1 = s__26150;
+var s__29726__$1 = s__29726;
 while(true){
-var temp__5735__auto__ = cljs.core.seq.call(null,s__26150__$1);
+var temp__5735__auto__ = cljs.core.seq.call(null,s__29726__$1);
 if(temp__5735__auto__){
-var s__26150__$2 = temp__5735__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__26150__$2)){
-var c__4527__auto__ = cljs.core.chunk_first.call(null,s__26150__$2);
+var s__29726__$2 = temp__5735__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__29726__$2)){
+var c__4527__auto__ = cljs.core.chunk_first.call(null,s__29726__$2);
 var size__4528__auto__ = cljs.core.count.call(null,c__4527__auto__);
-var b__26152 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
-if((function (){var i__26151 = (0);
+var b__29728 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
+if((function (){var i__29727 = (0);
 while(true){
-if((i__26151 < size__4528__auto__)){
-var i = cljs.core._nth.call(null,c__4527__auto__,i__26151);
-cljs.core.chunk_append.call(null,b__26152,cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')));
+if((i__29727 < size__4528__auto__)){
+var i = cljs.core._nth.call(null,c__4527__auto__,i__29727);
+cljs.core.chunk_append.call(null,b__29728,cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')));
 
-var G__26153 = (i__26151 + (1));
-i__26151 = G__26153;
+var G__29729 = (i__29727 + (1));
+i__29727 = G__29729;
 continue;
 } else {
 return true;
@@ -50,13 +50,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26152),dep$views$manipels$formular_daten__GT_jahr_semester_zuordung_$_iter__26149.call(null,cljs.core.chunk_rest.call(null,s__26150__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__29728),dep$views$manipels$formular_daten__GT_jahr_semester_zuordung_$_iter__29725.call(null,cljs.core.chunk_rest.call(null,s__29726__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26152),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__29728),null);
 }
 } else {
-var i = cljs.core.first.call(null,s__26150__$2);
-return cljs.core.cons.call(null,cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),dep$views$manipels$formular_daten__GT_jahr_semester_zuordung_$_iter__26149.call(null,cljs.core.rest.call(null,s__26150__$2)));
+var i = cljs.core.first.call(null,s__29726__$2);
+return cljs.core.cons.call(null,cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),dep$views$manipels$formular_daten__GT_jahr_semester_zuordung_$_iter__29725.call(null,cljs.core.rest.call(null,s__29726__$2)));
 }
 } else {
 return null;
@@ -67,10 +67,10 @@ break;
 });
 return iter__4529__auto__.call(null,cljs.core.range.call(null,(1),(8)));
 })());
-return medley.core.map_keys.call(null,(function (p1__26148_SHARP_){
-return cljs.core.assoc.call(null,p1__26148_SHARP_,new cljs.core.Keyword(null,"jahr","jahr",1260355162),(new cljs.core.Keyword(null,"jahr","jahr",1260355162).cljs$core$IFn$_invoke$arity$1(p1__26148_SHARP_) - new cljs.core.Keyword(null,"jahr","jahr",1260355162).cljs$core$IFn$_invoke$arity$1(dep.model.quartal.string__GT_quartal.call(null,new cljs.core.Keyword(null,"Stdnbgnn","Stdnbgnn",1363341617).cljs$core$IFn$_invoke$arity$1(formulardaten)))));
-}),medley.core.map_vals.call(null,(function (p1__26147_SHARP_){
-return dep.model.quartal.parse_int.call(null,cljs.core.last.call(null,clojure.string.split.call(null,cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__26147_SHARP_),/-/)));
+return medley.core.map_keys.call(null,(function (p1__29724_SHARP_){
+return cljs.core.assoc.call(null,p1__29724_SHARP_,new cljs.core.Keyword(null,"jahr","jahr",1260355162),(new cljs.core.Keyword(null,"jahr","jahr",1260355162).cljs$core$IFn$_invoke$arity$1(p1__29724_SHARP_) - new cljs.core.Keyword(null,"jahr","jahr",1260355162).cljs$core$IFn$_invoke$arity$1(dep.model.quartal.string__GT_quartal.call(null,new cljs.core.Keyword(null,"Stdnbgnn","Stdnbgnn",1363341617).cljs$core$IFn$_invoke$arity$1(formulardaten)))));
+}),medley.core.map_vals.call(null,(function (p1__29723_SHARP_){
+return dep.model.quartal.parse_int.call(null,cljs.core.last.call(null,clojure.string.split.call(null,cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__29723_SHARP_),/-/)));
 }),clojure.set.map_invert.call(null,medley.core.map_vals.call(null,dep.model.quartal.string__GT_quartal,jsz))));
 });
 /**
@@ -87,33 +87,33 @@ return dep.helpers.data_modifiers.replace_dataset.call(null,new cljs.core.Keywor
  * Wandelt die manipels für die Darstellung als Tabelle um.
  */
 dep.views.manipels.manipels__GT_table = (function dep$views$manipels$manipels__GT_table(manipels){
-return cljs.core.mapv.call(null,(function (p1__26154_SHARP_){
-return cljs.core.merge.call(null,cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Name","Name",-131211369),new cljs.core.Keyword(null,"Studienrichtung","Studienrichtung",2009895848),new cljs.core.Keyword(null,"An-Gr","An-Gr",-573881518),new cljs.core.Keyword(null,"Stdnbgnn","Stdnbgnn",1363341617),new cljs.core.Keyword(null,"Manipel","Manipel",-205524958)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__26154_SHARP_),new cljs.core.Keyword(null,"studienrichtung","studienrichtung",-290576756).cljs$core$IFn$_invoke$arity$1(p1__26154_SHARP_),new cljs.core.Keyword(null,"anzahlGruppen","anzahlGruppen",317177965).cljs$core$IFn$_invoke$arity$1(p1__26154_SHARP_),dep.model.quartal.quartal__GT_string.call(null,new cljs.core.Keyword(null,"studienbeginn","studienbeginn",1757161852).cljs$core$IFn$_invoke$arity$1(p1__26154_SHARP_)),p1__26154_SHARP_]),dep.model.quartal.sieben_semester__GT_quartstrng.call(null,new cljs.core.Keyword(null,"studienbeginn","studienbeginn",1757161852).cljs$core$IFn$_invoke$arity$1(p1__26154_SHARP_),new cljs.core.Keyword(null,"jahrSemesterZuordnung","jahrSemesterZuordnung",332963010).cljs$core$IFn$_invoke$arity$1(p1__26154_SHARP_)));
+return cljs.core.mapv.call(null,(function (p1__29730_SHARP_){
+return cljs.core.merge.call(null,cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"Name","Name",-131211369),new cljs.core.Keyword(null,"Studienrichtung","Studienrichtung",2009895848),new cljs.core.Keyword(null,"An-Gr","An-Gr",-573881518),new cljs.core.Keyword(null,"Stdnbgnn","Stdnbgnn",1363341617),new cljs.core.Keyword(null,"Manipel","Manipel",-205524958)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__29730_SHARP_),new cljs.core.Keyword(null,"studienrichtung","studienrichtung",-290576756).cljs$core$IFn$_invoke$arity$1(p1__29730_SHARP_),new cljs.core.Keyword(null,"anzahlGruppen","anzahlGruppen",317177965).cljs$core$IFn$_invoke$arity$1(p1__29730_SHARP_),dep.model.quartal.quartal__GT_string.call(null,new cljs.core.Keyword(null,"studienbeginn","studienbeginn",1757161852).cljs$core$IFn$_invoke$arity$1(p1__29730_SHARP_)),p1__29730_SHARP_]),dep.model.quartal.sieben_semester__GT_quartstrng.call(null,new cljs.core.Keyword(null,"studienbeginn","studienbeginn",1757161852).cljs$core$IFn$_invoke$arity$1(p1__29730_SHARP_),new cljs.core.Keyword(null,"jahrSemesterZuordnung","jahrSemesterZuordnung",332963010).cljs$core$IFn$_invoke$arity$1(p1__29730_SHARP_)));
 }),manipels);
 });
 dep.views.manipels.manipel_form_felder = (function dep$views$manipels$manipel_form_felder(form_state){
-var studienrichtungen = cljs.core.mapv.call(null,(function (p1__26155_SHARP_){
-return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"label","label",1718410804)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__26155_SHARP_),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__26155_SHARP_)]);
+var studienrichtungen = cljs.core.mapv.call(null,(function (p1__29731_SHARP_){
+return cljs.core.PersistentHashMap.fromArrays([new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.Keyword(null,"label","label",1718410804)],[new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__29731_SHARP_),new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(p1__29731_SHARP_)]);
 }),cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"studienrichtungen","studienrichtungen",805439886)], null))));
-return new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.title,new cljs.core.Keyword(null,"label","label",1718410804),"Manipel",new cljs.core.Keyword(null,"level","level",1290497552),new cljs.core.Keyword(null,"level2","level2",-2044031830)], null),dep.helpers.form_helpers.rc_input_box.call(null,"Name",cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"Name","Name",-131211369).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state))),new cljs.core.Keyword(null,"Name","Name",-131211369),null,cljs.core.symbol,false,form_state),dep.helpers.form_helpers.rc_dropdown.call(null,"Studienrichtung",new cljs.core.Keyword(null,"Studienrichtung","Studienrichtung",2009895848),studienrichtungen,false,form_state),dep.helpers.form_helpers.rc_input_box.call(null,"Anzahl-Gruppen",cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"An-Gr","An-Gr",-573881518).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state))),new cljs.core.Keyword(null,"An-Gr","An-Gr",-573881518),/^(\d+)$/,parseInt,false,form_state),dep.helpers.form_helpers.rc_input_box.call(null,"Studienbeginn",new cljs.core.Keyword(null,"Stdnbgnn","Stdnbgnn",1363341617).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state)),new cljs.core.Keyword(null,"Stdnbgnn","Stdnbgnn",1363341617),null,cljs.core.identity,false,form_state),(function (){var iter__4529__auto__ = (function dep$views$manipels$manipel_form_felder_$_iter__26156(s__26157){
+return new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.title,new cljs.core.Keyword(null,"label","label",1718410804),"Manipel",new cljs.core.Keyword(null,"level","level",1290497552),new cljs.core.Keyword(null,"level2","level2",-2044031830)], null),dep.helpers.form_helpers.rc_input_box.call(null,"Name",cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"Name","Name",-131211369).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state))),new cljs.core.Keyword(null,"Name","Name",-131211369),null,cljs.core.symbol,false,form_state),dep.helpers.form_helpers.rc_dropdown.call(null,"Studienrichtung",new cljs.core.Keyword(null,"Studienrichtung","Studienrichtung",2009895848),studienrichtungen,false,form_state),dep.helpers.form_helpers.rc_input_box.call(null,"Anzahl-Gruppen",cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"An-Gr","An-Gr",-573881518).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state))),new cljs.core.Keyword(null,"An-Gr","An-Gr",-573881518),/^(\d+)$/,parseInt,false,form_state),dep.helpers.form_helpers.rc_input_box.call(null,"Studienbeginn",new cljs.core.Keyword(null,"Stdnbgnn","Stdnbgnn",1363341617).cljs$core$IFn$_invoke$arity$1(cljs.core.deref.call(null,form_state)),new cljs.core.Keyword(null,"Stdnbgnn","Stdnbgnn",1363341617),null,cljs.core.identity,false,form_state),(function (){var iter__4529__auto__ = (function dep$views$manipels$manipel_form_felder_$_iter__29732(s__29733){
 return (new cljs.core.LazySeq(null,(function (){
-var s__26157__$1 = s__26157;
+var s__29733__$1 = s__29733;
 while(true){
-var temp__5735__auto__ = cljs.core.seq.call(null,s__26157__$1);
+var temp__5735__auto__ = cljs.core.seq.call(null,s__29733__$1);
 if(temp__5735__auto__){
-var s__26157__$2 = temp__5735__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__26157__$2)){
-var c__4527__auto__ = cljs.core.chunk_first.call(null,s__26157__$2);
+var s__29733__$2 = temp__5735__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__29733__$2)){
+var c__4527__auto__ = cljs.core.chunk_first.call(null,s__29733__$2);
 var size__4528__auto__ = cljs.core.count.call(null,c__4527__auto__);
-var b__26159 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
-if((function (){var i__26158 = (0);
+var b__29735 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
+if((function (){var i__29734 = (0);
 while(true){
-if((i__26158 < size__4528__auto__)){
-var i = cljs.core._nth.call(null,c__4527__auto__,i__26158);
-cljs.core.chunk_append.call(null,b__26159,dep.helpers.form_helpers.rc_input_box.call(null,["Semester ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join(''),cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')).call(null,cljs.core.deref.call(null,form_state)),cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),null,cljs.core.identity,false,form_state));
+if((i__29734 < size__4528__auto__)){
+var i = cljs.core._nth.call(null,c__4527__auto__,i__29734);
+cljs.core.chunk_append.call(null,b__29735,dep.helpers.form_helpers.rc_input_box.call(null,["Semester ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join(''),cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')).call(null,cljs.core.deref.call(null,form_state)),cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),null,cljs.core.identity,false,form_state));
 
-var G__26160 = (i__26158 + (1));
-i__26158 = G__26160;
+var G__29736 = (i__29734 + (1));
+i__29734 = G__29736;
 continue;
 } else {
 return true;
@@ -121,13 +121,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26159),dep$views$manipels$manipel_form_felder_$_iter__26156.call(null,cljs.core.chunk_rest.call(null,s__26157__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__29735),dep$views$manipels$manipel_form_felder_$_iter__29732.call(null,cljs.core.chunk_rest.call(null,s__29733__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26159),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__29735),null);
 }
 } else {
-var i = cljs.core.first.call(null,s__26157__$2);
-return cljs.core.cons.call(null,dep.helpers.form_helpers.rc_input_box.call(null,["Semester ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join(''),cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')).call(null,cljs.core.deref.call(null,form_state)),cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),null,cljs.core.identity,false,form_state),dep$views$manipels$manipel_form_felder_$_iter__26156.call(null,cljs.core.rest.call(null,s__26157__$2)));
+var i = cljs.core.first.call(null,s__29733__$2);
+return cljs.core.cons.call(null,dep.helpers.form_helpers.rc_input_box.call(null,["Semester ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join(''),cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')).call(null,cljs.core.deref.call(null,form_state)),cljs.core.keyword.call(null,["Sem-",cljs.core.str.cljs$core$IFn$_invoke$arity$1(i)].join('')),null,cljs.core.identity,false,form_state),dep$views$manipels$manipel_form_felder_$_iter__29732.call(null,cljs.core.rest.call(null,s__29733__$2)));
 }
 } else {
 return null;
