@@ -31,6 +31,8 @@
 # +STARTUP: inlineimages
 #+REVEAL_EXTRA_CSS: ./mycss/myrevealstyle.css
 
+#+LATEX_HEADER: \newenvironment*{nebeneinander}{}{}
+#+LATEX_HEADER: \newenvironment*{clear}{}{}
 #+LATEX_HEADER: \renewcommand\refname{Quellen}
 #+LATEX_HEADER: \usepackage{textgreek}
 #+LATEX_HEADER: \usemintedstyle{emacs}
