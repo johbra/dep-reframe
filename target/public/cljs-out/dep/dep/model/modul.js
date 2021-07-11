@@ -1,19 +1,24 @@
-// Compiled by ClojureScript 1.10.773 {}
+// Compiled by ClojureScript 1.10.773 {:static-fns true, :optimize-constants true}
 goog.provide('dep.model.modul');
 goog.require('cljs.core');
+goog.require('cljs.core.constants');
 goog.require('dep.model.quartal');
 goog.require('dep.model.manipel');
 /**
  * Erzeugt ein Modul-'Objekt' (hash-map)
  */
 dep.model.modul.__GT_Modul = (function dep$model$modul$__GT_Modul(nummer,name,semesterWochenstunden,studienrichtung,gueltigAb,gueltigBis){
-return new cljs.core.PersistentArrayMap(null, 7, [new cljs.core.Keyword(null,"id","id",-1388402092),cljs.core.gensym.call(null),new cljs.core.Keyword(null,"nummer","nummer",1652450962),nummer,new cljs.core.Keyword(null,"name","name",1843675177),name,new cljs.core.Keyword(null,"semesterWochenstunden","semesterWochenstunden",1725648707),semesterWochenstunden,new cljs.core.Keyword(null,"studienrichtung","studienrichtung",-290576756),studienrichtung,new cljs.core.Keyword(null,"gueltigAb","gueltigAb",-1592672781),gueltigAb,new cljs.core.Keyword(null,"gueltigBis","gueltigBis",-999485251),gueltigBis], null);
+return new cljs.core.PersistentArrayMap(null, 7, [cljs.core.cst$kw$id,cljs.core.gensym.cljs$core$IFn$_invoke$arity$0(),cljs.core.cst$kw$nummer,nummer,cljs.core.cst$kw$name,name,cljs.core.cst$kw$semesterWochenstunden,semesterWochenstunden,cljs.core.cst$kw$studienrichtung,studienrichtung,cljs.core.cst$kw$gueltigAb,gueltigAb,cljs.core.cst$kw$gueltigBis,gueltigBis], null);
 });
 /**
  * Bestimmt die Anzahl der Wochenstunden von modul im semester.
  */
 dep.model.modul.wochenStundenInSemester = (function dep$model$modul$wochenStundenInSemester(modul,semester){
-var n = modul.call(null,new cljs.core.Keyword(null,"semesterWochenstunden","semesterWochenstunden",1725648707)).call(null,semester);
+var n = (function (){var fexpr__24122 = (function (){var G__24123 = cljs.core.cst$kw$semesterWochenstunden;
+return (modul.cljs$core$IFn$_invoke$arity$1 ? modul.cljs$core$IFn$_invoke$arity$1(G__24123) : modul.call(null,G__24123));
+})();
+return (fexpr__24122.cljs$core$IFn$_invoke$arity$1 ? fexpr__24122.cljs$core$IFn$_invoke$arity$1(semester) : fexpr__24122.call(null,semester));
+})();
 if(cljs.core.truth_(n)){
 return n;
 } else {
@@ -25,9 +30,11 @@ return (0);
  *   muss.
  */
 dep.model.modul.mussModulUnterrichtetWerdenFuer_inQuartal_QMARK_ = (function dep$model$modul$mussModulUnterrichtetWerdenFuer_inQuartal_QMARK_(modul,manipel,quartal){
-if(cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"studienrichtung","studienrichtung",-290576756).cljs$core$IFn$_invoke$arity$1(modul),new cljs.core.Keyword(null,"studienrichtung","studienrichtung",-290576756).cljs$core$IFn$_invoke$arity$1(manipel))){
-var semester = dep.model.manipel.semesterInQuartal.call(null,manipel,quartal);
-return ((cljs.core.contains_QMARK_.call(null,new cljs.core.Keyword(null,"semesterWochenstunden","semesterWochenstunden",1725648707).cljs$core$IFn$_invoke$arity$1(modul),semester)) && ((new cljs.core.Keyword(null,"semesterWochenstunden","semesterWochenstunden",1725648707).cljs$core$IFn$_invoke$arity$1(modul).call(null,semester) > (0))) && (dep.model.quartal.liegt_zwischen_QMARK_.call(null,new cljs.core.Keyword(null,"studienbeginn","studienbeginn",1757161852).cljs$core$IFn$_invoke$arity$1(manipel),new cljs.core.Keyword(null,"gueltigAb","gueltigAb",-1592672781).cljs$core$IFn$_invoke$arity$1(modul),new cljs.core.Keyword(null,"gueltigBis","gueltigBis",-999485251).cljs$core$IFn$_invoke$arity$1(modul))));
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$studienrichtung.cljs$core$IFn$_invoke$arity$1(modul),cljs.core.cst$kw$studienrichtung.cljs$core$IFn$_invoke$arity$1(manipel))){
+var semester = dep.model.manipel.semesterInQuartal(manipel,quartal);
+return ((cljs.core.contains_QMARK_(cljs.core.cst$kw$semesterWochenstunden.cljs$core$IFn$_invoke$arity$1(modul),semester)) && (((function (){var fexpr__24127 = cljs.core.cst$kw$semesterWochenstunden.cljs$core$IFn$_invoke$arity$1(modul);
+return (fexpr__24127.cljs$core$IFn$_invoke$arity$1 ? fexpr__24127.cljs$core$IFn$_invoke$arity$1(semester) : fexpr__24127.call(null,semester));
+})() > (0))) && (dep.model.quartal.liegt_zwischen_QMARK_(cljs.core.cst$kw$studienbeginn.cljs$core$IFn$_invoke$arity$1(manipel),cljs.core.cst$kw$gueltigAb.cljs$core$IFn$_invoke$arity$1(modul),cljs.core.cst$kw$gueltigBis.cljs$core$IFn$_invoke$arity$1(modul))));
 } else {
 return false;
 }
@@ -38,12 +45,12 @@ return false;
  *   Die keys der Hash-map sind die Strings 'S1' bis 'S7'.
  */
 dep.model.modul.sws__GT_alle_semester = (function dep$model$modul$sws__GT_alle_semester(sws){
-var sems = cljs.core.range.call(null,(1),(8));
-return cljs.core.zipmap.call(null,cljs.core.map.call(null,(function (p1__31152_SHARP_){
-return cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__31152_SHARP_)].join(''));
-}),sems),cljs.core.map.call(null,(function (p1__31153_SHARP_){
-if(cljs.core.truth_(sws.call(null,p1__31153_SHARP_))){
-return sws.call(null,p1__31153_SHARP_);
+var sems = cljs.core.range.cljs$core$IFn$_invoke$arity$2((1),(8));
+return cljs.core.zipmap(cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__24128_SHARP_){
+return cljs.core.keyword.cljs$core$IFn$_invoke$arity$1(["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__24128_SHARP_)].join(''));
+}),sems),cljs.core.map.cljs$core$IFn$_invoke$arity$2((function (p1__24129_SHARP_){
+if(cljs.core.truth_((sws.cljs$core$IFn$_invoke$arity$1 ? sws.cljs$core$IFn$_invoke$arity$1(p1__24129_SHARP_) : sws.call(null,p1__24129_SHARP_)))){
+return (sws.cljs$core$IFn$_invoke$arity$1 ? sws.cljs$core$IFn$_invoke$arity$1(p1__24129_SHARP_) : sws.call(null,p1__24129_SHARP_));
 } else {
 return (0);
 }
@@ -53,9 +60,7 @@ return (0);
  * Liefert das Modul mit der Nummer symbol aus der Liste module.
  */
 dep.model.modul.modul_mit_nummer = (function dep$model$modul$modul_mit_nummer(module,symbol){
-return cljs.core.first.call(null,cljs.core.filter.call(null,(function (p1__31154_SHARP_){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__31154_SHARP_),symbol);
+return cljs.core.first(cljs.core.filter.cljs$core$IFn$_invoke$arity$2((function (p1__24130_SHARP_){
+return cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.cst$kw$id.cljs$core$IFn$_invoke$arity$1(p1__24130_SHARP_),symbol);
 }),module));
 });
-
-//# sourceMappingURL=modul.js.map

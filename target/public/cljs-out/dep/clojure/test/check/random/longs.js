@@ -1,6 +1,7 @@
-// Compiled by ClojureScript 1.10.773 {}
+// Compiled by ClojureScript 1.10.773 {:static-fns true, :optimize-constants true}
 goog.provide('clojure.test.check.random.longs');
 goog.require('cljs.core');
+goog.require('cljs.core.constants');
 goog.require('clojure.test.check.random.longs.bit_count_impl');
 goog.require('goog.math.Long');
 goog.require('cljs.core');
@@ -60,7 +61,9 @@ var arr = [(0),(0),(0),(0)];
 
 (arr[(3)] = ((arr[(3)]) & (65535)));
 
-return goog.math.Long.fromBits((((arr[(1)]) << (16)) | (arr[(0)])),(((arr[(3)]) << (16)) | (arr[(2)])));
+var G__14402 = (((arr[(1)]) << (16)) | (arr[(0)]));
+var G__14403 = (((arr[(3)]) << (16)) | (arr[(2)]));
+return goog.math.Long.fromBits(G__14402,G__14403);
 });
 clojure.test.check.random.longs.bit_xor = (function clojure$test$check$random$longs$bit_xor(x,y){
 return x.xor(y);
@@ -90,5 +93,3 @@ return null;
 });
 clojure.test.check.random.longs.ONE = goog.math.Long.getOne();
 clojure.test.check.random.longs.bit_count = clojure.test.check.random.longs.bit_count_impl.bit_count;
-
-//# sourceMappingURL=longs.js.map

@@ -1,6 +1,7 @@
-// Compiled by ClojureScript 1.10.773 {}
+// Compiled by ClojureScript 1.10.773 {:static-fns true, :optimize-constants true}
 goog.provide('dep.views.side_nav_bar');
 goog.require('cljs.core');
+goog.require('cljs.core.constants');
 goog.require('dep.model.quartal');
 goog.require('re_frame.core');
 goog.require('dep.views.dozenten');
@@ -11,26 +12,26 @@ goog.require('dep.views.datensicherung');
 goog.require('dep.views.studienrichtungen');
 goog.require('re_com.core');
 dep.views.side_nav_bar.menu_item = (function dep$views$side_nav_bar$menu_item(item,callback_fn){
-return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.hyperlink,new cljs.core.Keyword(null,"label","label",1718410804),item,new cljs.core.Keyword(null,"class","class",-2030961996)," bg-light",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
-return callback_fn.call(null,item);
+return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.hyperlink,cljs.core.cst$kw$label,item,cljs.core.cst$kw$class," bg-light",cljs.core.cst$kw$on_DASH_click,(function (){
+return (callback_fn.cljs$core$IFn$_invoke$arity$1 ? callback_fn.cljs$core$IFn$_invoke$arity$1(item) : callback_fn.call(null,item));
 })], null);
 });
 /**
  * Komponente für das Menü am linken Rand.
  */
 dep.views.side_nav_bar.sidebar = (function dep$views$side_nav_bar$sidebar(){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div#sidebar-wrapper","div#sidebar-wrapper",1043226224),new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.v_box,new cljs.core.Keyword(null,"class","class",-2030961996),"bg-light",new cljs.core.Keyword(null,"min-width","min-width",1926193728),"240px",new cljs.core.Keyword(null,"gap","gap",80255254),"15px",new cljs.core.Keyword(null,"children","children",-940561982),new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.menu_item,"Planung",(function (){
-return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"menu-item-selected","menu-item-selected",1061049935),new cljs.core.Keyword(null,"hauptseite","hauptseite",-227667578)], null));
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div_SHARP_sidebar_DASH_wrapper,new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.v_box,cljs.core.cst$kw$class,"bg-light",cljs.core.cst$kw$min_DASH_width,"240px",cljs.core.cst$kw$gap,"15px",cljs.core.cst$kw$children,new cljs.core.PersistentVector(null, 6, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.menu_item,"Planung",(function (){
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$menu_DASH_item_DASH_selected,cljs.core.cst$kw$hauptseite], null));
 })], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.menu_item,"Dozenten",(function (){
-return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"menu-item-selected","menu-item-selected",1061049935),new cljs.core.Keyword(null,"dozenten","dozenten",688305194)], null));
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$menu_DASH_item_DASH_selected,cljs.core.cst$kw$dozenten], null));
 })], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.menu_item,"Module",(function (){
-return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"menu-item-selected","menu-item-selected",1061049935),new cljs.core.Keyword(null,"module","module",1424618191)], null));
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$menu_DASH_item_DASH_selected,cljs.core.cst$kw$module], null));
 })], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.menu_item,"Manipel",(function (){
-return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"menu-item-selected","menu-item-selected",1061049935),new cljs.core.Keyword(null,"manipels","manipels",626202456)], null));
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$menu_DASH_item_DASH_selected,cljs.core.cst$kw$manipels], null));
 })], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.menu_item,"Studienrichtungen",(function (){
-return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"menu-item-selected","menu-item-selected",1061049935),new cljs.core.Keyword(null,"studienrichtungen","studienrichtungen",805439886)], null));
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$menu_DASH_item_DASH_selected,cljs.core.cst$kw$studienrichtungen], null));
 })], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.menu_item,"Datensicherung",(function (){
-return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"menu-item-selected","menu-item-selected",1061049935),new cljs.core.Keyword(null,"datensicherung","datensicherung",308712383)], null));
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$menu_DASH_item_DASH_selected,cljs.core.cst$kw$datensicherung], null));
 })], null)], null)], null)], null);
 });
 /**
@@ -38,31 +39,32 @@ return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 
  */
 dep.views.side_nav_bar.menu_actions = (function dep$views$side_nav_bar$menu_actions(selected){
 if(cljs.core.truth_(selected)){
-return selected.call(null,new cljs.core.PersistentArrayMap(null, 6, [new cljs.core.Keyword(null,"dozenten","dozenten",688305194),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.dozenten.dozenten], null),new cljs.core.Keyword(null,"manipels","manipels",626202456),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.manipels.manipels], null),new cljs.core.Keyword(null,"module","module",1424618191),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.module.module], null),new cljs.core.Keyword(null,"studienrichtungen","studienrichtungen",805439886),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.studienrichtungen.studienrichtungen], null),new cljs.core.Keyword(null,"datensicherung","datensicherung",308712383),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.datensicherung.datensicherung], null),new cljs.core.Keyword(null,"hauptseite","hauptseite",-227667578),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.planung.planung], null)], null));
+var G__25700 = new cljs.core.PersistentArrayMap(null, 6, [cljs.core.cst$kw$dozenten,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.dozenten.dozenten], null),cljs.core.cst$kw$manipels,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.manipels.manipels], null),cljs.core.cst$kw$module,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.module.module], null),cljs.core.cst$kw$studienrichtungen,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.studienrichtungen.studienrichtungen], null),cljs.core.cst$kw$datensicherung,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.datensicherung.datensicherung], null),cljs.core.cst$kw$hauptseite,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.planung.planung], null)], null);
+return (selected.cljs$core$IFn$_invoke$arity$1 ? selected.cljs$core$IFn$_invoke$arity$1(G__25700) : selected.call(null,G__25700));
 } else {
 return new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.planung.planung], null);
 }
 });
 dep.views.side_nav_bar.select_box = (function dep$views$side_nav_bar$select_box(lable,values,selected_value,callback_fn){
-return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.h_box,new cljs.core.Keyword(null,"gap","gap",80255254),"5px",new cljs.core.Keyword(null,"align","align",1964212802),new cljs.core.Keyword(null,"center","center",-748944368),new cljs.core.Keyword(null,"children","children",-940561982),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.label,new cljs.core.Keyword(null,"label","label",1718410804),lable], null),new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.single_dropdown,new cljs.core.Keyword(null,"choices","choices",1385611597),(function (){var iter__4529__auto__ = (function dep$views$side_nav_bar$select_box_$_iter__23340(s__23341){
+return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.h_box,cljs.core.cst$kw$gap,"5px",cljs.core.cst$kw$align,cljs.core.cst$kw$center,cljs.core.cst$kw$children,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.label,cljs.core.cst$kw$label,lable], null),new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.single_dropdown,cljs.core.cst$kw$choices,(function (){var iter__4529__auto__ = (function dep$views$side_nav_bar$select_box_$_iter__25701(s__25702){
 return (new cljs.core.LazySeq(null,(function (){
-var s__23341__$1 = s__23341;
+var s__25702__$1 = s__25702;
 while(true){
-var temp__5735__auto__ = cljs.core.seq.call(null,s__23341__$1);
+var temp__5735__auto__ = cljs.core.seq(s__25702__$1);
 if(temp__5735__auto__){
-var s__23341__$2 = temp__5735__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__23341__$2)){
-var c__4527__auto__ = cljs.core.chunk_first.call(null,s__23341__$2);
-var size__4528__auto__ = cljs.core.count.call(null,c__4527__auto__);
-var b__23343 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
-if((function (){var i__23342 = (0);
+var s__25702__$2 = temp__5735__auto__;
+if(cljs.core.chunked_seq_QMARK_(s__25702__$2)){
+var c__4527__auto__ = cljs.core.chunk_first(s__25702__$2);
+var size__4528__auto__ = cljs.core.count(c__4527__auto__);
+var b__25704 = cljs.core.chunk_buffer(size__4528__auto__);
+if((function (){var i__25703 = (0);
 while(true){
-if((i__23342 < size__4528__auto__)){
-var v = cljs.core._nth.call(null,c__4527__auto__,i__23342);
-cljs.core.chunk_append.call(null,b__23343,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),v], null),new cljs.core.Keyword(null,"label","label",1718410804),v], null));
+if((i__25703 < size__4528__auto__)){
+var v = cljs.core._nth.cljs$core$IFn$_invoke$arity$2(c__4527__auto__,i__25703);
+cljs.core.chunk_append(b__25704,new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$id,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,v], null),cljs.core.cst$kw$label,v], null));
 
-var G__23344 = (i__23342 + (1));
-i__23342 = G__23344;
+var G__25705 = (i__25703 + (1));
+i__25703 = G__25705;
 continue;
 } else {
 return true;
@@ -70,13 +72,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__23343),dep$views$side_nav_bar$select_box_$_iter__23340.call(null,cljs.core.chunk_rest.call(null,s__23341__$2)));
+return cljs.core.chunk_cons(cljs.core.chunk(b__25704),dep$views$side_nav_bar$select_box_$_iter__25701(cljs.core.chunk_rest(s__25702__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__23343),null);
+return cljs.core.chunk_cons(cljs.core.chunk(b__25704),null);
 }
 } else {
-var v = cljs.core.first.call(null,s__23341__$2);
-return cljs.core.cons.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"id","id",-1388402092),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),v], null),new cljs.core.Keyword(null,"label","label",1718410804),v], null),dep$views$side_nav_bar$select_box_$_iter__23340.call(null,cljs.core.rest.call(null,s__23341__$2)));
+var v = cljs.core.first(s__25702__$2);
+return cljs.core.cons(new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$id,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,v], null),cljs.core.cst$kw$label,v], null),dep$views$side_nav_bar$select_box_$_iter__25701(cljs.core.rest(s__25702__$2)));
 }
 } else {
 return null;
@@ -85,26 +87,24 @@ break;
 }
 }),null,null));
 });
-return iter__4529__auto__.call(null,values);
-})(),new cljs.core.Keyword(null,"model","model",331153215),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"key","key",-1516042587),selected_value], null),new cljs.core.Keyword(null,"on-change","on-change",-732046149),callback_fn], null)], null)], null);
+return iter__4529__auto__(values);
+})(),cljs.core.cst$kw$model,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$key,selected_value], null),cljs.core.cst$kw$on_DASH_change,callback_fn], null)], null)], null);
 });
 /**
  * Die Auswahlboxen für Geschäftsjahr und Quartal und die Planungsschaltfläche.
  */
 dep.views.side_nav_bar.geschaeftjahr_quartal_form = (function dep$views$side_nav_bar$geschaeftjahr_quartal_form(){
-var jahre = cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"jahre","jahre",2053865477)], null)));
-var quartale = cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"quartale","quartale",-602108134)], null)));
-var quartal = cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"quartal","quartal",-467113586)], null)));
-var geschaeftsjahr = cljs.core.deref.call(null,re_frame.core.subscribe.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"geschaeftsjahr","geschaeftsjahr",1407893286)], null)));
-return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.h_box,new cljs.core.Keyword(null,"class","class",-2030961996),"bg-light border-right",new cljs.core.Keyword(null,"gap","gap",80255254),"10px",new cljs.core.Keyword(null,"children","children",-940561982),new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.select_box.call(null,"Gesch\u00E4ftsjahr:",jahre,geschaeftsjahr,(function (p1__23345_SHARP_){
-return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"geschaeftsjahr","geschaeftsjahr",1407893286),new cljs.core.Keyword(null,"key","key",-1516042587).cljs$core$IFn$_invoke$arity$1(p1__23345_SHARP_)], null));
-})),dep.views.side_nav_bar.select_box.call(null,"Quartal:",quartale,dep.model.quartal.quartal__GT_string.call(null,quartal),(function (p1__23346_SHARP_){
-return re_frame.core.dispatch.call(null,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"quartal","quartal",-467113586),new cljs.core.Keyword(null,"key","key",-1516042587).cljs$core$IFn$_invoke$arity$1(p1__23346_SHARP_)], null));
-})),new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.button,new cljs.core.Keyword(null,"class","class",-2030961996),"btn-primary",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
-return dep.views.planung.plane_quartal.call(null);
-}),new cljs.core.Keyword(null,"label","label",1718410804),"Plane Quartal"], null),new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.button,new cljs.core.Keyword(null,"class","class",-2030961996),"btn-primary",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (){
-return dep.views.planung.neues_geschaeftjahr.call(null);
-}),new cljs.core.Keyword(null,"label","label",1718410804),"neues G-Jahr anlegen"], null)], null)], null);
+var jahre = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$jahre], null)));
+var quartale = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$quartale], null)));
+var quartal = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$quartal], null)));
+var geschaeftsjahr = cljs.core.deref(re_frame.core.subscribe.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$geschaeftsjahr], null)));
+return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.h_box,cljs.core.cst$kw$class,"bg-light border-right",cljs.core.cst$kw$gap,"10px",cljs.core.cst$kw$children,new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [dep.views.side_nav_bar.select_box("Gesch\u00E4ftsjahr:",jahre,geschaeftsjahr,(function (p1__25706_SHARP_){
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$geschaeftsjahr,cljs.core.cst$kw$key.cljs$core$IFn$_invoke$arity$1(p1__25706_SHARP_)], null));
+})),dep.views.side_nav_bar.select_box("Quartal:",quartale,dep.model.quartal.quartal__GT_string(quartal),(function (p1__25707_SHARP_){
+return re_frame.core.dispatch(new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$quartal,cljs.core.cst$kw$key.cljs$core$IFn$_invoke$arity$1(p1__25707_SHARP_)], null));
+})),new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.button,cljs.core.cst$kw$class,"btn-primary",cljs.core.cst$kw$on_DASH_click,(function (){
+return dep.views.planung.plane_quartal();
+}),cljs.core.cst$kw$label,"Plane Quartal"], null),new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.core.button,cljs.core.cst$kw$class,"btn-primary",cljs.core.cst$kw$on_DASH_click,(function (){
+return dep.views.planung.neues_geschaeftjahr();
+}),cljs.core.cst$kw$label,"neues G-Jahr anlegen"], null)], null)], null);
 });
-
-//# sourceMappingURL=side_nav_bar.js.map

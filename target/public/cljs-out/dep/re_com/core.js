@@ -1,6 +1,7 @@
-// Compiled by ClojureScript 1.10.773 {}
+// Compiled by ClojureScript 1.10.773 {:static-fns true, :optimize-constants true}
 goog.provide('re_com.core');
 goog.require('cljs.core');
+goog.require('cljs.core.constants');
 goog.require('re_com.alert');
 goog.require('re_com.box');
 goog.require('re_com.buttons');
@@ -88,5 +89,3 @@ re_com.core.make_tour = re_com.tour.make_tour;
 re_com.core.start_tour = re_com.tour.start_tour;
 re_com.core.make_tour_nav = re_com.tour.make_tour_nav;
 re_com.core.stack_spy = re_com.debug.stack_spy;
-
-//# sourceMappingURL=core.js.map

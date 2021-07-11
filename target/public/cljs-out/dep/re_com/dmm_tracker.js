@@ -1,6 +1,7 @@
-// Compiled by ClojureScript 1.10.773 {}
+// Compiled by ClojureScript 1.10.773 {:static-fns true, :optimize-constants true}
 goog.provide('re_com.dmm_tracker');
 goog.require('cljs.core');
+goog.require('cljs.core.constants');
 /**
  * Listen to DOM events during the bubble phase
  *   arg1   Event type, e.g. "click" or "mouseover"
@@ -25,17 +26,17 @@ throw (new Error("Couldn't find addEventListener method in document-event-listen
  */
 re_com.dmm_tracker.IMouseMoveTracker = function(){};
 
-var re_com$dmm_tracker$IMouseMoveTracker$captureMouseMoves$dyn_22267 = (function (this$,event){
+var re_com$dmm_tracker$IMouseMoveTracker$captureMouseMoves$dyn_19964 = (function (this$,event){
 var x__4428__auto__ = (((this$ == null))?null:this$);
 var m__4429__auto__ = (re_com.dmm_tracker.captureMouseMoves[goog.typeOf(x__4428__auto__)]);
 if((!((m__4429__auto__ == null)))){
-return m__4429__auto__.call(null,this$,event);
+return (m__4429__auto__.cljs$core$IFn$_invoke$arity$2 ? m__4429__auto__.cljs$core$IFn$_invoke$arity$2(this$,event) : m__4429__auto__.call(null,this$,event));
 } else {
 var m__4426__auto__ = (re_com.dmm_tracker.captureMouseMoves["_"]);
 if((!((m__4426__auto__ == null)))){
-return m__4426__auto__.call(null,this$,event);
+return (m__4426__auto__.cljs$core$IFn$_invoke$arity$2 ? m__4426__auto__.cljs$core$IFn$_invoke$arity$2(this$,event) : m__4426__auto__.call(null,this$,event));
 } else {
-throw cljs.core.missing_protocol.call(null,"IMouseMoveTracker.captureMouseMoves",this$);
+throw cljs.core.missing_protocol("IMouseMoveTracker.captureMouseMoves",this$);
 }
 }
 });
@@ -43,21 +44,21 @@ re_com.dmm_tracker.captureMouseMoves = (function re_com$dmm_tracker$captureMouse
 if((((!((this$ == null)))) && ((!((this$.re_com$dmm_tracker$IMouseMoveTracker$captureMouseMoves$arity$2 == null)))))){
 return this$.re_com$dmm_tracker$IMouseMoveTracker$captureMouseMoves$arity$2(this$,event);
 } else {
-return re_com$dmm_tracker$IMouseMoveTracker$captureMouseMoves$dyn_22267.call(null,this$,event);
+return re_com$dmm_tracker$IMouseMoveTracker$captureMouseMoves$dyn_19964(this$,event);
 }
 });
 
-var re_com$dmm_tracker$IMouseMoveTracker$_releaseMouseMoves$dyn_22268 = (function (this$,event){
+var re_com$dmm_tracker$IMouseMoveTracker$_releaseMouseMoves$dyn_19965 = (function (this$,event){
 var x__4428__auto__ = (((this$ == null))?null:this$);
 var m__4429__auto__ = (re_com.dmm_tracker._releaseMouseMoves[goog.typeOf(x__4428__auto__)]);
 if((!((m__4429__auto__ == null)))){
-return m__4429__auto__.call(null,this$,event);
+return (m__4429__auto__.cljs$core$IFn$_invoke$arity$2 ? m__4429__auto__.cljs$core$IFn$_invoke$arity$2(this$,event) : m__4429__auto__.call(null,this$,event));
 } else {
 var m__4426__auto__ = (re_com.dmm_tracker._releaseMouseMoves["_"]);
 if((!((m__4426__auto__ == null)))){
-return m__4426__auto__.call(null,this$,event);
+return (m__4426__auto__.cljs$core$IFn$_invoke$arity$2 ? m__4426__auto__.cljs$core$IFn$_invoke$arity$2(this$,event) : m__4426__auto__.call(null,this$,event));
 } else {
-throw cljs.core.missing_protocol.call(null,"IMouseMoveTracker.-releaseMouseMoves",this$);
+throw cljs.core.missing_protocol("IMouseMoveTracker.-releaseMouseMoves",this$);
 }
 }
 });
@@ -65,21 +66,21 @@ re_com.dmm_tracker._releaseMouseMoves = (function re_com$dmm_tracker$_releaseMou
 if((((!((this$ == null)))) && ((!((this$.re_com$dmm_tracker$IMouseMoveTracker$_releaseMouseMoves$arity$2 == null)))))){
 return this$.re_com$dmm_tracker$IMouseMoveTracker$_releaseMouseMoves$arity$2(this$,event);
 } else {
-return re_com$dmm_tracker$IMouseMoveTracker$_releaseMouseMoves$dyn_22268.call(null,this$,event);
+return re_com$dmm_tracker$IMouseMoveTracker$_releaseMouseMoves$dyn_19965(this$,event);
 }
 });
 
-var re_com$dmm_tracker$IMouseMoveTracker$_onMouseMove$dyn_22269 = (function (this$,event){
+var re_com$dmm_tracker$IMouseMoveTracker$_onMouseMove$dyn_19966 = (function (this$,event){
 var x__4428__auto__ = (((this$ == null))?null:this$);
 var m__4429__auto__ = (re_com.dmm_tracker._onMouseMove[goog.typeOf(x__4428__auto__)]);
 if((!((m__4429__auto__ == null)))){
-return m__4429__auto__.call(null,this$,event);
+return (m__4429__auto__.cljs$core$IFn$_invoke$arity$2 ? m__4429__auto__.cljs$core$IFn$_invoke$arity$2(this$,event) : m__4429__auto__.call(null,this$,event));
 } else {
 var m__4426__auto__ = (re_com.dmm_tracker._onMouseMove["_"]);
 if((!((m__4426__auto__ == null)))){
-return m__4426__auto__.call(null,this$,event);
+return (m__4426__auto__.cljs$core$IFn$_invoke$arity$2 ? m__4426__auto__.cljs$core$IFn$_invoke$arity$2(this$,event) : m__4426__auto__.call(null,this$,event));
 } else {
-throw cljs.core.missing_protocol.call(null,"IMouseMoveTracker.-onMouseMove",this$);
+throw cljs.core.missing_protocol("IMouseMoveTracker.-onMouseMove",this$);
 }
 }
 });
@@ -87,7 +88,7 @@ re_com.dmm_tracker._onMouseMove = (function re_com$dmm_tracker$_onMouseMove(this
 if((((!((this$ == null)))) && ((!((this$.re_com$dmm_tracker$IMouseMoveTracker$_onMouseMove$arity$2 == null)))))){
 return this$.re_com$dmm_tracker$IMouseMoveTracker$_onMouseMove$arity$2(this$,event);
 } else {
-return re_com$dmm_tracker$IMouseMoveTracker$_onMouseMove$dyn_22269.call(null,this$,event);
+return re_com$dmm_tracker$IMouseMoveTracker$_onMouseMove$dyn_19966(this$,event);
 }
 });
 
@@ -110,13 +111,13 @@ this.y = y;
 (re_com.dmm_tracker.MouseMoveTracker.prototype.re_com$dmm_tracker$IMouseMoveTracker$captureMouseMoves$arity$2 = (function (this$,event){
 var self__ = this;
 var this$__$1 = this;
-if(((cljs.core.not.call(null,self__.eventMoveToken)) && (cljs.core.not.call(null,self__.eventUpToken)))){
-(self__.eventMoveToken = re_com.dmm_tracker.document_event_listener.call(null,"mousemove",(function (p1__22270_SHARP_){
-return re_com.dmm_tracker._onMouseMove.call(null,this$__$1,p1__22270_SHARP_);
+if(((cljs.core.not(self__.eventMoveToken)) && (cljs.core.not(self__.eventUpToken)))){
+(self__.eventMoveToken = re_com.dmm_tracker.document_event_listener("mousemove",(function (p1__19967_SHARP_){
+return this$__$1.re_com$dmm_tracker$IMouseMoveTracker$_onMouseMove$arity$2(null,p1__19967_SHARP_);
 })));
 
-(self__.eventUpToken = re_com.dmm_tracker.document_event_listener.call(null,"mouseup",(function (p1__22271_SHARP_){
-return re_com.dmm_tracker._releaseMouseMoves.call(null,this$__$1,p1__22271_SHARP_);
+(self__.eventUpToken = re_com.dmm_tracker.document_event_listener("mouseup",(function (p1__19968_SHARP_){
+return this$__$1.re_com$dmm_tracker$IMouseMoveTracker$_releaseMouseMoves$arity$2(null,p1__19968_SHARP_);
 })));
 } else {
 }
@@ -136,14 +137,14 @@ return (self__.y = event.clientY);
 var self__ = this;
 var this$__$1 = this;
 if(cljs.core.truth_(self__.eventMoveToken)){
-self__.eventMoveToken.call(null);
+(self__.eventMoveToken.cljs$core$IFn$_invoke$arity$0 ? self__.eventMoveToken.cljs$core$IFn$_invoke$arity$0() : self__.eventMoveToken.call(null));
 
 (self__.eventMoveToken = null);
 } else {
 }
 
 if(cljs.core.truth_(self__.eventUpToken)){
-self__.eventUpToken.call(null);
+(self__.eventUpToken.cljs$core$IFn$_invoke$arity$0 ? self__.eventUpToken.cljs$core$IFn$_invoke$arity$0() : self__.eventUpToken.call(null));
 
 (self__.eventUpToken = null);
 } else {
@@ -156,7 +157,10 @@ if(cljs.core.truth_(self__.isDragging_QMARK_)){
 
 (self__.y = null);
 
-return self__.on_drag_end.call(null,event.ctrlKey,event.shiftKey,event);
+var G__19969 = event.ctrlKey;
+var G__19970 = event.shiftKey;
+var G__19971 = event;
+return (self__.on_drag_end.cljs$core$IFn$_invoke$arity$3 ? self__.on_drag_end.cljs$core$IFn$_invoke$arity$3(G__19969,G__19970,G__19971) : self__.on_drag_end.call(null,G__19969,G__19970,G__19971));
 } else {
 return null;
 }
@@ -169,7 +173,14 @@ var curr_x = event.clientX;
 var curr_y = event.clientY;
 var delta_x = (curr_x - self__.x);
 var delta_y = (curr_y - self__.y);
-self__.on_change.call(null,delta_x,delta_y,curr_x,curr_y,event.ctrlKey,event.shiftKey,event);
+var G__19972_19979 = delta_x;
+var G__19973_19980 = delta_y;
+var G__19974_19981 = curr_x;
+var G__19975_19982 = curr_y;
+var G__19976_19983 = event.ctrlKey;
+var G__19977_19984 = event.shiftKey;
+var G__19978_19985 = event;
+(self__.on_change.cljs$core$IFn$_invoke$arity$7 ? self__.on_change.cljs$core$IFn$_invoke$arity$7(G__19972_19979,G__19973_19980,G__19974_19981,G__19975_19982,G__19976_19983,G__19977_19984,G__19978_19985) : self__.on_change.call(null,G__19972_19979,G__19973_19980,G__19974_19981,G__19975_19982,G__19976_19983,G__19977_19984,G__19978_19985));
 
 (self__.x = curr_x);
 
@@ -179,7 +190,7 @@ return event.preventDefault();
 }));
 
 (re_com.dmm_tracker.MouseMoveTracker.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"on-change","on-change",908485378,null),new cljs.core.Symbol(null,"on-drag-end","on-drag-end",-2134163098,null),cljs.core.with_meta(new cljs.core.Symbol(null,"eventMoveToken","eventMoveToken",600656310,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"mutable","mutable",875778266),true], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"eventUpToken","eventUpToken",-1044363884,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"mutable","mutable",875778266),true], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"isDragging?","isDragging?",-691405813,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"mutable","mutable",875778266),true], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"x","x",-555367584,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"mutable","mutable",875778266),true], null)),cljs.core.with_meta(new cljs.core.Symbol(null,"y","y",-117328249,null),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"mutable","mutable",875778266),true], null))], null);
+return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$sym$on_DASH_change,cljs.core.cst$sym$on_DASH_drag_DASH_end,cljs.core.with_meta(cljs.core.cst$sym$eventMoveToken,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$mutable,true], null)),cljs.core.with_meta(cljs.core.cst$sym$eventUpToken,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$mutable,true], null)),cljs.core.with_meta(cljs.core.cst$sym$isDragging_QMARK_,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$mutable,true], null)),cljs.core.with_meta(cljs.core.cst$sym$x,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$mutable,true], null)),cljs.core.with_meta(cljs.core.cst$sym$y,new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$mutable,true], null))], null);
 }));
 
 (re_com.dmm_tracker.MouseMoveTracker.cljs$lang$type = true);
@@ -187,7 +198,7 @@ return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMP
 (re_com.dmm_tracker.MouseMoveTracker.cljs$lang$ctorStr = "re-com.dmm-tracker/MouseMoveTracker");
 
 (re_com.dmm_tracker.MouseMoveTracker.cljs$lang$ctorPrWriter = (function (this__4369__auto__,writer__4370__auto__,opt__4371__auto__){
-return cljs.core._write.call(null,writer__4370__auto__,"re-com.dmm-tracker/MouseMoveTracker");
+return cljs.core._write(writer__4370__auto__,"re-com.dmm-tracker/MouseMoveTracker");
 }));
 
 /**
@@ -198,7 +209,5 @@ return (new re_com.dmm_tracker.MouseMoveTracker(on_change,on_drag_end,eventMoveT
 });
 
 re_com.dmm_tracker.make_dmm_tracker = (function re_com$dmm_tracker$make_dmm_tracker(on_change,on_drag_end){
-return re_com.dmm_tracker.__GT_MouseMoveTracker.call(null,on_change,on_drag_end,null,null,false,null,null);
+return re_com.dmm_tracker.__GT_MouseMoveTracker(on_change,on_drag_end,null,null,false,null,null);
 });
-
-//# sourceMappingURL=dmm_tracker.js.map

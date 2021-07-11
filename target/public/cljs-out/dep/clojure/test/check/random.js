@@ -1,6 +1,7 @@
-// Compiled by ClojureScript 1.10.773 {}
+// Compiled by ClojureScript 1.10.773 {:static-fns true, :optimize-constants true}
 goog.provide('clojure.test.check.random');
 goog.require('cljs.core');
+goog.require('cljs.core.constants');
 goog.require('clojure.test.check.random.doubles');
 goog.require('clojure.test.check.random.longs');
 
@@ -9,17 +10,17 @@ goog.require('clojure.test.check.random.longs');
  */
 clojure.test.check.random.IRandom = function(){};
 
-var clojure$test$check$random$IRandom$rand_long$dyn_27065 = (function (rng){
+var clojure$test$check$random$IRandom$rand_long$dyn_21172 = (function (rng){
 var x__4428__auto__ = (((rng == null))?null:rng);
 var m__4429__auto__ = (clojure.test.check.random.rand_long[goog.typeOf(x__4428__auto__)]);
 if((!((m__4429__auto__ == null)))){
-return m__4429__auto__.call(null,rng);
+return (m__4429__auto__.cljs$core$IFn$_invoke$arity$1 ? m__4429__auto__.cljs$core$IFn$_invoke$arity$1(rng) : m__4429__auto__.call(null,rng));
 } else {
 var m__4426__auto__ = (clojure.test.check.random.rand_long["_"]);
 if((!((m__4426__auto__ == null)))){
-return m__4426__auto__.call(null,rng);
+return (m__4426__auto__.cljs$core$IFn$_invoke$arity$1 ? m__4426__auto__.cljs$core$IFn$_invoke$arity$1(rng) : m__4426__auto__.call(null,rng));
 } else {
-throw cljs.core.missing_protocol.call(null,"IRandom.rand-long",rng);
+throw cljs.core.missing_protocol("IRandom.rand-long",rng);
 }
 }
 });
@@ -33,21 +34,21 @@ clojure.test.check.random.rand_long = (function clojure$test$check$random$rand_l
 if((((!((rng == null)))) && ((!((rng.clojure$test$check$random$IRandom$rand_long$arity$1 == null)))))){
 return rng.clojure$test$check$random$IRandom$rand_long$arity$1(rng);
 } else {
-return clojure$test$check$random$IRandom$rand_long$dyn_27065.call(null,rng);
+return clojure$test$check$random$IRandom$rand_long$dyn_21172(rng);
 }
 });
 
-var clojure$test$check$random$IRandom$rand_double$dyn_27066 = (function (rng){
+var clojure$test$check$random$IRandom$rand_double$dyn_21173 = (function (rng){
 var x__4428__auto__ = (((rng == null))?null:rng);
 var m__4429__auto__ = (clojure.test.check.random.rand_double[goog.typeOf(x__4428__auto__)]);
 if((!((m__4429__auto__ == null)))){
-return m__4429__auto__.call(null,rng);
+return (m__4429__auto__.cljs$core$IFn$_invoke$arity$1 ? m__4429__auto__.cljs$core$IFn$_invoke$arity$1(rng) : m__4429__auto__.call(null,rng));
 } else {
 var m__4426__auto__ = (clojure.test.check.random.rand_double["_"]);
 if((!((m__4426__auto__ == null)))){
-return m__4426__auto__.call(null,rng);
+return (m__4426__auto__.cljs$core$IFn$_invoke$arity$1 ? m__4426__auto__.cljs$core$IFn$_invoke$arity$1(rng) : m__4426__auto__.call(null,rng));
 } else {
-throw cljs.core.missing_protocol.call(null,"IRandom.rand-double",rng);
+throw cljs.core.missing_protocol("IRandom.rand-double",rng);
 }
 }
 });
@@ -62,21 +63,21 @@ clojure.test.check.random.rand_double = (function clojure$test$check$random$rand
 if((((!((rng == null)))) && ((!((rng.clojure$test$check$random$IRandom$rand_double$arity$1 == null)))))){
 return rng.clojure$test$check$random$IRandom$rand_double$arity$1(rng);
 } else {
-return clojure$test$check$random$IRandom$rand_double$dyn_27066.call(null,rng);
+return clojure$test$check$random$IRandom$rand_double$dyn_21173(rng);
 }
 });
 
-var clojure$test$check$random$IRandom$split$dyn_27067 = (function (rng){
+var clojure$test$check$random$IRandom$split$dyn_21174 = (function (rng){
 var x__4428__auto__ = (((rng == null))?null:rng);
 var m__4429__auto__ = (clojure.test.check.random.split[goog.typeOf(x__4428__auto__)]);
 if((!((m__4429__auto__ == null)))){
-return m__4429__auto__.call(null,rng);
+return (m__4429__auto__.cljs$core$IFn$_invoke$arity$1 ? m__4429__auto__.cljs$core$IFn$_invoke$arity$1(rng) : m__4429__auto__.call(null,rng));
 } else {
 var m__4426__auto__ = (clojure.test.check.random.split["_"]);
 if((!((m__4426__auto__ == null)))){
-return m__4426__auto__.call(null,rng);
+return (m__4426__auto__.cljs$core$IFn$_invoke$arity$1 ? m__4426__auto__.cljs$core$IFn$_invoke$arity$1(rng) : m__4426__auto__.call(null,rng));
 } else {
-throw cljs.core.missing_protocol.call(null,"IRandom.split",rng);
+throw cljs.core.missing_protocol("IRandom.split",rng);
 }
 }
 });
@@ -91,21 +92,21 @@ clojure.test.check.random.split = (function clojure$test$check$random$split(rng)
 if((((!((rng == null)))) && ((!((rng.clojure$test$check$random$IRandom$split$arity$1 == null)))))){
 return rng.clojure$test$check$random$IRandom$split$arity$1(rng);
 } else {
-return clojure$test$check$random$IRandom$split$dyn_27067.call(null,rng);
+return clojure$test$check$random$IRandom$split$dyn_21174(rng);
 }
 });
 
-var clojure$test$check$random$IRandom$split_n$dyn_27068 = (function (rng,n){
+var clojure$test$check$random$IRandom$split_n$dyn_21175 = (function (rng,n){
 var x__4428__auto__ = (((rng == null))?null:rng);
 var m__4429__auto__ = (clojure.test.check.random.split_n[goog.typeOf(x__4428__auto__)]);
 if((!((m__4429__auto__ == null)))){
-return m__4429__auto__.call(null,rng,n);
+return (m__4429__auto__.cljs$core$IFn$_invoke$arity$2 ? m__4429__auto__.cljs$core$IFn$_invoke$arity$2(rng,n) : m__4429__auto__.call(null,rng,n));
 } else {
 var m__4426__auto__ = (clojure.test.check.random.split_n["_"]);
 if((!((m__4426__auto__ == null)))){
-return m__4426__auto__.call(null,rng,n);
+return (m__4426__auto__.cljs$core$IFn$_invoke$arity$2 ? m__4426__auto__.cljs$core$IFn$_invoke$arity$2(rng,n) : m__4426__auto__.call(null,rng,n));
 } else {
-throw cljs.core.missing_protocol.call(null,"IRandom.split-n",rng);
+throw cljs.core.missing_protocol("IRandom.split-n",rng);
 }
 }
 });
@@ -120,7 +121,7 @@ clojure.test.check.random.split_n = (function clojure$test$check$random$split_n(
 if((((!((rng == null)))) && ((!((rng.clojure$test$check$random$IRandom$split_n$arity$2 == null)))))){
 return rng.clojure$test$check$random$IRandom$split_n$arity$2(rng,n);
 } else {
-return clojure$test$check$random$IRandom$split_n$dyn_27068.call(null,rng,n);
+return clojure$test$check$random$IRandom$split_n$dyn_21175(rng,n);
 }
 });
 
@@ -128,29 +129,31 @@ return clojure$test$check$random$IRandom$split_n$dyn_27068.call(null,rng,n);
  * Helper for defining constants.
  */
 clojure.test.check.random.hex_long = (function clojure$test$check$random$hex_long(s){
-return clojure.test.check.random.longs.from_string.call(null,s,(16));
+return clojure.test.check.random.longs.from_string(s,(16));
 });
 /**
  * Performs (-> x (unsigned-bit-shift-right n) (bit-xor x)).
  */
 clojure.test.check.random.bxoubsr = (function clojure$test$check$random$bxoubsr(x,n){
-return clojure.test.check.random.longs.bit_xor.call(null,clojure.test.check.random.longs.unsigned_bit_shift_right.call(null,x,n),x);
+return clojure.test.check.random.longs.bit_xor(clojure.test.check.random.longs.unsigned_bit_shift_right(x,n),x);
 });
-clojure.test.check.random.mix_64_const_1 = clojure.test.check.random.hex_long.call(null,"bf58476d1ce4e5b9");
-clojure.test.check.random.mix_64_const_2 = clojure.test.check.random.hex_long.call(null,"94d049bb133111eb");
+clojure.test.check.random.mix_64_const_1 = clojure.test.check.random.hex_long("bf58476d1ce4e5b9");
+clojure.test.check.random.mix_64_const_2 = clojure.test.check.random.hex_long("94d049bb133111eb");
 clojure.test.check.random.mix_64 = (function clojure$test$check$random$mix_64(n){
-return clojure.test.check.random.bxoubsr.call(null,clojure.test.check.random.longs._STAR_.call(null,clojure.test.check.random.bxoubsr.call(null,clojure.test.check.random.longs._STAR_.call(null,clojure.test.check.random.bxoubsr.call(null,n,(30)),clojure.test.check.random.mix_64_const_1),(27)),clojure.test.check.random.mix_64_const_2),(31));
+return clojure.test.check.random.bxoubsr(clojure.test.check.random.longs._STAR_(clojure.test.check.random.bxoubsr(clojure.test.check.random.longs._STAR_(clojure.test.check.random.bxoubsr(n,(30)),clojure.test.check.random.mix_64_const_1),(27)),clojure.test.check.random.mix_64_const_2),(31));
 });
-clojure.test.check.random.mix_gamma_const_1 = clojure.test.check.random.hex_long.call(null,"ff51afd7ed558ccd");
-clojure.test.check.random.mix_gamma_const_2 = clojure.test.check.random.hex_long.call(null,"c4ceb9fe1a85ec53");
-clojure.test.check.random.mix_gamma_const_3 = clojure.test.check.random.hex_long.call(null,"aaaaaaaaaaaaaaaa");
+clojure.test.check.random.mix_gamma_const_1 = clojure.test.check.random.hex_long("ff51afd7ed558ccd");
+clojure.test.check.random.mix_gamma_const_2 = clojure.test.check.random.hex_long("c4ceb9fe1a85ec53");
+clojure.test.check.random.mix_gamma_const_3 = clojure.test.check.random.hex_long("aaaaaaaaaaaaaaaa");
 clojure.test.check.random.mix_gamma = (function clojure$test$check$random$mix_gamma(n){
-var z = clojure.test.check.random.longs.bit_or.call(null,clojure.test.check.random.bxoubsr.call(null,clojure.test.check.random.longs._STAR_.call(null,clojure.test.check.random.bxoubsr.call(null,clojure.test.check.random.longs._STAR_.call(null,clojure.test.check.random.bxoubsr.call(null,n,(33)),clojure.test.check.random.mix_gamma_const_1),(33)),clojure.test.check.random.mix_gamma_const_2),(33)),clojure.test.check.random.longs.ONE);
-var G__27069 = z;
-if(((24) > clojure.test.check.random.longs.bit_count.call(null,clojure.test.check.random.bxoubsr.call(null,z,(1))))){
-return clojure.test.check.random.longs.bit_xor.call(null,G__27069,clojure.test.check.random.mix_gamma_const_3);
+var z = clojure.test.check.random.longs.bit_or(clojure.test.check.random.bxoubsr(clojure.test.check.random.longs._STAR_(clojure.test.check.random.bxoubsr(clojure.test.check.random.longs._STAR_(clojure.test.check.random.bxoubsr(n,(33)),clojure.test.check.random.mix_gamma_const_1),(33)),clojure.test.check.random.mix_gamma_const_2),(33)),clojure.test.check.random.longs.ONE);
+var G__21176 = z;
+if(((24) > (function (){var G__21177 = clojure.test.check.random.bxoubsr(z,(1));
+return (clojure.test.check.random.longs.bit_count.cljs$core$IFn$_invoke$arity$1 ? clojure.test.check.random.longs.bit_count.cljs$core$IFn$_invoke$arity$1(G__21177) : clojure.test.check.random.longs.bit_count.call(null,G__21177));
+})())){
+return clojure.test.check.random.longs.bit_xor(G__21176,clojure.test.check.random.mix_gamma_const_3);
 } else {
-return G__27069;
+return G__21176;
 }
 });
 
@@ -167,29 +170,29 @@ this.state = state;
 (clojure.test.check.random.JavaUtilSplittableRandom.prototype.clojure$test$check$random$IRandom$rand_long$arity$1 = (function (_){
 var self__ = this;
 var ___$1 = this;
-return clojure.test.check.random.mix_64.call(null,clojure.test.check.random.longs._PLUS_.call(null,self__.state,self__.gamma));
+return clojure.test.check.random.mix_64(clojure.test.check.random.longs._PLUS_(self__.state,self__.gamma));
 }));
 
 (clojure.test.check.random.JavaUtilSplittableRandom.prototype.clojure$test$check$random$IRandom$rand_double$arity$1 = (function (this$){
 var self__ = this;
 var this$__$1 = this;
-return clojure.test.check.random.doubles.rand_long__GT_rand_double.call(null,clojure.test.check.random.rand_long.call(null,this$__$1));
+return clojure.test.check.random.doubles.rand_long__GT_rand_double(this$__$1.clojure$test$check$random$IRandom$rand_long$arity$1(null));
 }));
 
 (clojure.test.check.random.JavaUtilSplittableRandom.prototype.clojure$test$check$random$IRandom$split$arity$1 = (function (this$){
 var self__ = this;
 var this$__$1 = this;
-var state_SINGLEQUOTE_ = clojure.test.check.random.longs._PLUS_.call(null,self__.gamma,self__.state);
-var state_SINGLEQUOTE__SINGLEQUOTE_ = clojure.test.check.random.longs._PLUS_.call(null,self__.gamma,state_SINGLEQUOTE_);
-var gamma_SINGLEQUOTE_ = clojure.test.check.random.mix_gamma.call(null,state_SINGLEQUOTE__SINGLEQUOTE_);
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new clojure.test.check.random.JavaUtilSplittableRandom(self__.gamma,state_SINGLEQUOTE__SINGLEQUOTE_)),(new clojure.test.check.random.JavaUtilSplittableRandom(gamma_SINGLEQUOTE_,clojure.test.check.random.mix_64.call(null,state_SINGLEQUOTE_)))], null);
+var state_SINGLEQUOTE_ = clojure.test.check.random.longs._PLUS_(self__.gamma,self__.state);
+var state_SINGLEQUOTE__SINGLEQUOTE_ = clojure.test.check.random.longs._PLUS_(self__.gamma,state_SINGLEQUOTE_);
+var gamma_SINGLEQUOTE_ = clojure.test.check.random.mix_gamma(state_SINGLEQUOTE__SINGLEQUOTE_);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [(new clojure.test.check.random.JavaUtilSplittableRandom(self__.gamma,state_SINGLEQUOTE__SINGLEQUOTE_)),(new clojure.test.check.random.JavaUtilSplittableRandom(gamma_SINGLEQUOTE_,clojure.test.check.random.mix_64(state_SINGLEQUOTE_)))], null);
 }));
 
 (clojure.test.check.random.JavaUtilSplittableRandom.prototype.clojure$test$check$random$IRandom$split_n$arity$2 = (function (this$,n){
 var self__ = this;
 var this$__$1 = this;
-var G__27070 = n;
-switch (G__27070) {
+var G__21178 = n;
+switch (G__21178) {
 case (0):
 return cljs.core.PersistentVector.EMPTY;
 
@@ -201,19 +204,19 @@ break;
 default:
 var n_dec = (n - (1));
 var state__$1 = self__.state;
-var ret = cljs.core.transient$.call(null,cljs.core.PersistentVector.EMPTY);
+var ret = cljs.core.transient$(cljs.core.PersistentVector.EMPTY);
 while(true){
-if(cljs.core._EQ_.call(null,n_dec,cljs.core.count.call(null,ret))){
-return cljs.core.persistent_BANG_.call(null,cljs.core.conj_BANG_.call(null,ret,(new clojure.test.check.random.JavaUtilSplittableRandom(self__.gamma,state__$1))));
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(n_dec,cljs.core.count(ret))){
+return cljs.core.persistent_BANG_(cljs.core.conj_BANG_.cljs$core$IFn$_invoke$arity$2(ret,(new clojure.test.check.random.JavaUtilSplittableRandom(self__.gamma,state__$1))));
 } else {
-var state_SINGLEQUOTE_ = clojure.test.check.random.longs._PLUS_.call(null,self__.gamma,state__$1);
-var state_SINGLEQUOTE__SINGLEQUOTE_ = clojure.test.check.random.longs._PLUS_.call(null,self__.gamma,state_SINGLEQUOTE_);
-var gamma_SINGLEQUOTE_ = clojure.test.check.random.mix_gamma.call(null,state_SINGLEQUOTE__SINGLEQUOTE_);
-var new_rng = (new clojure.test.check.random.JavaUtilSplittableRandom(gamma_SINGLEQUOTE_,clojure.test.check.random.mix_64.call(null,state_SINGLEQUOTE_)));
-var G__27072 = state_SINGLEQUOTE__SINGLEQUOTE_;
-var G__27073 = cljs.core.conj_BANG_.call(null,ret,new_rng);
-state__$1 = G__27072;
-ret = G__27073;
+var state_SINGLEQUOTE_ = clojure.test.check.random.longs._PLUS_(self__.gamma,state__$1);
+var state_SINGLEQUOTE__SINGLEQUOTE_ = clojure.test.check.random.longs._PLUS_(self__.gamma,state_SINGLEQUOTE_);
+var gamma_SINGLEQUOTE_ = clojure.test.check.random.mix_gamma(state_SINGLEQUOTE__SINGLEQUOTE_);
+var new_rng = (new clojure.test.check.random.JavaUtilSplittableRandom(gamma_SINGLEQUOTE_,clojure.test.check.random.mix_64(state_SINGLEQUOTE_)));
+var G__21180 = state_SINGLEQUOTE__SINGLEQUOTE_;
+var G__21181 = cljs.core.conj_BANG_.cljs$core$IFn$_invoke$arity$2(ret,new_rng);
+state__$1 = G__21180;
+ret = G__21181;
 continue;
 }
 break;
@@ -223,7 +226,7 @@ break;
 }));
 
 (clojure.test.check.random.JavaUtilSplittableRandom.getBasis = (function (){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Symbol(null,"gamma","gamma",-770466082,null),new cljs.core.Symbol(null,"state","state",-348086572,null)], null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$sym$gamma,cljs.core.cst$sym$state], null);
 }));
 
 (clojure.test.check.random.JavaUtilSplittableRandom.cljs$lang$type = true);
@@ -231,7 +234,7 @@ return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMP
 (clojure.test.check.random.JavaUtilSplittableRandom.cljs$lang$ctorStr = "clojure.test.check.random/JavaUtilSplittableRandom");
 
 (clojure.test.check.random.JavaUtilSplittableRandom.cljs$lang$ctorPrWriter = (function (this__4369__auto__,writer__4370__auto__,opt__4371__auto__){
-return cljs.core._write.call(null,writer__4370__auto__,"clojure.test.check.random/JavaUtilSplittableRandom");
+return cljs.core._write(writer__4370__auto__,"clojure.test.check.random/JavaUtilSplittableRandom");
 }));
 
 /**
@@ -241,26 +244,26 @@ clojure.test.check.random.__GT_JavaUtilSplittableRandom = (function clojure$test
 return (new clojure.test.check.random.JavaUtilSplittableRandom(gamma,state));
 });
 
-clojure.test.check.random.golden_gamma = clojure.test.check.random.hex_long.call(null,"9e3779b97f4a7c15");
+clojure.test.check.random.golden_gamma = clojure.test.check.random.hex_long("9e3779b97f4a7c15");
 clojure.test.check.random.make_java_util_splittable_random = (function clojure$test$check$random$make_java_util_splittable_random(seed){
-return (new clojure.test.check.random.JavaUtilSplittableRandom(clojure.test.check.random.golden_gamma,(function (){var or__4126__auto__ = clojure.test.check.random.longs.__GT_long.call(null,seed);
+return (new clojure.test.check.random.JavaUtilSplittableRandom(clojure.test.check.random.golden_gamma,(function (){var or__4126__auto__ = clojure.test.check.random.longs.__GT_long(seed);
 if(cljs.core.truth_(or__4126__auto__)){
 return or__4126__auto__;
 } else {
-throw cljs.core.ex_info.call(null,"Bad random seed!",new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"seed","seed",68613327),seed], null));
+throw cljs.core.ex_info.cljs$core$IFn$_invoke$arity$2("Bad random seed!",new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$seed,seed], null));
 }
 })()));
 });
-clojure.test.check.random.next_rng = (function (){var a = cljs.core.atom.call(null,new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"state","state",-1988618099),clojure.test.check.random.make_java_util_splittable_random.call(null,(new Date()).valueOf())], null));
+clojure.test.check.random.next_rng = (function (){var a = cljs.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentArrayMap(null, 1, [cljs.core.cst$kw$state,clojure.test.check.random.make_java_util_splittable_random((new Date()).valueOf())], null));
 return (function (){
-return new cljs.core.Keyword(null,"returned","returned",-2020439163).cljs$core$IFn$_invoke$arity$1(cljs.core.swap_BANG_.call(null,a,(function (p__27074){
-var map__27075 = p__27074;
-var map__27075__$1 = (((((!((map__27075 == null))))?(((((map__27075.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__27075.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.call(null,cljs.core.hash_map,map__27075):map__27075);
-var state = cljs.core.get.call(null,map__27075__$1,new cljs.core.Keyword(null,"state","state",-1988618099));
-var vec__27077 = clojure.test.check.random.split.call(null,state);
-var r1 = cljs.core.nth.call(null,vec__27077,(0),null);
-var r2 = cljs.core.nth.call(null,vec__27077,(1),null);
-return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"state","state",-1988618099),r1,new cljs.core.Keyword(null,"returned","returned",-2020439163),r2], null);
+return cljs.core.cst$kw$returned.cljs$core$IFn$_invoke$arity$1(cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(a,(function (p__21182){
+var map__21183 = p__21182;
+var map__21183__$1 = (((((!((map__21183 == null))))?(((((map__21183.cljs$lang$protocol_mask$partition0$ & (64))) || ((cljs.core.PROTOCOL_SENTINEL === map__21183.cljs$core$ISeq$))))?true:false):false))?cljs.core.apply.cljs$core$IFn$_invoke$arity$2(cljs.core.hash_map,map__21183):map__21183);
+var state = cljs.core.get.cljs$core$IFn$_invoke$arity$2(map__21183__$1,cljs.core.cst$kw$state);
+var vec__21185 = clojure.test.check.random.split(state);
+var r1 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21185,(0),null);
+var r2 = cljs.core.nth.cljs$core$IFn$_invoke$arity$3(vec__21185,(1),null);
+return new cljs.core.PersistentArrayMap(null, 2, [cljs.core.cst$kw$state,r1,cljs.core.cst$kw$returned,r2], null);
 })));
 });
 })();
@@ -269,8 +272,8 @@ return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"st
  *   implementation of the IRandom protocol.
  */
 clojure.test.check.random.make_random = (function clojure$test$check$random$make_random(var_args){
-var G__27081 = arguments.length;
-switch (G__27081) {
+var G__21189 = arguments.length;
+switch (G__21189) {
 case 0:
 return clojure.test.check.random.make_random.cljs$core$IFn$_invoke$arity$0();
 
@@ -286,14 +289,12 @@ throw (new Error(["Invalid arity: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(
 });
 
 (clojure.test.check.random.make_random.cljs$core$IFn$_invoke$arity$0 = (function (){
-return clojure.test.check.random.next_rng.call(null);
+return (clojure.test.check.random.next_rng.cljs$core$IFn$_invoke$arity$0 ? clojure.test.check.random.next_rng.cljs$core$IFn$_invoke$arity$0() : clojure.test.check.random.next_rng.call(null));
 }));
 
 (clojure.test.check.random.make_random.cljs$core$IFn$_invoke$arity$1 = (function (seed){
-return clojure.test.check.random.make_java_util_splittable_random.call(null,seed);
+return clojure.test.check.random.make_java_util_splittable_random(seed);
 }));
 
 (clojure.test.check.random.make_random.cljs$lang$maxFixedArity = 1);
 
-
-//# sourceMappingURL=random.js.map
