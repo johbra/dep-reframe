@@ -39,11 +39,11 @@ return false;
  */
 dep.model.modul.sws__GT_alle_semester = (function dep$model$modul$sws__GT_alle_semester(sws){
 var sems = cljs.core.range.call(null,(1),(8));
-return cljs.core.zipmap.call(null,cljs.core.map.call(null,(function (p1__25819_SHARP_){
-return cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__25819_SHARP_)].join(''));
-}),sems),cljs.core.map.call(null,(function (p1__25820_SHARP_){
-if(cljs.core.truth_(sws.call(null,p1__25820_SHARP_))){
-return sws.call(null,p1__25820_SHARP_);
+return cljs.core.zipmap.call(null,cljs.core.map.call(null,(function (p1__31152_SHARP_){
+return cljs.core.keyword.call(null,["S",cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__31152_SHARP_)].join(''));
+}),sems),cljs.core.map.call(null,(function (p1__31153_SHARP_){
+if(cljs.core.truth_(sws.call(null,p1__31153_SHARP_))){
+return sws.call(null,p1__31153_SHARP_);
 } else {
 return (0);
 }
@@ -53,8 +53,8 @@ return (0);
  * Liefert das Modul mit der Nummer symbol aus der Liste module.
  */
 dep.model.modul.modul_mit_nummer = (function dep$model$modul$modul_mit_nummer(module,symbol){
-return cljs.core.first.call(null,cljs.core.filter.call(null,(function (p1__25821_SHARP_){
-return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__25821_SHARP_),symbol);
+return cljs.core.first.call(null,cljs.core.filter.call(null,(function (p1__31154_SHARP_){
+return cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"id","id",-1388402092).cljs$core$IFn$_invoke$arity$1(p1__31154_SHARP_),symbol);
 }),module));
 });
 

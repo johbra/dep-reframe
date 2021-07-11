@@ -1,8 +1,9 @@
-(ns dep.model.dozent
+(ns dep.model.dozent 
   (:require [clojure.spec.alpha :as s]
             [clojure.spec.gen.alpha :as gen]
             [dep.model.quartal :refer [geschaeftsjahreszahl]]
-            [dep.helpers.helpers :refer [round1]]))
+            [dep.helpers.helpers :refer [round1]]
+            [com.rpl.specter :as sp]))
 
 ;; Konstruktor
 (defn ->Dozent
@@ -48,16 +49,27 @@
 (defn schreiben-stunden-auf-quartal
   "Schreibt die stunden für dozent auf das quartal (Quartal keine Nr) gut."
   [dozent stunden quartal]
-  (let [auslastungen-in-quartal
-        ((:auslastungen dozent) (geschaeftsjahreszahl quartal))
-        index (if (= (:nr quartal) 4) 0 (:nr quartal))]
-    (if auslastungen-in-quartal
-      (assoc-in dozent [:auslastungen (geschaeftsjahreszahl quartal)]
-                (assoc auslastungen-in-quartal index (round1 stunden)))
+  (let [index (if (= (:nr quartal) 4) 0 (:nr quartal))]
+    (if (sp/select-any [:auslastungen (geschaeftsjahreszahl quartal)] dozent)
+      (sp/setval [:auslastungen (geschaeftsjahreszahl quartal) index]
+                 (round1 stunden) dozent) 
       #?(:clj (throw (Exception. (str "Geschäftsjahr existiert nicht: "
                                       (geschaeftsjahreszahl quartal))))
          :cljs (throw (js/Error. (str "Geschäftsjahr existiert nicht: "
                                       (geschaeftsjahreszahl quartal))))))))
+#_(defn schreiben-stunden-auf-quartal
+    "Schreibt die stunden für dozent auf das quartal (Quartal keine Nr) gut."
+    [dozent stunden quartal]
+    (let [auslastungen-in-quartal
+          ((:auslastungen dozent) (geschaeftsjahreszahl quartal))
+          index (if (= (:nr quartal) 4) 0 (:nr quartal))]
+      (if auslastungen-in-quartal
+        (assoc-in dozent [:auslastungen (geschaeftsjahreszahl quartal)]
+                  (assoc auslastungen-in-quartal index (round1 stunden)))
+        #?(:clj (throw (Exception. (str "Geschäftsjahr existiert nicht: "
+                                        (geschaeftsjahreszahl quartal))))
+           :cljs (throw (js/Error. (str "Geschäftsjahr existiert nicht: "
+                                        (geschaeftsjahreszahl quartal))))))))
 
 (defn dozent-mit-namen
   "Liefert den Dozenten mit dem Namen string aus der Liste dozenten."

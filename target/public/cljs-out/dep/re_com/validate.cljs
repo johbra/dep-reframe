@@ -1,7 +1,11 @@
 (ns re-com.validate
+  (:require-macros
+    [re-com.validate])
   (:require
     [cljs-time.core         :as    time.core]
     [clojure.set            :refer [superset?]]
+    [re-com.config          :refer [debug?]]
+    [re-com.debug           :as    debug]
     [re-com.util            :refer [deref-or-value-peek]]
     [reagent.core           :as    reagent]
     [reagent.impl.component :as    component]
@@ -17,18 +21,11 @@
   [obj max-len]
   (gstring/truncate (str obj) max-len))
 
-(defn log-error
-  "Sends a message to the DeV Tools console as an error. Returns false to indicate 'error' condition"
-  [& args]
-  (.error js/console (apply str args))
-  false)
-
 (defn log-warning
   "Sends a message to the DeV Tools console as an warning. Returns true to indicate 'not and error' condition"
   [& args]
   (.warn js/console (apply str args))
   true)
-
 
 (defn hash-map-with-name-keys
   [v]
@@ -38,84 +35,123 @@
 (defn extract-arg-data
   "Package up all the relevant data for validation purposes from the xxx-args-desc map into a new map"
   [args-desc]
-    {:arg-names      (set (map :name args-desc))
-     :required-args  (->> args-desc
-                          (filter :required)
-                          (map :name)
-                          set)
-     :validated-args (->> (filter :validate-fn args-desc)
-                          vec
-                          (hash-map-with-name-keys))})
+  {:arg-names      (set (map :name args-desc))
+   :required-args  (->> args-desc
+                        (filter :required)
+                        (map :name)
+                        set)
+   :validated-args (->> (filter :validate-fn args-desc)
+                        vec
+                        (hash-map-with-name-keys))})
 
 ;; ----------------------------------------------------------------------------
 ;; Primary validation functions
 ;; ----------------------------------------------------------------------------
 
-(defn arg-names-valid?
-  "returns true if every passed-args is value. Otherwise log the problem and return false"
-  [defined-args passed-args]
-  (or (superset? defined-args passed-args)
-      (let [missing-args (remove defined-args passed-args)]
-        (log-error "Invalid argument(s): " missing-args)))) ;; Regent will show the component-path
+(defn arg-names-known?
+  "returns problems conjed with a problem map for every passed-arg that is not in defined-args."
+  [defined-args passed-args problems]
+  (if (superset? defined-args passed-args)
+    problems
+    (let [unknown-args (remove defined-args passed-args)]
+      (into problems (map (fn [arg] {:problem :unknown :arg-name arg}) unknown-args)))))
 
-(defn required-args-passed?
-  "returns true if all the required args are supplied. Otherwise log the error and return false"
-  [required-args passed-args]
-  (or (superset? passed-args required-args)
-      (let [missing-args (remove passed-args required-args)]
-        (log-error "Missing required argument(s): " missing-args)))) ;; Regent will show the component-path
+;; [IJ] TODO: This can probably be refactored and combined with the above arg-names-valid? fn.
+(defn required-args?
+  "returns problems conjed with a problem map for every required-args that is not in passed-args."
+  [required-args passed-args problems]
+  (if (superset? passed-args required-args)
+    problems
+    (let [missing-args (remove passed-args required-args)]
+      (into problems (map (fn [arg] {:problem :required :arg-name arg}) missing-args)))))
 
-
-(defn validate-fns-pass?
+(defn validate-fns?
   "Gathers together a list of args that have a validator and...
    returns true if all argument values are valid OR are just warnings (log warning to the console).
    Otherwise log an error to the console and return false.
-   Validation functions can return:
+   Validation function args (2 arities supported):
+         - Arg 1:  The arg to be validated (note that this is stripped from it's enclosing atom if required, this is always a value)
+         - Arg 2:  (optional) true if the arg is wrapped in an atom, otherwise false
+   Validation function return:
          - true:   validation success
          - false:  validation failed - use standard error message
          - map:    validation failed - includes two keys:
                                          :status  - :error:   log to console as error
                                                     :warning: log to console as warning
                                          :message - use this string in the message of the warning/error"
-  [args-with-validators passed-args component-name]
+  [args-with-validators passed-args problems]
   (let [validate-arg (fn [[_ v-arg-def]]
-                       (let [arg-name        (:name v-arg-def)
-                             arg-val         (deref-or-value-peek (arg-name passed-args)) ;; Automatically extract value if it's in an atom
-                             required?       (:required v-arg-def)
-                             validate-result ((:validate-fn v-arg-def) arg-val)
-                             log-msg-base    (str "Validation failed for argument '" arg-name "' in component '" component-name "': ")
-                             comp-name       (str " at " (component/component-name (reagent/current-component)))
-                             warning?        (= (:status validate-result) :warning)]
-                         ;(println (str "[" component-name "] " arg-name " = '" (if (nil? arg-val) "nil" (left-string arg-val 200)) "' => " validate-result))
+                       (let [arg-name          (:name v-arg-def)
+                             arg-val           (deref-or-value-peek (arg-name passed-args)) ;; Automatically extract value if it's in an atom
+                             validate-fn       (:validate-fn v-arg-def)
+                             validate-result   (if (= 1 (.-length ^js/Function validate-fn))
+                                                 (validate-fn arg-val) ;; Standard call, just pass the arg
+                                                 (validate-fn arg-val (satisfies? IDeref (arg-name passed-args)))) ;; Extended call, also wants to know if arg-val is an atom
+                             required?         (:required v-arg-def)
+                             problem-base      {:arg-name arg-name}
+                             warning?          (= (:status validate-result) :warning)]
                          (cond
                            (or (true? validate-result)
                                (and (nil? arg-val)          ;; Allow nil values through if the arg is NOT required
-                                    (not required?))) true
-                           (false? validate-result)  (log-error log-msg-base "Expected '" (:type v-arg-def) "'. Got '" (if (nil? arg-val) "nil" (left-string arg-val 60)) "'" comp-name)
-                           (map?   validate-result)  ((if warning? log-warning log-error)
-                                                       log-msg-base
-                                                       (:message validate-result)
-                                                       (when warning? comp-name))
-                           :else                      (log-error "Invalid return from validate-fn: " validate-result comp-name))))]
-    (->> (select-keys args-with-validators (vec (keys passed-args)))
-         (map validate-arg)
-         (every? true?))))
+                                    (not required?)))
+                           nil
+
+                           (false? validate-result)
+                           (merge problem-base
+                                  {:problem  :validate-fn
+                                   :expected v-arg-def
+                                   :actual   (left-string (pr-str arg-val) 60)})
+
+                           (and (map? validate-result)
+                                (not warning?))
+                           (merge problem-base
+                                  {:problem            :validate-fn-map
+                                   :validate-fn-result validate-result})
+
+                           (and (map? validate-result)
+                                warning?)
+                           (do
+                             (log-warning
+                               (str "Validation failed for argument '" arg-name "' in component '" (component/component-name (reagent/current-component)) "': " (:message validate-result)))
+                             nil)
+
+                           :else
+                           (merge problem-base
+                                  {:problem            :validate-fn-return
+                                   :validate-fn-result validate-result}))))]
+    (into problems
+      (->> (select-keys args-with-validators (vec (keys passed-args)))
+           (map validate-arg)))))
 
 (defn validate-args
   "Calls three validation tests:
     - Are arg names valid?
     - Have all required args been passed?
-    - Specific valiadation function calls to check arg values if specified
-   If they all pass, returns true.
-   Normally used for a call to the {:pre...} at the beginning of a function"
-  [arg-defs passed-args & component-name]
-  (if-not ^boolean js/goog.DEBUG
-    true
-    (let [passed-arg-keys (set (keys passed-args))]
-      (and (arg-names-valid?      (:arg-names      arg-defs) passed-arg-keys)
-           (required-args-passed? (:required-args  arg-defs) passed-arg-keys)
-           (validate-fns-pass?    (:validated-args arg-defs) passed-args (first component-name))))))
+    - Specific validation function calls to check arg values if specified
 
+   If they all pass, returns nil.
+
+   Normally used as the first function of an `or` at the beginning of a component render function, so that either the
+   validation problem component will be rendered in place of the component or nil will skip to the component rendering
+   normally.
+
+   Used to use {:pre... at the beginning of functions and return booleans. Stopped doing that as throws and causes
+   long ugly stack traces. We rely on walking the dom for data-rc-src attributes in the debug/validate-args-problem
+   component instead."
+  [arg-defs passed-args]
+  (if-not debug?
+    nil
+    (let [passed-arg-keys (set (keys passed-args))
+          problems        (->> []
+                               (arg-names-known? (:arg-names arg-defs) passed-arg-keys)
+                               (required-args?   (:required-args arg-defs) passed-arg-keys)
+                               (validate-fns?    (:validated-args arg-defs) passed-args)
+                               (remove nil?))]
+      (when-not (empty? problems)
+        [debug/validate-args-error
+         :problems  problems
+         :args      passed-args
+         :component (debug/short-component-name (component/component-name (reagent/current-component)))]))))
 
 ;; ----------------------------------------------------------------------------
 ;; Custom :validate-fn functions based on (validate-arg-against-set)
@@ -328,7 +364,7 @@
   "Returns true if the passed argument is a valid CSS style.
    Otherwise returns a warning map"
   [arg]
-  (if-not ^boolean js/goog.DEBUG
+  (if-not debug?
     true
     (let [arg (deref-or-value-peek arg)]
       (and (map? arg)
@@ -342,7 +378,7 @@
   ([attr]
    (let [attr (name attr)
          ext? #(and (= (.indexOf attr %) 0)
-                       (> (count attr) (count %)))]
+                    (> (count attr) (count %)))]
      (some (comp ext? #(str % "-") name) extension-attrs))))
 
 (defn invalid-html-attrs
@@ -358,7 +394,7 @@
    Notes:
     - Prevents :class and :style attributes"
   [arg]
-  (if-not ^boolean js/goog.DEBUG
+  (if-not debug?
     true
     (let [arg (deref-or-value-peek arg)]
       (and (map? arg)
@@ -366,13 +402,51 @@
                  contains-class? (contains? arg-keys :class)
                  contains-style? (contains? arg-keys :style)
                  result   (cond
-                            contains-class? ":class not allowed in :attr argument"
-                            contains-style? ":style not allowed in :attr argument"
+                            contains-class? ":attr parameters (including :parts) do not allow :class"
+                            contains-style? ":attr parameters (including :parts) do not allow :style"
                             :else           (when-let [invalid (not-empty (invalid-html-attrs arg-keys))]
                                               (str "Unknown HTML attribute(s): " invalid)))]
              (or (nil? result)
                  {:status  (if (or contains-class? contains-style?) :error :warning)
                   :message result}))))))
+
+(defn parts?
+  "Returns a function that validates a value is a map that contains `keys` mapped to values that are maps containing
+   `class`, `:style` and/or `:attr`."
+  [keys]
+  {:pre [(set? keys)]}
+  (fn [arg]
+    (if-not debug?
+      true
+      (reduce-kv
+        (fn [_ k v]
+          (if-not (keys k)
+            (reduced {:status  :error
+                      :message (str "Invalid keyword in :parts parameter: " k)})
+            (reduce-kv
+              (fn [_ k2 v2]
+                (case k2
+                  :class (if-not (string? v2)
+                           (reduced {:status :error
+                                     :message (str "Parameter [:parts " k " " k2 "] expected string but got " (type v2))})
+                           true)
+                  :style (let [valid? (css-style? v2)]
+                           (if-not (true? valid?)
+                             (reduced valid?)
+                             true))
+                  :attr  (let [valid? (html-attr? v2)]
+                           (if-not (true? valid?)
+                             (reduced valid?)
+                             true))
+                  (reduced {:status :error
+                            :message (str "Invalid keyword in [:parts " k "] parameter: " k2)})))
+              true
+              v)))
+        true
+        arg))))
+
+
+;; Test for specific data types
 
 (defn date-like?
   "Returns true if arg satisfies cljs-time.core/DateTimeProtocol typically goog.date.UtcDateTime or goog.date.Date,
@@ -392,10 +466,44 @@
   (let [arg (deref-or-value-peek arg)]
     (or (number? arg) (string? arg))))
 
+(defn ifn-or-nil?
+  "Returns true if the passed argument is a function, keyword or nil, otherwise false/error"
+  [arg]
+  (or (nil? arg) (ifn? arg)))
+
+
+;; Test for atoms containing specific data types
+;; NOTE: These "test for atom" validation functions use the 2-arity option where the validation mechanism passes the value
+;;       of the arg as with the 1-arity version (derefed with peek) but also a boolean (arg-is-atom?) showing whether
+;;       the arg was passed inside an atom or not
+
+(defn vector-atom?
+  "Returns true if the passed argument is an atom containing a vector"
+  [arg arg-is-atom?]
+  (and arg-is-atom? (vector? (deref-or-value-peek arg))))
+
+(defn map-atom?
+  "Returns true if the passed argument is an atom containing a map"
+  [arg arg-is-atom?]
+  (and arg-is-atom? (map? (deref-or-value-peek arg))))
+
+
+;; Test for specific data types either as values or contained in atoms, but WITHOUT derefing the atoms
+
 (defn string-or-atom?
   "Returns true if the passed argument is a string (or a string within an atom), otherwise false/error"
   [arg]
   (string? (deref-or-value-peek arg)))
+
+(defn vector-or-atom?
+  "Returns true if the passed argument is a vector (or a vector within an atom), otherwise false/error"
+  [arg]
+  (vector? (deref-or-value-peek arg)))
+
+(defn map-or-atom?
+  "Returns true if the passed argument is a map (or a map within an atom), otherwise false/error"
+  [arg]
+  (map? (deref-or-value-peek arg)))
 
 (defn nillable-string-or-atom?
   "Returns true if the passed argument is a string/nil (or a string/nil within an atom), otherwise false/error"

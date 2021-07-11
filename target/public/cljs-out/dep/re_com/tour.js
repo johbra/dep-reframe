@@ -19,33 +19,33 @@ goog.require('re_com.buttons');
  */
 re_com.tour.make_tour = (function re_com$tour$make_tour(tour_spec){
 var tour_map = new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"current-step","current-step",-2023410137),cljs.core.atom.call(null,(0)),new cljs.core.Keyword(null,"steps","steps",-128433302),tour_spec], null);
-return cljs.core.reduce.call(null,(function (p1__21591_SHARP_,p2__21592_SHARP_){
-return cljs.core.assoc.call(null,p1__21591_SHARP_,p2__21592_SHARP_,reagent.core.atom.call(null,false));
+return cljs.core.reduce.call(null,(function (p1__26866_SHARP_,p2__26867_SHARP_){
+return cljs.core.assoc.call(null,p1__26866_SHARP_,p2__26867_SHARP_,reagent.core.atom.call(null,false));
 }),tour_map,tour_spec);
 });
 /**
  * Resets all poover atoms to false
  */
 re_com.tour.initialise_tour = (function re_com$tour$initialise_tour(tour){
-return cljs.core.doall.call(null,(function (){var iter__4529__auto__ = (function re_com$tour$initialise_tour_$_iter__21593(s__21594){
+return cljs.core.doall.call(null,(function (){var iter__4529__auto__ = (function re_com$tour$initialise_tour_$_iter__26868(s__26869){
 return (new cljs.core.LazySeq(null,(function (){
-var s__21594__$1 = s__21594;
+var s__26869__$1 = s__26869;
 while(true){
-var temp__5735__auto__ = cljs.core.seq.call(null,s__21594__$1);
+var temp__5735__auto__ = cljs.core.seq.call(null,s__26869__$1);
 if(temp__5735__auto__){
-var s__21594__$2 = temp__5735__auto__;
-if(cljs.core.chunked_seq_QMARK_.call(null,s__21594__$2)){
-var c__4527__auto__ = cljs.core.chunk_first.call(null,s__21594__$2);
+var s__26869__$2 = temp__5735__auto__;
+if(cljs.core.chunked_seq_QMARK_.call(null,s__26869__$2)){
+var c__4527__auto__ = cljs.core.chunk_first.call(null,s__26869__$2);
 var size__4528__auto__ = cljs.core.count.call(null,c__4527__auto__);
-var b__21596 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
-if((function (){var i__21595 = (0);
+var b__26871 = cljs.core.chunk_buffer.call(null,size__4528__auto__);
+if((function (){var i__26870 = (0);
 while(true){
-if((i__21595 < size__4528__auto__)){
-var step = cljs.core._nth.call(null,c__4527__auto__,i__21595);
-cljs.core.chunk_append.call(null,b__21596,cljs.core.reset_BANG_.call(null,step.call(null,tour),false));
+if((i__26870 < size__4528__auto__)){
+var step = cljs.core._nth.call(null,c__4527__auto__,i__26870);
+cljs.core.chunk_append.call(null,b__26871,cljs.core.reset_BANG_.call(null,step.call(null,tour),false));
 
-var G__21597 = (i__21595 + (1));
-i__21595 = G__21597;
+var G__26872 = (i__26870 + (1));
+i__26870 = G__26872;
 continue;
 } else {
 return true;
@@ -53,13 +53,13 @@ return true;
 break;
 }
 })()){
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__21596),re_com$tour$initialise_tour_$_iter__21593.call(null,cljs.core.chunk_rest.call(null,s__21594__$2)));
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26871),re_com$tour$initialise_tour_$_iter__26868.call(null,cljs.core.chunk_rest.call(null,s__26869__$2)));
 } else {
-return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__21596),null);
+return cljs.core.chunk_cons.call(null,cljs.core.chunk.call(null,b__26871),null);
 }
 } else {
-var step = cljs.core.first.call(null,s__21594__$2);
-return cljs.core.cons.call(null,cljs.core.reset_BANG_.call(null,step.call(null,tour),false),re_com$tour$initialise_tour_$_iter__21593.call(null,cljs.core.rest.call(null,s__21594__$2)));
+var step = cljs.core.first.call(null,s__26869__$2);
+return cljs.core.cons.call(null,cljs.core.reset_BANG_.call(null,step.call(null,tour),false),re_com$tour$initialise_tour_$_iter__26868.call(null,cljs.core.rest.call(null,s__26869__$2)));
 }
 } else {
 return null;
@@ -123,11 +123,11 @@ return null;
 re_com.tour.make_tour_nav = (function re_com$tour$make_tour_nav(tour){
 var on_first_button = cljs.core._EQ_.call(null,cljs.core.deref.call(null,new cljs.core.Keyword(null,"current-step","current-step",-2023410137).cljs$core$IFn$_invoke$arity$1(tour)),(0));
 var on_last_button = cljs.core._EQ_.call(null,cljs.core.deref.call(null,new cljs.core.Keyword(null,"current-step","current-step",-2023410137).cljs$core$IFn$_invoke$arity$1(tour)),(cljs.core.count.call(null,new cljs.core.Keyword(null,"steps","steps",-128433302).cljs$core$IFn$_invoke$arity$1(tour)) - (1)));
-return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"hr","hr",1377740067),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),cljs.core.merge.call(null,re_com.box.flex_child_style.call(null,"none"),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"margin","margin",-995903681),"10px 0px 10px"], null))], null)], null),((on_first_button)?null:new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.buttons.button,new cljs.core.Keyword(null,"label","label",1718410804),"Previous",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (event){
+return new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"div","div",1057191632),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"hr","hr",1377740067),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"style","style",-496642736),cljs.core.merge.call(null,re_com.box.flex_child_style.call(null,"none"),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"margin","margin",-995903681),"10px 0px 10px"], null))], null)], null),((on_first_button)?null:new cljs.core.PersistentVector(null, 11, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.buttons.button,new cljs.core.Keyword(null,"src","src",-1651076051),(((!(goog.DEBUG)))?null:new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"file","file",-1269645878),"/Users/jb/Google-Drive/Planung/Clojure-Script/dep-reframe/target/public/cljs-out/dep/re_com/tour.cljs",new cljs.core.Keyword(null,"line","line",212345235),88], null)),new cljs.core.Keyword(null,"label","label",1718410804),"Previous",new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (event){
 re_com.tour.prev_tour_step.call(null,tour);
 
 return null;
-}),new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"margin-right","margin-right",809689658),"15px"], null),new cljs.core.Keyword(null,"class","class",-2030961996),"btn-default"], null)),new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.buttons.button,new cljs.core.Keyword(null,"label","label",1718410804),((on_last_button)?"Finish":"Next"),new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (event){
+}),new cljs.core.Keyword(null,"style","style",-496642736),new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"margin-right","margin-right",809689658),"15px"], null),new cljs.core.Keyword(null,"class","class",-2030961996),"btn-default rc-tour-btn-previous"], null)),new cljs.core.PersistentVector(null, 9, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.buttons.button,new cljs.core.Keyword(null,"src","src",-1651076051),(((!(goog.DEBUG)))?null:new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"file","file",-1269645878),"/Users/jb/Google-Drive/Planung/Clojure-Script/dep-reframe/target/public/cljs-out/dep/re_com/tour.cljs",new cljs.core.Keyword(null,"line","line",212345235),94], null)),new cljs.core.Keyword(null,"label","label",1718410804),((on_last_button)?"Finish":"Next"),new cljs.core.Keyword(null,"on-click","on-click",1632826543),(function (event){
 if(on_last_button){
 re_com.tour.finish_tour.call(null,tour);
 } else {
@@ -135,7 +135,7 @@ re_com.tour.next_tour_step.call(null,tour);
 }
 
 return null;
-}),new cljs.core.Keyword(null,"class","class",-2030961996),"btn-default"], null)], null);
+}),new cljs.core.Keyword(null,"class","class",-2030961996),["btn-default ",((on_last_button)?"rc-tour-btn-finish":"rc-tour-btn-next")].join('')], null)], null);
 });
 
 //# sourceMappingURL=tour.js.map

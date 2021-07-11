@@ -3,6 +3,8 @@ goog.provide('re_com.validate');
 goog.require('cljs.core');
 goog.require('cljs_time.core');
 goog.require('clojure.set');
+goog.require('re_com.config');
+goog.require('re_com.debug');
 goog.require('re_com.util');
 goog.require('reagent.core');
 goog.require('reagent.impl.component');
@@ -16,55 +18,18 @@ re_com.validate.left_string = (function re_com$validate$left_string(obj,max_len)
 return goog.string.truncate(cljs.core.str.cljs$core$IFn$_invoke$arity$1(obj),max_len);
 });
 /**
- * Sends a message to the DeV Tools console as an error. Returns false to indicate 'error' condition
- */
-re_com.validate.log_error = (function re_com$validate$log_error(var_args){
-var args__4742__auto__ = [];
-var len__4736__auto___16758 = arguments.length;
-var i__4737__auto___16759 = (0);
-while(true){
-if((i__4737__auto___16759 < len__4736__auto___16758)){
-args__4742__auto__.push((arguments[i__4737__auto___16759]));
-
-var G__16760 = (i__4737__auto___16759 + (1));
-i__4737__auto___16759 = G__16760;
-continue;
-} else {
-}
-break;
-}
-
-var argseq__4743__auto__ = ((((0) < args__4742__auto__.length))?(new cljs.core.IndexedSeq(args__4742__auto__.slice((0)),(0),null)):null);
-return re_com.validate.log_error.cljs$core$IFn$_invoke$arity$variadic(argseq__4743__auto__);
-});
-
-(re_com.validate.log_error.cljs$core$IFn$_invoke$arity$variadic = (function (args){
-console.error(cljs.core.apply.call(null,cljs.core.str,args));
-
-return false;
-}));
-
-(re_com.validate.log_error.cljs$lang$maxFixedArity = (0));
-
-/** @this {Function} */
-(re_com.validate.log_error.cljs$lang$applyTo = (function (seq16757){
-var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq16757));
-}));
-
-/**
  * Sends a message to the DeV Tools console as an warning. Returns true to indicate 'not and error' condition
  */
 re_com.validate.log_warning = (function re_com$validate$log_warning(var_args){
 var args__4742__auto__ = [];
-var len__4736__auto___16762 = arguments.length;
-var i__4737__auto___16763 = (0);
+var len__4736__auto___21832 = arguments.length;
+var i__4737__auto___21833 = (0);
 while(true){
-if((i__4737__auto___16763 < len__4736__auto___16762)){
-args__4742__auto__.push((arguments[i__4737__auto___16763]));
+if((i__4737__auto___21833 < len__4736__auto___21832)){
+args__4742__auto__.push((arguments[i__4737__auto___21833]));
 
-var G__16764 = (i__4737__auto___16763 + (1));
-i__4737__auto___16763 = G__16764;
+var G__21834 = (i__4737__auto___21833 + (1));
+i__4737__auto___21833 = G__21834;
 continue;
 } else {
 }
@@ -84,9 +49,9 @@ return true;
 (re_com.validate.log_warning.cljs$lang$maxFixedArity = (0));
 
 /** @this {Function} */
-(re_com.validate.log_warning.cljs$lang$applyTo = (function (seq16761){
+(re_com.validate.log_warning.cljs$lang$applyTo = (function (seq21831){
 var self__4724__auto__ = this;
-return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq16761));
+return self__4724__auto__.cljs$core$IFn$_invoke$arity$variadic(cljs.core.seq.call(null,seq21831));
 }));
 
 re_com.validate.hash_map_with_name_keys = (function re_com$validate$hash_map_with_name_keys(v){
@@ -99,34 +64,39 @@ re_com.validate.extract_arg_data = (function re_com$validate$extract_arg_data(ar
 return new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"arg-names","arg-names",1632831252),cljs.core.set.call(null,cljs.core.map.call(null,new cljs.core.Keyword(null,"name","name",1843675177),args_desc)),new cljs.core.Keyword(null,"required-args","required-args",1225806985),cljs.core.set.call(null,cljs.core.map.call(null,new cljs.core.Keyword(null,"name","name",1843675177),cljs.core.filter.call(null,new cljs.core.Keyword(null,"required","required",1807647006),args_desc))),new cljs.core.Keyword(null,"validated-args","validated-args",278814533),re_com.validate.hash_map_with_name_keys.call(null,cljs.core.vec.call(null,cljs.core.filter.call(null,new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),args_desc)))], null);
 });
 /**
- * returns true if every passed-args is value. Otherwise log the problem and return false
+ * returns problems conjed with a problem map for every passed-arg that is not in defined-args.
  */
-re_com.validate.arg_names_valid_QMARK_ = (function re_com$validate$arg_names_valid_QMARK_(defined_args,passed_args){
-var or__4126__auto__ = clojure.set.superset_QMARK_.call(null,defined_args,passed_args);
-if(or__4126__auto__){
-return or__4126__auto__;
+re_com.validate.arg_names_known_QMARK_ = (function re_com$validate$arg_names_known_QMARK_(defined_args,passed_args,problems){
+if(clojure.set.superset_QMARK_.call(null,defined_args,passed_args)){
+return problems;
 } else {
-var missing_args = cljs.core.remove.call(null,defined_args,passed_args);
-return re_com.validate.log_error.call(null,"Invalid argument(s): ",missing_args);
+var unknown_args = cljs.core.remove.call(null,defined_args,passed_args);
+return cljs.core.into.call(null,problems,cljs.core.map.call(null,(function (arg){
+return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"problem","problem",1168155148),new cljs.core.Keyword(null,"unknown","unknown",-935977881),new cljs.core.Keyword(null,"arg-name","arg-name",6205923),arg], null);
+}),unknown_args));
 }
 });
 /**
- * returns true if all the required args are supplied. Otherwise log the error and return false
+ * returns problems conjed with a problem map for every required-args that is not in passed-args.
  */
-re_com.validate.required_args_passed_QMARK_ = (function re_com$validate$required_args_passed_QMARK_(required_args,passed_args){
-var or__4126__auto__ = clojure.set.superset_QMARK_.call(null,passed_args,required_args);
-if(or__4126__auto__){
-return or__4126__auto__;
+re_com.validate.required_args_QMARK_ = (function re_com$validate$required_args_QMARK_(required_args,passed_args,problems){
+if(clojure.set.superset_QMARK_.call(null,passed_args,required_args)){
+return problems;
 } else {
 var missing_args = cljs.core.remove.call(null,passed_args,required_args);
-return re_com.validate.log_error.call(null,"Missing required argument(s): ",missing_args);
+return cljs.core.into.call(null,problems,cljs.core.map.call(null,(function (arg){
+return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"problem","problem",1168155148),new cljs.core.Keyword(null,"required","required",1807647006),new cljs.core.Keyword(null,"arg-name","arg-name",6205923),arg], null);
+}),missing_args));
 }
 });
 /**
  * Gathers together a list of args that have a validator and...
  * returns true if all argument values are valid OR are just warnings (log warning to the console).
  * Otherwise log an error to the console and return false.
- * Validation functions can return:
+ * Validation function args (2 arities supported):
+ *       - Arg 1:  The arg to be validated (note that this is stripped from it's enclosing atom if required, this is always a value)
+ *       - Arg 2:  (optional) true if the arg is wrapped in an atom, otherwise false
+ * Validation function return:
  *       - true:   validation success
  *       - false:  validation failed - use standard error message
  *       - map:    validation failed - includes two keys:
@@ -134,84 +104,84 @@ return re_com.validate.log_error.call(null,"Missing required argument(s): ",miss
  *                                                  :warning: log to console as warning
  *                                       :message - use this string in the message of the warning/error
  */
-re_com.validate.validate_fns_pass_QMARK_ = (function re_com$validate$validate_fns_pass_QMARK_(args_with_validators,passed_args,component_name){
-var validate_arg = (function (p__16765){
-var vec__16766 = p__16765;
-var _ = cljs.core.nth.call(null,vec__16766,(0),null);
-var v_arg_def = cljs.core.nth.call(null,vec__16766,(1),null);
+re_com.validate.validate_fns_QMARK_ = (function re_com$validate$validate_fns_QMARK_(args_with_validators,passed_args,problems){
+var validate_arg = (function (p__21835){
+var vec__21836 = p__21835;
+var _ = cljs.core.nth.call(null,vec__21836,(0),null);
+var v_arg_def = cljs.core.nth.call(null,vec__21836,(1),null);
 var arg_name = new cljs.core.Keyword(null,"name","name",1843675177).cljs$core$IFn$_invoke$arity$1(v_arg_def);
 var arg_val = re_com.util.deref_or_value_peek.call(null,arg_name.call(null,passed_args));
-var required_QMARK_ = new cljs.core.Keyword(null,"required","required",1807647006).cljs$core$IFn$_invoke$arity$1(v_arg_def);
-var validate_result = new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944).cljs$core$IFn$_invoke$arity$1(v_arg_def).call(null,arg_val);
-var log_msg_base = ["Validation failed for argument '",cljs.core.str.cljs$core$IFn$_invoke$arity$1(arg_name),"' in component '",cljs.core.str.cljs$core$IFn$_invoke$arity$1(component_name),"': "].join('');
-var comp_name = [" at ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(reagent.impl.component.component_name.call(null,reagent.core.current_component.call(null)))].join('');
-var warning_QMARK_ = cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"status","status",-1997798413).cljs$core$IFn$_invoke$arity$1(validate_result),new cljs.core.Keyword(null,"warning","warning",-1685650671));
-if(((validate_result === true) || ((((arg_val == null)) && (cljs.core.not.call(null,required_QMARK_)))))){
+var validate_fn = new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944).cljs$core$IFn$_invoke$arity$1(v_arg_def);
+var validate_result = ((cljs.core._EQ_.call(null,(1),validate_fn.length))?validate_fn.call(null,arg_val):validate_fn.call(null,arg_val,(function (){var G__21839 = arg_name.call(null,passed_args);
+if((!((G__21839 == null)))){
+if((((G__21839.cljs$lang$protocol_mask$partition0$ & (32768))) || ((cljs.core.PROTOCOL_SENTINEL === G__21839.cljs$core$IDeref$)))){
 return true;
 } else {
+if((!G__21839.cljs$lang$protocol_mask$partition0$)){
+return cljs.core.native_satisfies_QMARK_.call(null,cljs.core.IDeref,G__21839);
+} else {
+return false;
+}
+}
+} else {
+return cljs.core.native_satisfies_QMARK_.call(null,cljs.core.IDeref,G__21839);
+}
+})()));
+var required_QMARK_ = new cljs.core.Keyword(null,"required","required",1807647006).cljs$core$IFn$_invoke$arity$1(v_arg_def);
+var problem_base = new cljs.core.PersistentArrayMap(null, 1, [new cljs.core.Keyword(null,"arg-name","arg-name",6205923),arg_name], null);
+var warning_QMARK_ = cljs.core._EQ_.call(null,new cljs.core.Keyword(null,"status","status",-1997798413).cljs$core$IFn$_invoke$arity$1(validate_result),new cljs.core.Keyword(null,"warning","warning",-1685650671));
+if(((validate_result === true) || ((((arg_val == null)) && (cljs.core.not.call(null,required_QMARK_)))))){
+return null;
+} else {
 if(validate_result === false){
-return re_com.validate.log_error.call(null,log_msg_base,"Expected '",new cljs.core.Keyword(null,"type","type",1174270348).cljs$core$IFn$_invoke$arity$1(v_arg_def),"'. Got '",(((arg_val == null))?"nil":re_com.validate.left_string.call(null,arg_val,(60))),"'",comp_name);
+return cljs.core.merge.call(null,problem_base,new cljs.core.PersistentArrayMap(null, 3, [new cljs.core.Keyword(null,"problem","problem",1168155148),new cljs.core.Keyword(null,"validate-fn","validate-fn",1430169944),new cljs.core.Keyword(null,"expected","expected",1583670997),v_arg_def,new cljs.core.Keyword(null,"actual","actual",107306363),re_com.validate.left_string.call(null,cljs.core.pr_str.call(null,arg_val),(60))], null));
 } else {
-if(cljs.core.map_QMARK_.call(null,validate_result)){
-return ((warning_QMARK_)?re_com.validate.log_warning:re_com.validate.log_error).call(null,log_msg_base,new cljs.core.Keyword(null,"message","message",-406056002).cljs$core$IFn$_invoke$arity$1(validate_result),((warning_QMARK_)?comp_name:null));
+if(((cljs.core.map_QMARK_.call(null,validate_result)) && ((!(warning_QMARK_))))){
+return cljs.core.merge.call(null,problem_base,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"problem","problem",1168155148),new cljs.core.Keyword(null,"validate-fn-map","validate-fn-map",-759001917),new cljs.core.Keyword(null,"validate-fn-result","validate-fn-result",280916497),validate_result], null));
 } else {
-return re_com.validate.log_error.call(null,"Invalid return from validate-fn: ",validate_result,comp_name);
+if(((cljs.core.map_QMARK_.call(null,validate_result)) && (warning_QMARK_))){
+re_com.validate.log_warning.call(null,["Validation failed for argument '",cljs.core.str.cljs$core$IFn$_invoke$arity$1(arg_name),"' in component '",cljs.core.str.cljs$core$IFn$_invoke$arity$1(reagent.impl.component.component_name.call(null,reagent.core.current_component.call(null))),"': ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(new cljs.core.Keyword(null,"message","message",-406056002).cljs$core$IFn$_invoke$arity$1(validate_result))].join(''));
+
+return null;
+} else {
+return cljs.core.merge.call(null,problem_base,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"problem","problem",1168155148),new cljs.core.Keyword(null,"validate-fn-return","validate-fn-return",1381166265),new cljs.core.Keyword(null,"validate-fn-result","validate-fn-result",280916497),validate_result], null));
 
 }
 }
 }
+}
 });
-return cljs.core.every_QMARK_.call(null,cljs.core.true_QMARK_,cljs.core.map.call(null,validate_arg,cljs.core.select_keys.call(null,args_with_validators,cljs.core.vec.call(null,cljs.core.keys.call(null,passed_args)))));
+return cljs.core.into.call(null,problems,cljs.core.map.call(null,validate_arg,cljs.core.select_keys.call(null,args_with_validators,cljs.core.vec.call(null,cljs.core.keys.call(null,passed_args)))));
 });
 /**
  * Calls three validation tests:
  *  - Are arg names valid?
  *  - Have all required args been passed?
- *  - Specific valiadation function calls to check arg values if specified
- * If they all pass, returns true.
- * Normally used for a call to the {:pre...} at the beginning of a function
+ *  - Specific validation function calls to check arg values if specified
+ * 
+ * If they all pass, returns nil.
+ * 
+ * Normally used as the first function of an `or` at the beginning of a component render function, so that either the
+ * validation problem component will be rendered in place of the component or nil will skip to the component rendering
+ * normally.
+ * 
+ * Used to use {:pre... at the beginning of functions and return booleans. Stopped doing that as throws and causes
+ * long ugly stack traces. We rely on walking the dom for data-rc-src attributes in the debug/validate-args-problem
+ * component instead.
  */
-re_com.validate.validate_args = (function re_com$validate$validate_args(var_args){
-var args__4742__auto__ = [];
-var len__4736__auto___16772 = arguments.length;
-var i__4737__auto___16773 = (0);
-while(true){
-if((i__4737__auto___16773 < len__4736__auto___16772)){
-args__4742__auto__.push((arguments[i__4737__auto___16773]));
-
-var G__16774 = (i__4737__auto___16773 + (1));
-i__4737__auto___16773 = G__16774;
-continue;
-} else {
-}
-break;
-}
-
-var argseq__4743__auto__ = ((((2) < args__4742__auto__.length))?(new cljs.core.IndexedSeq(args__4742__auto__.slice((2)),(0),null)):null);
-return re_com.validate.validate_args.cljs$core$IFn$_invoke$arity$variadic((arguments[(0)]),(arguments[(1)]),argseq__4743__auto__);
-});
-
-(re_com.validate.validate_args.cljs$core$IFn$_invoke$arity$variadic = (function (arg_defs,passed_args,component_name){
-if((!(goog.DEBUG))){
-return true;
+re_com.validate.validate_args = (function re_com$validate$validate_args(arg_defs,passed_args){
+if((!(re_com.config.debug_QMARK_))){
+return null;
 } else {
 var passed_arg_keys = cljs.core.set.call(null,cljs.core.keys.call(null,passed_args));
-return ((re_com.validate.arg_names_valid_QMARK_.call(null,new cljs.core.Keyword(null,"arg-names","arg-names",1632831252).cljs$core$IFn$_invoke$arity$1(arg_defs),passed_arg_keys)) && (re_com.validate.required_args_passed_QMARK_.call(null,new cljs.core.Keyword(null,"required-args","required-args",1225806985).cljs$core$IFn$_invoke$arity$1(arg_defs),passed_arg_keys)) && (re_com.validate.validate_fns_pass_QMARK_.call(null,new cljs.core.Keyword(null,"validated-args","validated-args",278814533).cljs$core$IFn$_invoke$arity$1(arg_defs),passed_args,cljs.core.first.call(null,component_name))));
+var problems = cljs.core.remove.call(null,cljs.core.nil_QMARK_,re_com.validate.validate_fns_QMARK_.call(null,new cljs.core.Keyword(null,"validated-args","validated-args",278814533).cljs$core$IFn$_invoke$arity$1(arg_defs),passed_args,re_com.validate.required_args_QMARK_.call(null,new cljs.core.Keyword(null,"required-args","required-args",1225806985).cljs$core$IFn$_invoke$arity$1(arg_defs),passed_arg_keys,re_com.validate.arg_names_known_QMARK_.call(null,new cljs.core.Keyword(null,"arg-names","arg-names",1632831252).cljs$core$IFn$_invoke$arity$1(arg_defs),passed_arg_keys,cljs.core.PersistentVector.EMPTY))));
+if(cljs.core.empty_QMARK_.call(null,problems)){
+return null;
+} else {
+return new cljs.core.PersistentVector(null, 7, 5, cljs.core.PersistentVector.EMPTY_NODE, [re_com.debug.validate_args_error,new cljs.core.Keyword(null,"problems","problems",2097327077),problems,new cljs.core.Keyword(null,"args","args",1315556576),passed_args,new cljs.core.Keyword(null,"component","component",1555936782),re_com.debug.short_component_name.call(null,reagent.impl.component.component_name.call(null,reagent.core.current_component.call(null)))], null);
 }
-}));
-
-(re_com.validate.validate_args.cljs$lang$maxFixedArity = (2));
-
-/** @this {Function} */
-(re_com.validate.validate_args.cljs$lang$applyTo = (function (seq16769){
-var G__16770 = cljs.core.first.call(null,seq16769);
-var seq16769__$1 = cljs.core.next.call(null,seq16769);
-var G__16771 = cljs.core.first.call(null,seq16769__$1);
-var seq16769__$2 = cljs.core.next.call(null,seq16769__$1);
-var self__4723__auto__ = this;
-return self__4723__auto__.cljs$core$IFn$_invoke$arity$variadic(G__16770,G__16771,seq16769__$2);
-}));
-
+}
+});
 re_com.validate.justify_options = new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"start","start",-355208981),new cljs.core.Keyword(null,"end","end",-268185958),new cljs.core.Keyword(null,"center","center",-748944368),new cljs.core.Keyword(null,"between","between",1131099276),new cljs.core.Keyword(null,"around","around",-265975553)], null);
 re_com.validate.align_options = new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"start","start",-355208981),new cljs.core.Keyword(null,"end","end",-268185958),new cljs.core.Keyword(null,"center","center",-748944368),new cljs.core.Keyword(null,"baseline","baseline",1151033280),new cljs.core.Keyword(null,"stretch","stretch",-1888837380)], null);
 re_com.validate.scroll_options = new cljs.core.PersistentVector(null, 4, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"auto","auto",-566279492),new cljs.core.Keyword(null,"off","off",606440789),new cljs.core.Keyword(null,"on","on",173873944),new cljs.core.Keyword(null,"spill","spill",-1725816817)], null);
@@ -268,8 +238,8 @@ return re_com.validate.validate_arg_against_set.call(null,arg,":position",re_com
  * Given a vector or list of codes, create a [:span] hiccup vector containing a comma separated list of the codes
  */
 re_com.validate.make_code_list = (function re_com$validate$make_code_list(codes){
-return cljs.core.into.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991)], null),cljs.core.interpose.call(null,", ",cljs.core.map.call(null,(function (p1__16775_SHARP_){
-return (new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"code","code",1586293142),cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__16775_SHARP_)],null));
+return cljs.core.into.call(null,new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.Keyword(null,"span","span",1394872991)], null),cljs.core.interpose.call(null,", ",cljs.core.map.call(null,(function (p1__21840_SHARP_){
+return (new cljs.core.PersistentVector(null,2,(5),cljs.core.PersistentVector.EMPTY_NODE,[new cljs.core.Keyword(null,"code","code",1586293142),cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__21840_SHARP_)],null));
 }),codes)));
 });
 re_com.validate.justify_options_list = re_com.validate.make_code_list.call(null,re_com.validate.justify_options);
@@ -307,7 +277,7 @@ return ((cljs.core.sequential_QMARK_.call(null,arg__$1)) && (((cljs.core.empty_Q
  * Otherwise returns a warning map
  */
 re_com.validate.css_style_QMARK_ = (function re_com$validate$css_style_QMARK_(arg){
-if((!(goog.DEBUG))){
+if((!(re_com.config.debug_QMARK_))){
 return true;
 } else {
 var arg__$1 = re_com.util.deref_or_value_peek.call(null,arg);
@@ -329,23 +299,23 @@ return false;
  */
 re_com.validate.extension_attribute_QMARK_ = (function re_com$validate$extension_attribute_QMARK_(attr){
 var attr__$1 = cljs.core.name.call(null,attr);
-var ext_QMARK_ = (function (p1__16776_SHARP_){
-return ((cljs.core._EQ_.call(null,attr__$1.indexOf(p1__16776_SHARP_),(0))) && ((((attr__$1).length) > cljs.core.count.call(null,p1__16776_SHARP_))));
+var ext_QMARK_ = (function (p1__21841_SHARP_){
+return ((cljs.core._EQ_.call(null,attr__$1.indexOf(p1__21841_SHARP_),(0))) && ((((attr__$1).length) > cljs.core.count.call(null,p1__21841_SHARP_))));
 });
-return cljs.core.some.call(null,cljs.core.comp.call(null,ext_QMARK_,(function (p1__16777_SHARP_){
-return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__16777_SHARP_),"-"].join('');
+return cljs.core.some.call(null,cljs.core.comp.call(null,ext_QMARK_,(function (p1__21842_SHARP_){
+return [cljs.core.str.cljs$core$IFn$_invoke$arity$1(p1__21842_SHARP_),"-"].join('');
 }),cljs.core.name),re_com.validate.extension_attrs);
 });
 /**
  * Returns the subset of HTML attributes contained in the passed argument that are not valid HTML attributes.
  */
 re_com.validate.invalid_html_attrs = (function re_com$validate$invalid_html_attrs(attrs){
-return cljs.core.remove.call(null,(function (p1__16778_SHARP_){
-var or__4126__auto__ = re_com.validate.html_attrs.call(null,p1__16778_SHARP_);
+return cljs.core.remove.call(null,(function (p1__21843_SHARP_){
+var or__4126__auto__ = re_com.validate.html_attrs.call(null,p1__21843_SHARP_);
 if(cljs.core.truth_(or__4126__auto__)){
 return or__4126__auto__;
 } else {
-return re_com.validate.extension_attribute_QMARK_.call(null,p1__16778_SHARP_);
+return re_com.validate.extension_attribute_QMARK_.call(null,p1__21843_SHARP_);
 }
 }),attrs);
 });
@@ -356,7 +326,7 @@ return re_com.validate.extension_attribute_QMARK_.call(null,p1__16778_SHARP_);
  *  - Prevents :class and :style attributes
  */
 re_com.validate.html_attr_QMARK_ = (function re_com$validate$html_attr_QMARK_(arg){
-if((!(goog.DEBUG))){
+if((!(re_com.config.debug_QMARK_))){
 return true;
 } else {
 var arg__$1 = re_com.util.deref_or_value_peek.call(null,arg);
@@ -364,7 +334,7 @@ if(cljs.core.map_QMARK_.call(null,arg__$1)){
 var arg_keys = cljs.core.set.call(null,cljs.core.keys.call(null,arg__$1));
 var contains_class_QMARK_ = cljs.core.contains_QMARK_.call(null,arg_keys,new cljs.core.Keyword(null,"class","class",-2030961996));
 var contains_style_QMARK_ = cljs.core.contains_QMARK_.call(null,arg_keys,new cljs.core.Keyword(null,"style","style",-496642736));
-var result = ((contains_class_QMARK_)?":class not allowed in :attr argument":((contains_style_QMARK_)?":style not allowed in :attr argument":(function (){var temp__5735__auto__ = cljs.core.not_empty.call(null,re_com.validate.invalid_html_attrs.call(null,arg_keys));
+var result = ((contains_class_QMARK_)?":attr parameters (including :parts) do not allow :class":((contains_style_QMARK_)?":attr parameters (including :parts) do not allow :style":(function (){var temp__5735__auto__ = cljs.core.not_empty.call(null,re_com.validate.invalid_html_attrs.call(null,arg_keys));
 if(cljs.core.truth_(temp__5735__auto__)){
 var invalid = temp__5735__auto__;
 return ["Unknown HTML attribute(s): ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(invalid)].join('');
@@ -383,6 +353,64 @@ return new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"st
 return false;
 }
 }
+});
+/**
+ * Returns a function that validates a value is a map that contains `keys` mapped to values that are maps containing
+ * `class`, `:style` and/or `:attr`.
+ */
+re_com.validate.parts_QMARK_ = (function re_com$validate$parts_QMARK_(keys){
+if(cljs.core.set_QMARK_.call(null,keys)){
+} else {
+throw (new Error("Assert failed: (set? keys)"));
+}
+
+return (function (arg){
+if((!(re_com.config.debug_QMARK_))){
+return true;
+} else {
+return cljs.core.reduce_kv.call(null,(function (_,k,v){
+if(cljs.core.not.call(null,keys.call(null,k))){
+return cljs.core.reduced.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"error","error",-978969032),new cljs.core.Keyword(null,"message","message",-406056002),["Invalid keyword in :parts parameter: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k)].join('')], null));
+} else {
+return cljs.core.reduce_kv.call(null,(function (___$1,k2,v2){
+var G__21844 = k2;
+var G__21844__$1 = (((G__21844 instanceof cljs.core.Keyword))?G__21844.fqn:null);
+switch (G__21844__$1) {
+case "class":
+if((!(typeof v2 === 'string'))){
+return cljs.core.reduced.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"error","error",-978969032),new cljs.core.Keyword(null,"message","message",-406056002),["Parameter [:parts ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k)," ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k2),"] expected string but got ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.type.call(null,v2))].join('')], null));
+} else {
+return true;
+}
+
+break;
+case "style":
+var valid_QMARK_ = re_com.validate.css_style_QMARK_.call(null,v2);
+if((!(valid_QMARK_ === true))){
+return cljs.core.reduced.call(null,valid_QMARK_);
+} else {
+return true;
+}
+
+break;
+case "attr":
+var valid_QMARK_ = re_com.validate.html_attr_QMARK_.call(null,v2);
+if((!(valid_QMARK_ === true))){
+return cljs.core.reduced.call(null,valid_QMARK_);
+} else {
+return true;
+}
+
+break;
+default:
+return cljs.core.reduced.call(null,new cljs.core.PersistentArrayMap(null, 2, [new cljs.core.Keyword(null,"status","status",-1997798413),new cljs.core.Keyword(null,"error","error",-978969032),new cljs.core.Keyword(null,"message","message",-406056002),["Invalid keyword in [:parts ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k),"] parameter: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(k2)].join('')], null));
+
+}
+}),true,v);
+}
+}),true,arg);
+}
+});
 });
 /**
  * Returns true if arg satisfies cljs-time.core/DateTimeProtocol typically goog.date.UtcDateTime or goog.date.Date,
@@ -406,10 +434,50 @@ var arg__$1 = re_com.util.deref_or_value_peek.call(null,arg);
 return ((typeof arg__$1 === 'number') || (typeof arg__$1 === 'string'));
 });
 /**
+ * Returns true if the passed argument is a function, keyword or nil, otherwise false/error
+ */
+re_com.validate.ifn_or_nil_QMARK_ = (function re_com$validate$ifn_or_nil_QMARK_(arg){
+return (((arg == null)) || (cljs.core.ifn_QMARK_.call(null,arg)));
+});
+/**
+ * Returns true if the passed argument is an atom containing a vector
+ */
+re_com.validate.vector_atom_QMARK_ = (function re_com$validate$vector_atom_QMARK_(arg,arg_is_atom_QMARK_){
+var and__4115__auto__ = arg_is_atom_QMARK_;
+if(cljs.core.truth_(and__4115__auto__)){
+return cljs.core.vector_QMARK_.call(null,re_com.util.deref_or_value_peek.call(null,arg));
+} else {
+return and__4115__auto__;
+}
+});
+/**
+ * Returns true if the passed argument is an atom containing a map
+ */
+re_com.validate.map_atom_QMARK_ = (function re_com$validate$map_atom_QMARK_(arg,arg_is_atom_QMARK_){
+var and__4115__auto__ = arg_is_atom_QMARK_;
+if(cljs.core.truth_(and__4115__auto__)){
+return cljs.core.map_QMARK_.call(null,re_com.util.deref_or_value_peek.call(null,arg));
+} else {
+return and__4115__auto__;
+}
+});
+/**
  * Returns true if the passed argument is a string (or a string within an atom), otherwise false/error
  */
 re_com.validate.string_or_atom_QMARK_ = (function re_com$validate$string_or_atom_QMARK_(arg){
 return typeof re_com.util.deref_or_value_peek.call(null,arg) === 'string';
+});
+/**
+ * Returns true if the passed argument is a vector (or a vector within an atom), otherwise false/error
+ */
+re_com.validate.vector_or_atom_QMARK_ = (function re_com$validate$vector_or_atom_QMARK_(arg){
+return cljs.core.vector_QMARK_.call(null,re_com.util.deref_or_value_peek.call(null,arg));
+});
+/**
+ * Returns true if the passed argument is a map (or a map within an atom), otherwise false/error
+ */
+re_com.validate.map_or_atom_QMARK_ = (function re_com$validate$map_or_atom_QMARK_(arg){
+return cljs.core.map_QMARK_.call(null,re_com.util.deref_or_value_peek.call(null,arg));
 });
 /**
  * Returns true if the passed argument is a string/nil (or a string/nil within an atom), otherwise false/error
