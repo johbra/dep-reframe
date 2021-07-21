@@ -1,7 +1,7 @@
 (ns dep.views.planung
   (:require 
    [re-frame.core :as rf] 
-   [re-com.core :refer [v-box h-box p]]
+   [re-com.core :refer [v-box h-box]]
    [dep.model.manipel :refer [quartal-aus-jsz-fuer-semester]]
    [dep.model.quartal :refer [semester->quartal minus]]
    [dep.model.lehrveranstaltung :refer [lehrveranstaltungen-fuer-quartal]] 

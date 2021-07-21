@@ -9,7 +9,7 @@
     :refer [quartal->string string->quartal sieben-semester->quartstrng
             parse-int]]
    [dep.views.planung :refer [umplane-lven]]
-   [dep.helpers.form-helpers :refer [rc-input-box rc-dropdown standard-form]]
+   [dep.helpers.form-helpers :refer [rc-input-box rc-dropdown]]
    [dep.helpers.data-modifiers :refer [remove-dataset replace-dataset]]))
 
 (def sem-tabellen-koepfe

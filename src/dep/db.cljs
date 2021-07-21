@@ -38,5 +38,6 @@
    :lven (get-testdata :lven)
    :selected nil
    :show-modal false
-   :table-sort {:sort-column :Name :ascending true}})
+   :table-sort {:sort-column :Name :ascending true}
+   :dateien []})
 

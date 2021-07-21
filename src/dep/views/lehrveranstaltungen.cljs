@@ -4,7 +4,7 @@
    [re-com.core :refer [title button]] 
    [dep.views.table :refer [table-ui td-render-fn]]
    [dep.model.lehrveranstaltung :refer [semesterWochenstunden semester]]
-   [dep.helpers.form-helpers :refer [rc-input-box rc-dropdown standard-form]]
+   [dep.helpers.form-helpers :refer [rc-input-box rc-dropdown]]
    [dep.helpers.data-modifiers :refer [remove-dataset replace-dataset
                                        duplicate-dataset]]))
 
@@ -23,7 +23,7 @@
 (defn dupliziere-lv
   [form-state]
   (let [neue-lv (assoc (:Lv @form-state) :id (gensym))]
-    (duplicate-dataset :lven :id neue-lv)))
+    (duplicate-dataset :lven neue-lv)))
 
 (defn lvn->table
   "Wandelt die Lehrveranstaltungen (lvn) für die Darstellung als Tabelle um. "

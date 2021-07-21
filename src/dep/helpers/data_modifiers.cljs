@@ -21,7 +21,7 @@
     (rf/dispatch [:show-modal false])))
 
 (defn duplicate-dataset
-  [app-db-key data-set-key new-dataset]
+  [app-db-key new-dataset]
   (let [data-sets @(rf/subscribe [app-db-key])]
     (rf/dispatch
      [app-db-key

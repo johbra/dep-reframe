@@ -4,9 +4,6 @@
    [re-com.core :refer [title button]]
    [dep.model.dozent :refer [->Dozent]]
    [dep.views.table :refer [table-ui td-render-fn]]
-
-   [dep.views.demo :refer [table]]
-   
    [dep.helpers.form-helpers :refer [rc-input-box rc-check-box]]
    [dep.helpers.data-modifiers :refer [remove-dataset replace-dataset]]))
 

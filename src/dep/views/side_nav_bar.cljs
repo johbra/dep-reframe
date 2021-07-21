@@ -34,7 +34,7 @@
 
 (defn menu-actions
   "Das in der Sidebar platzierte Menü."
-  [selected]
+  [selected] 
   (if selected
     (selected
      {:dozenten [dozenten ]

@@ -1,3 +1,7 @@
-^{:css-dirs ["resources/public/css"]}
+^{:log-syntax-error-style :concise
+  :css-dirs ["resources/public/css"]}
 {:main dep.core
- :asset-path "cljs-out/dep"}
+ :asset-path "cljs-out/dep"
+                                        ;:closure-defines {"re_frame.trace.trace_enabled_QMARK_" true}
+                                        ;:preloads [day8.re-frame-10x.preload devtools.preload]
+ }

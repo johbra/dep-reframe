@@ -2,8 +2,7 @@
   (:require [clojure.spec.alpha :as s] 
             [clojure.spec.test.alpha :as stest]
             [clojure.test.check]
-            [clojure.test.check.properties]
-            [clojure.pprint :as pp]))
+            [clojure.test.check.properties]))
 
 ;; Specs für Quartal 
 (s/def ::nr #{1 2 3 4})

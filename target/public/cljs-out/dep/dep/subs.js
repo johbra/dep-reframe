@@ -1,0 +1,69 @@
+// Compiled by ClojureScript 1.10.844 {:static-fns true, :optimize-constants true}
+goog.provide('dep.subs');
+goog.require('cljs.core');
+goog.require('cljs.core.constants');
+goog.require('re_frame.core');
+goog.require('dep.model.quartal');
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$welt,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return db;
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$name,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$display_DASH_name.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$selected,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$selected.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$jahre,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$jahre.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$geschaeftsjahr,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$geschaeftsjahr.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$quartal,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$quartal.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$quartale,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.map.cljs$core$IFn$_invoke$arity$2(dep.model.quartal.quartal__GT_string,dep.model.quartal.quartale_fuer_jahr(cljs.core.cst$kw$geschaeftsjahr.cljs$core$IFn$_invoke$arity$1(db)));
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$dozenten,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$dozenten.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$studienrichtungen,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$studienrichtungen.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$manipels,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$manipels.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$module,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$module.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$lven,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$lven.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$dateien,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$dateien.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$show_DASH_modal,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$show_DASH_modal.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$modal_DASH_form,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$modal_DASH_form.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$buttons,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$buttons.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$edit_DASH_component,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$edit_DASH_component.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$update_DASH_fn,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$update_DASH_fn.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$remove_DASH_fn,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$remove_DASH_fn.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$sort_DASH_column,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$sort_DASH_column.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$table_DASH_sort.cljs$core$IFn$_invoke$arity$1(db));
+})], 0));
+re_frame.core.reg_sub.cljs$core$IFn$_invoke$arity$variadic(cljs.core.cst$kw$table_DASH_sort,cljs.core.prim_seq.cljs$core$IFn$_invoke$arity$2([(function (db,_){
+return cljs.core.cst$kw$table_DASH_sort.cljs$core$IFn$_invoke$arity$1(db);
+})], 0));

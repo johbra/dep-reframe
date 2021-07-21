@@ -1,82 +1,92 @@
-(ns dep.helpers.drop-file-stream
-  (:require-macros [cljs.core.async.macros :refer [go]])
-  (:require  [cljs-http.client :as http]
-             [cljs.core.async :as a :refer [<! chan timeout]]
-             [reagent.core :as r]))
+(ns dep.helpers.drop-file-stream 
+  (:require [day8.re-frame.http-fx]
+            [ajax.core :refer [text-response-format json-request-format
+                               json-response-format]]))
 
-;; Hilfsfunktion für das Lesen einer Datei aus der Dropbox
-;; Provisorium für die Bereitstellung von alten Modul- und Manipel-Daten
-(defn lies-datei
-  [f-name w f]  
-  (go (let [pfad (str "{\"path\":\"/" f-name "\"}")
-            response
-            (<! (http/post
-                 "https://content.dropboxapi.com/2/files/download" 
-                 {:with-credentials? false
-                  :headers {"Authorization" "Bearer QfCCKhxI-HwAAAAAAAAHBzmH6xSzQwGNTWKR1Wk53LGz7lzksYn_jOa-SXCgTTZ-"
-                            "Dropbox-API-Arg" pfad
-                            "Content-Type" "text/plain; charset=utf-8"}         
-                  }))]
-        (reset! w (vec (f (:body response)))))));
+;; Funktionen für den Zugriff auf Dateien in der Dropbox unter Vewendung
+;; der HTTP Effects Handler For re-frame ((https://github.com/Day8/re-frame-http-fx)
 
-(defn write-text
-  "Schreibt den text in eine Datei mit dem Namen f-name."
-  [text f-name] 
-  (go (let [pfad (str "{\"path\":\"/" f-name \" "," "\"mode\":{\".tag\":\"overwrite\"}}")]
-        (<! (http/post "https://content.dropboxapi.com/2/files/upload" 
-                       {:with-credentials? false
-                        :headers {"Authorization" "Bearer QfCCKhxI-HwAAAAAAAAHBzmH6xSzQwGNTWKR1Wk53LGz7lzksYn_jOa-SXCgTTZ-"
-                                  "Dropbox-API-Arg" pfad
-                                  "Content-Type" "application/octet-stream"}
-                        :body text} 
-                       )))))
+(def authorization
+  "Bearer QfCCKhxI-HwAAAAAAAAHBzmH6xSzQwGNTWKR1Wk53LGz7lzksYn_jOa-SXCgTTZ-")
 
-(defn list-folder
-  "Liefert die Liste der Dateien im Basisverzeichnis."
-  []
-  (go (let [pfad  (str "{\"path\":\"\"}")
-            response
-            (<! (http/post "https://api.dropboxapi.com/2/files/list_folder"
-                           {:with-credentials? false
-                            :headers {"Authorization" "Bearer QfCCKhxI-HwAAAAAAAAHBzmH6xSzQwGNTWKR1Wk53LGz7lzksYn_jOa-SXCgTTZ-" 
-                                      "Content-Type" "application/json"                
-                                      }
-                            :json-params {:path ""}} 
-                           ))] 
-        (:entries (:body response)))))
+(defn ajax-request-read-edn-from-dropbox
+  "Liest die Datei filename aus der Dropbox."
+  [filename ]
+  (let [path (str "{\"path\":\"/" filename "\"}")]
+    {:method          :post
+     :uri             "https://content.dropboxapi.com/2/files/download"
+     :with-credentials? false
+     :headers
+     {"Authorization" authorization 
+      "Dropbox-API-Arg" path
+      "Content-Type" "text/plain; charset=utf-8"}
+     :response-format  (text-response-format)
+     :on-success      [:process-read]
+     :on-failure      [:bad-resp]
+     :body ""}))
 
-(defn delete-file-named
-  "Löscht die Datei mit dem Namen f-name aus dem Basisverzeichnis."
-  [f-name]
-  (go (let [pfad (str "/" f-name)]
-        (<! (http/post "https://api.dropboxapi.com/2/files/delete_v2" 
-                       {:with-credentials? false
-                        :headers {"Authorization" "Bearer QfCCKhxI-HwAAAAAAAAHBzmH6xSzQwGNTWKR1Wk53LGz7lzksYn_jOa-SXCgTTZ-"}
-                        :json-params {:path pfad}}
-                       )))))
+(defn ajax-request-list-folder-on-dropbox
+  "Liest den Ordnerinhalt der App aus der Dropbox."
+  [] 
+  {:method          :post
+   :uri             "https://api.dropboxapi.com/2/files/list_folder"
+   :with-credentials? false
+   :headers
+   {"Authorization" authorization
+    "Content-Type" "application/json"}
+   :format (json-request-format)
+   :params {:path ""}
+   :response-format  (json-response-format {:keywords? true})
+   :on-success      [:process-list-folder-request]
+   :on-failure      [:bad-resp]})
 
-(defn read-edn-file
-  "Liefert den Inhalt der EDN-Datei mit dem Namen f-name."
-  [f-name] 
-  (go (let [pfad (str "{\"path\":\"/" f-name "\"}")
-            response
-            (<! (http/post
-                 "https://content.dropboxapi.com/2/files/download" 
-                 {:with-credentials? false
-                  :headers {"Authorization" "Bearer QfCCKhxI-HwAAAAAAAAHBzmH6xSzQwGNTWKR1Wk53LGz7lzksYn_jOa-SXCgTTZ-"
-                            "Dropbox-API-Arg" pfad
-                            "Content-Type" "text/plain; charset=utf-8"}         
-                  }))]
-        (cljs.reader/read-string (:body response)))))
+(defn ajax-request-write-edn-to-dropbox
+  "Schreibt content im EDN-Format in Datei filename."
+  [content filename]
+  (let [path
+        (str "{\"path\":\"/" filename \" "," "\"mode\":{\".tag\":\"overwrite\"}}")]
+    {:method          :post
+     :uri             "https://content.dropboxapi.com/2/files/upload"
+     :with-credentials? false
+     :headers
+     {"Authorization" authorization 
+      "Dropbox-API-Arg" path
+      "Content-Type" "application/octet-stream"}
+     :response-format  (json-response-format {:keywords? true})
+     :on-success      [:process-written]
+     :on-failure      [:bad-resp]
+     :body content}))
 
-(defn rename-file
+(defn ajax-request-delete-file-from-dropbox
+  "Löscht Datei filename aus der Liste files und aus der Dropbox."
+  [filename files]
+  (let [path (str "/" filename)]
+    {:method          :post
+     :uri             "https://api.dropboxapi.com/2/files/delete"
+     :with-credentials? false
+     :headers
+     {"Authorization" authorization}
+     :format (json-request-format)
+     :params {:path path}
+     :response-format (json-response-format {:keywords? true})
+     :on-success      [:process-deleted files]
+     :on-failure      [:bad-resp]}))
+
+(defn ajax-request-rename-file-on-dropbox
   "Benennt die Datei mit dem Namen f-name-old in f-name-new um."
   [f-name-old f-name-new]
-  (go (let [path-old (str "/" f-name-old)
-            path-new (str "/" f-name-new)]
-        (<! (http/post "https://api.dropboxapi.com/2/files/move_v2" 
-                       {:with-credentials? false
-                        :headers {"Authorization" "Bearer QfCCKhxI-HwAAAAAAAAHBzmH6xSzQwGNTWKR1Wk53LGz7lzksYn_jOa-SXCgTTZ-"}
-                        :json-params {:from_path path-old
-                                      :to_path path-new}}
-                       )))))
+  (let [path-old (str "/" f-name-old)
+        path-new (str "/" f-name-new)]
+    {:method          :post
+     :uri             "https://api.dropboxapi.com/2/files/move_v2"
+     :with-credentials? false
+     :headers
+     {"Authorization" authorization}
+     :format (json-request-format)
+     :params {:from_path path-old
+              :to_path path-new}
+     :response-format (json-response-format {:keywords? true})
+     :on-success      [:process-renamed]
+     :on-failure      [:bad-resp]}))
+
+

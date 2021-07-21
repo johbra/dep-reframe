@@ -7,7 +7,7 @@
    [dep.views.table :refer [table-ui td-render-fn]]
    [dep.model.quartal
     :refer [quartal->string string->quartal]]
-   [dep.helpers.form-helpers :refer [rc-input-box rc-dropdown standard-form]]
+   [dep.helpers.form-helpers :refer [rc-input-box rc-dropdown]]
    [dep.helpers.data-modifiers :refer [remove-dataset replace-dataset
                                        duplicate-dataset]]))
 
@@ -31,7 +31,7 @@
 (defn aender-modul 
   "Erzeugt ein neues Modul aus den in aenderungen gegebenen Daten."
   [form-state]
-  (let [form @form-state       
+  (let [form @form-state
         neues-modul (assoc
                      (->Modul (:Nr form)
                               (:Name form)
@@ -52,7 +52,7 @@
                  (:Studienrichtung form)
                  (string->quartal (:ab-Stbgnn form))
                  (string->quartal (:bis-Stbgnn form)))]
-    (duplicate-dataset :module :nummer neues-modul)))
+    (duplicate-dataset :module neues-modul)))
 
 (defn module->table
   "Wandelt die module für die Darstellung als Tabelle um."

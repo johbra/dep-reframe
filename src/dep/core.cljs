@@ -4,18 +4,16 @@
    [reagent.dom :as rdom] 
    [re-frame.core :as rf]
    [dep.subs]
-   [dep.events :as events]
+   [dep.events]
    [dep.views.side-nav-bar :as bar]
    [dep.views.modal :refer [modal]]
    [re-com.core :refer [v-box h-box box gap]]   
-   ))
+   )) 
 
 (defn main-panel    ;; my top level reagent component
   []
   (let [name  (rf/subscribe [:name])
-        selected (rf/subscribe [:selected])
-                                        ;titel (calc/add 4 5)
-        ] 
+        selected (rf/subscribe [:selected])] 
     [:div
      ;; [:div [:pre (with-out-str (pprint @re-frame.db/app-db))]]
      [modal]

@@ -4,14 +4,13 @@
    [re-com.core :refer [title button]]
    [dep.model.studienrichtung :refer [->Studienrichtung]]
    [dep.views.table :refer [table-ui td-render-fn]]
-   [dep.helpers.form-helpers :refer [rc-input-box standard-form]]
+   [dep.helpers.form-helpers :refer [rc-input-box]]
    [dep.helpers.data-modifiers :refer [remove-dataset replace-dataset]]))
 
 (defn aender-studienrichtung 
-  "Erzeugt eine neue Studienrichtung aus den in aenderungen gegebenen Daten."
+  "Erzeugt eine neue Studienrichtung aus den im Formular gegebenen Daten."
   [form-state] 
-  (let [studienrichtungen @(rf/subscribe [:studienrichtungen])
-        neu (->Studienrichtung (:Bezeichnung @form-state))]
+  (let [neu (->Studienrichtung (:Bezeichnung @form-state))]
     (replace-dataset :studienrichtungen :name neu)))
 
 (defn studienrichtungen->table

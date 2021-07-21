@@ -5,6 +5,7 @@
                         single-dropdown]]))
 
 (defn rc-input-box
+  "Erzeugt ein Eingabefeld mithilfe von re-com."
   [labl model form-key validation-regex convert-fn disabled? s] 
   ^{:key labl}
   [h-box :justify :between :align :center
@@ -17,6 +18,7 @@
                :disabled? disabled?]]])
 
 (defn rc-check-box
+  "Erzeugt eine Checkbox mithilfe von re-com"
   [labl form-key s] 
   [h-box :children [[label :width "100px" :label labl]
                     [checkbox 
@@ -24,6 +26,7 @@
                      :on-change #(swap! s assoc form-key %)]]])
 
 (defn rc-dropdown
+  "Erzeugt ein Dropdown-Eingabefeld mithilfe von re-com."
   [labl form-key choices disabled? s]
   [h-box :justify :between :align :center
    :children [[label :width "100px" :label labl]
